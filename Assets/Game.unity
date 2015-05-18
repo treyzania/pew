@@ -292,7 +292,6 @@ GameObject:
   - 4: {fileID: 611393346}
   - 54: {fileID: 611393348}
   - 65: {fileID: 611393347}
-  - 75: {fileID: 611393349}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -340,17 +339,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0
---- !u!75 &611393349
-ConstantForce:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 611393345}
-  m_Enabled: 1
-  m_Force: {x: 0, y: 0, z: 0}
-  m_RelativeForce: {x: 2, y: 0, z: 0}
-  m_Torque: {x: 0, y: 0, z: 0}
-  m_RelativeTorque: {x: 0, y: 1, z: 0}
 --- !u!1 &648152451
 GameObject:
   m_ObjectHideFlags: 0
