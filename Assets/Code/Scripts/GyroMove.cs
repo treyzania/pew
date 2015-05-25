@@ -3,13 +3,26 @@ using System.Collections;
 
 public class GyroMove : MonoBehaviour {
 
-	public float VelocityFactor = 5F;
-	public float RotationFactor = 5F;
+	[Range(0, 10)] public float VelocityFactor = 5F;
+	[Range(0, 10)] public float VelocityExponent = 1F;
+	[Range(0, 10)] public float RotationFactor = 5F;
+	
 	public float RotationAdjustCutoff = 0.05F;
 	
+	private ShipManager sm;
 	private Quaternion lastFacingTarget;
 	
+	public void VF(float i) {
+		this.VelocityFactor = i;
+	}
+	
+	public void VE(float j) {
+		this.VelocityExponent = j;
+	}
+	
 	void Start () {
+		
+		this.sm = this.GetComponent<ShipManager>();
 		
 		this.lastFacingTarget = Quaternion.identity;
 		
@@ -17,15 +30,26 @@ public class GyroMove : MonoBehaviour {
 	
 	void Update () {
 		
-		Vector3 acceleration = new Vector3(Input.acceleration.x, 0, Input.acceleration.y);
-		if (acceleration.magnitude > this.RotationAdjustCutoff) this.lastFacingTarget = Quaternion.LookRotation(acceleration);
+		Vector3 dir = new Vector3(Input.acceleration.x, 0, Input.acceleration.y);
+		Vector3 norm = dir.normalized;
 		
-		this.GetComponent<Rigidbody>().AddForce(acceleration * this.VelocityFactor);
+		// Calculate the magnitude.
+		float inertiaFactor = sm.GetCurrentEngineMaxThrust() / sm.GetMass();
+		float throttleFactor = Mathf.Pow(dir.magnitude, VelocityExponent);
+		float mag = inertiaFactor * VelocityFactor * throttleFactor;
+		
+		// Update the position.
+		this.transform.position += norm * mag;
+		
+		// Update the rotation.
+		this.lastFacingTarget = Quaternion.LookRotation(norm, Vector3.up);
 		this.transform.rotation = Quaternion.Slerp(
 			this.transform.rotation,
 			this.lastFacingTarget,
-			Time.deltaTime * this.RotationFactor
+			Time.deltaTime * RotationFactor
 		);
+		
+		//if (Mathf.Abs(Quaternion.Dot(this.transform.rotation, this.lastFacingTarget)) < this.RotationAdjustCutoff) {}
 		
 	}
 	

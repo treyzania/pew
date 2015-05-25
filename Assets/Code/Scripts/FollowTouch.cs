@@ -15,7 +15,7 @@ public class FollowTouch : MonoBehaviour {
 		
 		if (ts.Length > 0) {
 			
-			Debug.Log(ts[0].position.x + ", " + ts[0].position.y);
+			//Debug.Log(ts[0].position.x + ", " + ts[0].position.y);
 			this.transform.position = new Vector3(ts[0].position.x, ts[0].position.y, 0);
 			
 		}
