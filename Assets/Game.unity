@@ -559,8 +559,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VelocityFactor: 1
   VelocityExponent: 1
-  RotationFactor: 5
+  RotationFactor: 10
   RotationAdjustCutoff: .100000001
+  DeadzoneCutoff: .0250000004
 --- !u!1 &648152451
 GameObject:
   m_ObjectHideFlags: 0

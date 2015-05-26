@@ -6,12 +6,15 @@ public class GyroMove : MonoBehaviour {
 
 	[Range(0, 10)] public float VelocityFactor = 5F;
 	[Range(0, 10)] public float VelocityExponent = 1F;
-	[Range(0, 10)] public float RotationFactor = 5F;
+	[Range(0, 50)] public float RotationFactor = 1F;
 	
 	[Range(0, 1)] public float RotationAdjustCutoff = 0.1F;
+	[Range(0, 1)] public float DeadzoneCutoff = 0.05F;
+	[Range(0, 1)] public float TiltFactor = 1F;
 	
 	private ShipManager sm;
 	private Quaternion lastFacingTarget;
+	private Transform modelTree;
 	
 	public void VF(float i) {
 		this.VelocityFactor = i;
@@ -40,10 +43,9 @@ public class GyroMove : MonoBehaviour {
 		float mag = inertiaFactor * VelocityFactor * throttleFactor;
 		
 		// Update the position.
-		this.transform.position += norm * mag;
+		if (dir.magnitude > DeadzoneCutoff) this.transform.position += norm * mag;
 		
 		// Update the rotation.
-		
 		if (dir.magnitude > this.RotationAdjustCutoff) {
 			
 			this.lastFacingTarget = Quaternion.LookRotation(norm, Vector3.up);
