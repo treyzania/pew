@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(ShipManager))]
 public class GyroMove : MonoBehaviour {
 
 	[Range(0, 10)] public float VelocityFactor = 5F;
 	[Range(0, 10)] public float VelocityExponent = 1F;
 	[Range(0, 10)] public float RotationFactor = 5F;
 	
-	public float RotationAdjustCutoff = 0.05F;
+	[Range(0, 1)] public float RotationAdjustCutoff = 0.1F;
 	
 	private ShipManager sm;
 	private Quaternion lastFacingTarget;
@@ -42,14 +43,17 @@ public class GyroMove : MonoBehaviour {
 		this.transform.position += norm * mag;
 		
 		// Update the rotation.
-		this.lastFacingTarget = Quaternion.LookRotation(norm, Vector3.up);
-		this.transform.rotation = Quaternion.Slerp(
-			this.transform.rotation,
-			this.lastFacingTarget,
-			Time.deltaTime * RotationFactor
-		);
 		
-		//if (Mathf.Abs(Quaternion.Dot(this.transform.rotation, this.lastFacingTarget)) < this.RotationAdjustCutoff) {}
+		if (dir.magnitude > this.RotationAdjustCutoff) {
+			
+			this.lastFacingTarget = Quaternion.LookRotation(norm, Vector3.up);
+			this.transform.rotation = Quaternion.Slerp(
+				this.transform.rotation,
+				this.lastFacingTarget,
+				Time.deltaTime * RotationFactor
+			);
+			
+		}
 		
 	}
 	
