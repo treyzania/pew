@@ -138,6 +138,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: .100000001
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 228f21d96ec785643b3719e0dfe0dcc1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b730bb05677a8514babcb82f12adc6a3, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 228f21d96ec785643b3719e0dfe0dcc1, type: 3}
   m_IsPrefabParent: 0
@@ -232,13 +236,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 176947311}
-  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
-  m_LocalPosition: {x: 0, y: .5, z: 1.79999995}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: .70710659, z: 0, w: -.707106948}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: .200000018, y: .200000003, z: .200000018}
   m_Children:
   - {fileID: 1960602002}
-  m_Father: {fileID: 1258650888}
-  m_RootOrder: 4
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
 --- !u!1 &276811208
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,7 +501,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 611393345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.11999989, y: 0, z: 0}
+  m_LocalPosition: {x: -3.11999989, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1258650888}
@@ -927,7 +931,6 @@ Transform:
   - {fileID: 430857133}
   - {fileID: 933427979}
   - {fileID: 1738735014}
-  - {fileID: 176947312}
   - {fileID: 1468357208}
   m_Father: {fileID: 611393346}
   m_RootOrder: 0
@@ -971,7 +974,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 959eaef9c0597ef419ae306517490140, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1079,7 +1082,7 @@ Transform:
   - {fileID: 1491502727}
   - {fileID: 987388536}
   m_Father: {fileID: 1258650888}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1 &1468794030
 GameObject:
   m_ObjectHideFlags: 0
@@ -2527,6 +2530,10 @@ Prefab:
       propertyPath: m_Name
       value: ship_cannon2
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 228f21d96ec785643b3719e0dfe0dcc1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b730bb05677a8514babcb82f12adc6a3, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 228f21d96ec785643b3719e0dfe0dcc1, type: 3}
   m_IsPrefabParent: 0
@@ -2675,7 +2682,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1961762684}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 30, y: 30, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
