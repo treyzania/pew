@@ -145,7 +145,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 228f21d96ec785643b3719e0dfe0dcc1, type: 3}
   m_IsPrefabParent: 0
---- !u!4 &31842296
+--- !u!4 &31842296 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 228f21d96ec785643b3719e0dfe0dcc1, type: 3}
   m_PrefabInternal: {fileID: 31842295}
@@ -562,6 +562,7 @@ MonoBehaviour:
   RotationFactor: 10
   RotationAdjustCutoff: .100000001
   DeadzoneCutoff: .0250000004
+  TiltFactor: 0
 --- !u!1 &648152451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,7 +1052,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1227566e234f2448b1a01ef5436029e, type: 3}
   m_IsPrefabParent: 0
---- !u!4 &1416151832
+--- !u!4 &1416151832 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: c1227566e234f2448b1a01ef5436029e, type: 3}
   m_PrefabInternal: {fileID: 1416151831}
@@ -2538,7 +2539,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 228f21d96ec785643b3719e0dfe0dcc1, type: 3}
   m_IsPrefabParent: 0
---- !u!4 &1908239290
+--- !u!4 &1908239290 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 228f21d96ec785643b3719e0dfe0dcc1, type: 3}
   m_PrefabInternal: {fileID: 1908239289}

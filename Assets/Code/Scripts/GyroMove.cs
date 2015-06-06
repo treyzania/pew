@@ -10,23 +10,15 @@ public class GyroMove : MonoBehaviour {
 	
 	[Range(0, 1)] public float RotationAdjustCutoff = 0.1F;
 	[Range(0, 1)] public float DeadzoneCutoff = 0.05F;
-	[Range(0, 1)] public float TiltFactor = 1F;
 	
 	private ShipManager sm;
 	private Quaternion lastFacingTarget;
 	private Transform modelTree;
 	
-	public void VF(float i) {
-		this.VelocityFactor = i;
-	}
-	
-	public void VE(float j) {
-		this.VelocityExponent = j;
-	}
-	
 	void Start () {
 		
 		this.sm = this.GetComponent<ShipManager>();
+		this.modelTree = this.transform.FindChild("ModelTree");
 		
 		this.lastFacingTarget = Quaternion.identity;
 		
