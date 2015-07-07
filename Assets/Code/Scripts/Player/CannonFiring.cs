@@ -10,13 +10,19 @@ public class CannonFiring : MonoBehaviour {
 	
 	private float timeSinceFiring = 0F;
 	
+	void Start() {
+		
+		// HULLO!
+		
+	}
+	
 	public void TryFire() {
 		
 		Debug.Log("Firing cannon. " + timeSinceFiring + ", " + Time.fixedDeltaTime);
 		
-		if (timeSinceFiring <= FireThreshold) {
+		if (timeSinceFiring >= FireThreshold) {
 			
-			if (Missile != null) {
+			if (this.Missile != null) {
 				
 				GameObject m = GameObject.Instantiate(this.Missile);
 				
@@ -28,24 +34,19 @@ public class CannonFiring : MonoBehaviour {
 				// Up because of how the rotation is.
 				rb.velocity = m.transform.up * InitialMissileVelocity;
 				
+				Debug.Log(m.transform.position);
+				
 			}
 			
+			this.timeSinceFiring = 0F;
+			
 		}
-		
-		this.timeSinceFiring = 0F;
 		
 	}
 	
 	void Update() {
 		
-		if (Input.touches.Length > 0) {
-			
-			if (this.timeSinceFiring >= this.FireThreshold) {
-				this.TryFire();
-				this.timeSinceFiring = 0F;
-			}
-			
-		}
+		if (Input.touches.Length > 0) this.TryFire();
 		
 	}
 	
