@@ -27,9 +27,6 @@ namespace Pew.Player {
 			
 			float armor = this.ShipHull.Armor;
 			float shield = this.ShipShield.ProtectionFactor;
-			
-			
-			
 		}
 		
 	}
