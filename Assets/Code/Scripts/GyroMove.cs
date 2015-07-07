@@ -5,7 +5,7 @@ using System.Collections;
 public class GyroMove : MonoBehaviour {
 
 	[Range(0, 10)] public float VelocityFactor = 5F;
-	[Range(0, 10)] public float VelocityExponent = 1F;
+	[Range(0, 2.5F)] public float VelocityExponent = 1F;
 	[Range(0, 50)] public float RotationFactor = 1F;
 	
 	[Range(0, 1)] public float RotationAdjustCutoff = 0.1F;

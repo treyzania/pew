@@ -325,6 +325,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 430857133}
   - 114: {fileID: 430857134}
+  - 114: {fileID: 430857135}
   m_Layer: 0
   m_Name: Mount_Turret
   m_TagString: Untagged
@@ -360,6 +361,22 @@ MonoBehaviour:
   Target: {fileID: 648152454}
   ShipRoot: {fileID: 611393346}
   RotationAdjustFactor: 10
+  cf: {fileID: 0}
+--- !u!114 &430857135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 430857132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccc890f865d4e1e48b726b6ca009cc1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BarrelEnd: {fileID: 1860856054}
+  Missile: {fileID: 163480, guid: a180434b35e75e445a3d5e3c5ccab42f, type: 2}
+  InitialMissileVelocity: 5
+  FireThreshold: 1
 --- !u!1 &491796440
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,11 +575,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VelocityFactor: 1
-  VelocityExponent: 1
+  VelocityExponent: .5
   RotationFactor: 10
   RotationAdjustCutoff: .100000001
   DeadzoneCutoff: .0250000004
-  TiltFactor: 0
 --- !u!1 &648152451
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,6 +592,7 @@ GameObject:
   - 114: {fileID: 648152455}
   - 132: {fileID: 648152457}
   - 114: {fileID: 648152456}
+  - 114: {fileID: 648152458}
   m_Layer: 5
   m_Name: TargetPanel
   m_TagString: Untagged
@@ -624,7 +641,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -50, y: 0}
+  m_AnchoredPosition: {x: -100, y: 0}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &648152455
@@ -638,6 +655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355a65bf296ff0440be7c1414783ad11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cannon: {fileID: 430857135}
 --- !u!114 &648152456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -672,6 +690,60 @@ GUIText:
     rgba: 4294967295
   m_PixelCorrect: 1
   m_RichText: 1
+--- !u!114 &648152458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 648152451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delegates: []
+--- !u!1001 &745040679
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 418066, guid: a180434b35e75e445a3d5e3c5ccab42f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.13899994
+      objectReference: {fileID: 0}
+    - target: {fileID: 418066, guid: a180434b35e75e445a3d5e3c5ccab42f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.34000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 418066, guid: a180434b35e75e445a3d5e3c5ccab42f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 418066, guid: a180434b35e75e445a3d5e3c5ccab42f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418066, guid: a180434b35e75e445a3d5e3c5ccab42f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418066, guid: a180434b35e75e445a3d5e3c5ccab42f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 418066, guid: a180434b35e75e445a3d5e3c5ccab42f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 418066, guid: a180434b35e75e445a3d5e3c5ccab42f, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a180434b35e75e445a3d5e3c5ccab42f, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &933427978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2471,8 +2543,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1860856053}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.5}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: -3.77489471e-07, y: 1.1920929e-07, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 430857133}
