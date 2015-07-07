@@ -2,17 +2,16 @@
 using System.Collections;
 
 [RequireComponent(typeof(ShipManager))]
+[RequireComponent(typeof(CannonFiring))]
 public class CannonTargeting : MonoBehaviour {
 
 	public RectTransform Target;
 	public Transform ShipRoot;
 	public float RotationAdjustFactor = 1F;
-	//public bool LockX, LockY, LockZ;
-	
-	//private Quaternion rotQuat = null;
+	public CannonFiring cf;
 	
 	void Start () {
-		
+		this.cf = this.GetComponent<CannonFiring>();
 	}
 	
 	public void Logg() {

@@ -4,12 +4,12 @@ using System.Collections;
 
 public class FollowTouch : MonoBehaviour {
 
-	// Use this for initialization
+	public CannonFiring cannon = null;
+	
 	void Start () {
 	
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
 		Touch[] ts = Input.touches;
@@ -22,4 +22,17 @@ public class FollowTouch : MonoBehaviour {
 		}
 		
 	}
+	
+	public void FireTest() {
+		
+		Debug.Log("Clicked!");
+		
+		if (cannon != null) {
+			
+			cannon.TryFire();
+			
+		}
+		
+	}
+	
 }
