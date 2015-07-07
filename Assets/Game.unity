@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbdaa712e87eeed49b96a50e537ebb95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
+  Target: {fileID: 1204364903}
   ShipRoot: {fileID: 611393346}
   RotationAdjustFactor: 10
   cf: {fileID: 0}
@@ -310,7 +310,7 @@ MonoBehaviour:
   BarrelEnd: {fileID: 1860856054}
   Missile: {fileID: 163480, guid: a180434b35e75e445a3d5e3c5ccab42f, type: 2}
   InitialMissileVelocity: 5
-  FireThreshold: 1
+  FireThreshold: .0500000007
 --- !u!1 &611393345
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +695,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1262251693}
   - 33: {fileID: 1262251696}
-  - 136: {fileID: 1262251695}
   - 23: {fileID: 1262251694}
   m_Layer: 0
   m_Name: Cylinder
@@ -740,19 +739,6 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!136 &1262251695
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1262251692}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: .5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1262251696
 MeshFilter:
   m_ObjectHideFlags: 0
