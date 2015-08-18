@@ -3,14 +3,37 @@ using System.Collections;
 
 public class HealthManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+	public float Health, MaxHealth;
+	public float DefenseFactor;
 	
+	void Start () {
+		
 	}
 	
-	// Update is called once per frame
 	void Update () {
+		
+	}
 	
+	public void DealDamage(float damage) {
+		
+		Health -= damage * DefenseFactor; // Apply damage.
+		
+		this.HandleDeath();
+		
+	}
+	
+	public void HandleDeath() {
+		
+		if (Health <= 0) {
+			
+			Debug.Log("I died!");
+			
+			GameObject.Destroy(this.gameObject);
+			
+		} else {
+			Debug.Log("Not dead!");
+		}
+		
 	}
 	
 }
