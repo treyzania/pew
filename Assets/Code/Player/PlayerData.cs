@@ -29,6 +29,10 @@ namespace Pew.Player {
 			float shield = this.ShipShield.ProtectionFactor;
 		}
 		
+		public int GetPlayerWorth() {
+			return -1;
+		}
+		
 	}
 	
 }
