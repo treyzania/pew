@@ -38,7 +38,7 @@ public class EnemySpawner : ScriptableObject {
 	
 	public void StartWave() {
 		
-		float playerAptitude = Ship.PlayerInstance.GetPlayerWorth();
+		float playerAptitude = Ship.PlayerInstance.GetPlayerAptitude();
 		GameObject playerObject = Ship.PlayerInstance.Container;
 		float effectiveDifficulty = BaseDifficulty * playerAptitude * Mathf.Pow(DifficultyIncreaseFactor, (float) WaveNumber);
 		EnemyEntry enemy = SelectEnemy(playerAptitude);
