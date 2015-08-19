@@ -7,6 +7,8 @@ namespace Pew.Player {
 	
 	public class Ship {
 		
+		public static Ship PlayerInstance;
+		
 		// Structure.
 		public Hull ShipHull;
 		public Cannon ShipCannons;
@@ -29,7 +31,8 @@ namespace Pew.Player {
 			float shield = this.ShipShield.ProtectionFactor;
 		}
 		
-		public int GetPlayerWorth() {
+		public int GetPlayerAptitude() {
+			// TODO Aptitude algorithm.
 			return -1;
 		}
 		
