@@ -14,7 +14,7 @@ public class TurnTowardsTravel : MonoBehaviour {
 	void Update() {
 		
 		Quaternion currentRot = this.transform.rotation;
-		Quaternion travelRot = Quaternion.LookRotation(this.rb.velocity * -1);
+		Quaternion travelRot = Quaternion.LookRotation(this.rb.velocity);
 		
 		this.transform.rotation = Quaternion.Slerp(currentRot, travelRot, RotationSpeed * Time.deltaTime);
 		
