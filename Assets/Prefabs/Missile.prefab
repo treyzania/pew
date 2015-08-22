@@ -13,6 +13,8 @@ GameObject:
   - 136: {fileID: 13632040}
   - 23: {fileID: 2334142}
   - 114: {fileID: 11464174}
+  - 114: {fileID: 11429446}
+  - 114: {fileID: 11458842}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -27,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.13899994, y: 1.34000003, z: .200000003}
+  m_LocalPosition: {x: -3.11886597, y: -2.31900001, z: .726415515}
   m_LocalScale: {x: .0250000004, y: .0500000007, z: .0250000004}
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,10 +76,34 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &11429446
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24e99e2e3818f641ba67b6496629e13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseDamage: 5
+--- !u!114 &11458842
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 939930c0c3ccdbb47819466373edc53a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &11464174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb91533076d2b3b49812cb2486ad51cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxRange: 10
+  MaxRange: 25
 --- !u!136 &13632040
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -97,10 +123,10 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163480}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: .5
-  m_Height: 2
+  m_Radius: .75
+  m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
@@ -109,7 +135,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: BaseDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 163480}
