@@ -16,6 +16,8 @@ public class MissileExploder : MonoBehaviour {
 			Debug.Log("Dealing damage!");
 			hm.DealDamage(BaseDamage);
 			
+			GameObject.Destroy(this.gameObject);
+			
 		}
 		
 	}

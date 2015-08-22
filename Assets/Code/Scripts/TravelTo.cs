@@ -9,7 +9,7 @@ public class TravelTo : MonoBehaviour {
 	public float ForcePercent = 1F;
 	public float CutoffDistance;
 	public float IdleVelocity, IdleSlowdownFactor;
-	public float RotationFactor;
+	public float RotationSpeed;
 	
 	private Rigidbody rb;
 	private TurnTowardsTravel ttt;
@@ -28,18 +28,20 @@ public class TravelTo : MonoBehaviour {
 		if (dist > this.CutoffDistance) {
 			
 			rb.AddForce(dir * Mathf.Min(MaxForce, BaseForce * Mathf.Pow(ForcePercent, dist)));
+			if (ttt) ttt.enabled = true;
 			
 		} else {
 			
 			if (this.rb.velocity.sqrMagnitude > Mathf.Pow(IdleVelocity, 2)) {
 				rb.AddForce(-1 * this.rb.velocity * this.rb.mass * IdleSlowdownFactor);
 				if (ttt) ttt.enabled = false;
-			} else {
-				if (ttt) ttt.enabled = true;
 			}
 			
-			this.transform.rotation = Quaternion.LookRotation(diff);
-			
+			this.transform.rotation = Quaternion.Slerp(
+				this.transform.rotation,
+				Quaternion.LookRotation(diff, Vector3.up),
+				RotationSpeed * Time.deltaTime
+			);
 		}
 		
 	}
