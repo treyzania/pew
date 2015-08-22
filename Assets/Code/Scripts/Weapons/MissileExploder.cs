@@ -9,11 +9,11 @@ public class MissileExploder : MonoBehaviour {
 		
 		HealthManager hm = col.gameObject.GetComponent<HealthManager>();
 		
-		Debug.Log("I hit something!");
+		//Debug.Log("I hit something!");
 		
 		if (hm != null) {
 			
-			Debug.Log("Dealing damage!");
+			//Debug.Log("Dealing damage!");
 			hm.DealDamage(BaseDamage);
 			
 			GameObject.Destroy(this.gameObject);

@@ -33,7 +33,7 @@ namespace Pew.Player {
 		
 		public int GetPlayerAptitude() {
 			// TODO Aptitude algorithm.
-			return -1;
+			return 10;
 		}
 		
 	}

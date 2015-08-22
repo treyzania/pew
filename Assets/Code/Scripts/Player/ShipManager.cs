@@ -1,13 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Pew.Player;
 
 public class ShipManager : MonoBehaviour {
 
 	public float CurrentThrottle = 0F;
+	public Ship TheShip;
 	
 	// Use this for initialization
 	void Start () {
-	
+		
+		this.TheShip = new Ship();
+		this.TheShip.Container = this.gameObject;
+		
+		Ship.PlayerInstance = this.TheShip;
+		
 	}
 	
 	// Update is called once per frame

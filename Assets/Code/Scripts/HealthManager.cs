@@ -26,12 +26,9 @@ public class HealthManager : MonoBehaviour {
 		
 		if (Health <= 0) {
 			
-			Debug.Log("I died!");
-			
 			GameObject.Destroy(this.gameObject);
+			// TODO Effects.
 			
-		} else {
-			Debug.Log("Not dead!");
 		}
 		
 	}

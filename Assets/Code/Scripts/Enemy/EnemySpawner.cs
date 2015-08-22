@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Pew.Player;
 using Pew.Enemies;
 
-public class EnemySpawner : ScriptableObject {
+public class EnemySpawner : MonoBehaviour {
 
 	public float BaseDifficulty = 10F;
 	public float DifficultyIncreaseFactor = 1.05F;
@@ -34,20 +34,27 @@ public class EnemySpawner : ScriptableObject {
 			
 		}
 		
+		MillisToWave -= (long) (1F / Time.deltaTime);
+		
 	}
 	
 	public void StartWave() {
 		
-		float playerAptitude = Ship.PlayerInstance.GetPlayerAptitude();
+		float playerAptitude = Ship.PlayerInstance.GetPlayerAptitude(); // Move?
 		GameObject playerObject = Ship.PlayerInstance.Container;
 		float effectiveDifficulty = BaseDifficulty * playerAptitude * Mathf.Pow(DifficultyIncreaseFactor, (float) WaveNumber);
-		EnemyEntry enemy = SelectEnemy(playerAptitude);
 		
-		int enemyCount = Mathf.CeilToInt(playerAptitude / enemy.Difficulty); // Combined difficulty is roughly proportional to player aptitude.
+		Debug.Log("Starting wave at difficulty " + effectiveDifficulty);
+		
+		EnemyEntry enemy = SelectEnemy(effectiveDifficulty);
+		
+		int enemyCount = Mathf.CeilToInt(effectiveDifficulty / enemy.Difficulty); // Combined difficulty is roughly proportional to player aptitude.
 		
 		// Calculate the location of the group.
 		Vector2 groupOffset = SpawningRadius * Random.insideUnitCircle.normalized;
 		Vector3 groupsLocation = playerObject.transform.position + new Vector3(groupOffset.x, 0, groupOffset.y);
+		
+		Debug.Log("Spawning " + enemyCount + " enemies at " + groupOffset);
 		
 		for (int i = 0; i < enemyCount; i++) {
 			
@@ -59,6 +66,9 @@ public class EnemySpawner : ScriptableObject {
 			GameObject actualEnemy = GameObject.Instantiate(enemy.Prefab);
 			actualEnemy.transform.position = enemyLocation;
 			
+			TravelTo tt = actualEnemy.GetComponent<TravelTo>();
+			if (tt) tt.Target = playerObject;
+			
 		}
 		
 	}
@@ -67,7 +77,7 @@ public class EnemySpawner : ScriptableObject {
 		
 		EnemyEntry ee = null;
 		
-		while (ee != null) {
+		while (ee == null) {
 			
 			EnemyEntry testEntry = EnemyList[Mathf.FloorToInt(Random.Range(0, EnemyList.Length))];
 			if (testEntry.Difficulty <= maxDifficulty) ee = testEntry;

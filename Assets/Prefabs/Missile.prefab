@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24e99e2e3818f641ba67b6496629e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseDamage: 5
+  BaseDamage: 25
 --- !u!114 &11458842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,7 +138,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: BaseDamage
-      value: 10
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger

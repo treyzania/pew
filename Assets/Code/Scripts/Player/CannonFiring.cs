@@ -18,7 +18,7 @@ public class CannonFiring : MonoBehaviour {
 	
 	public void TryFire() {
 		
-		Debug.Log("Firing cannon. " + timeSinceFiring + ", " + Time.fixedDeltaTime);
+		//Debug.Log("Firing cannon. " + timeSinceFiring + ", " + Time.fixedDeltaTime);
 		
 		if (timeSinceFiring >= FireThreshold) {
 			
@@ -34,7 +34,7 @@ public class CannonFiring : MonoBehaviour {
 				// Up because of how the rotation is.
 				mm.Velocity = m.transform.up * InitialMissileVelocity;
 				
-				Debug.Log(m.transform.position);
+				//Debug.Log(m.transform.position);
 				
 			}
 			
