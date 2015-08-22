@@ -74,6 +74,8 @@ public class EnemySpawner : ScriptableObject {
 			
 		}
 		
+		return ee;
+		
 	}
 	
 }
