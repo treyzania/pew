@@ -723,9 +723,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaseDifficulty: 1
-  DifficultyIncreaseFactor: 1.25
+  DifficultyIncreaseFactor: 1.04999995
   BaseWavePeriod: 30000
-  WavePeriodFactor: .899999976
+  WavePeriodFactor: .949999988
   SpawningRadius: 20
   SpawningGroupRadius: 5
   EnemyList:
