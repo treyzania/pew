@@ -59,7 +59,7 @@ public class EnemySpawner : MonoBehaviour {
 		for (int i = 0; i < enemyCount; i++) {
 			
 			// Calculate the location of each specific enemy.
-			Vector2 enemyOffset = SpawningGroupRadius * Random.insideUnitCircle.normalized;
+			Vector2 enemyOffset = SpawningGroupRadius * Random.insideUnitCircle;
 			Vector3 enemyLocation = groupsLocation + new Vector3(enemyOffset.x, 0, enemyOffset.y);
 			
 			// Actually spawn it.
