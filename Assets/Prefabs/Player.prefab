@@ -30,8 +30,8 @@ GameObject:
   - 135: {fileID: 13503646}
   - 114: {fileID: 11470242}
   - 114: {fileID: 11439458}
-  - 114: {fileID: 11406204}
   - 114: {fileID: 11434020}
+  - 114: {fileID: 11406204}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -750,7 +750,6 @@ MonoBehaviour:
   Target: {fileID: 0}
   ShipRoot: {fileID: 433468}
   RotationAdjustFactor: 10
-  cf: {fileID: 0}
 --- !u!114 &11420858
 MonoBehaviour:
   m_ObjectHideFlags: 1
