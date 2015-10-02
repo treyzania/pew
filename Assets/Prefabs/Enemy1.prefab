@@ -227,8 +227,8 @@ MonoBehaviour:
   - {fileID: 462210}
   - {fileID: 422490}
   FiringVelocity: 10
-  MissileDamage: 2.5
-  FiringRate: 5
+  MissileDamage: 2
+  FiringRate: 2
   AttackRadius: 10
 --- !u!114 &11426676
 MonoBehaviour:
@@ -308,7 +308,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MissileDamage
-      value: 2.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: AttackRadius
@@ -316,7 +316,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: FiringRate
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

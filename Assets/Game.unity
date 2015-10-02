@@ -37,9 +37,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
---- !u!127 &3
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -68,6 +65,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
+    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
@@ -190,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowActivationOnStandalone: 0
+  m_ForceModuleActive: 0
 --- !u!114 &276811210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,7 +206,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: .5
-  m_AllowActivationOnMobileDevice: 0
+  m_ForceModuleActive: 0
 --- !u!114 &276811211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,6 +284,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: e7d17300a99f9824aaff270d645741d1, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
@@ -348,7 +352,7 @@ Camera:
   m_GameObject: {fileID: 1163838894}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -368,6 +372,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -433,6 +438,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: .39199999}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -572,6 +583,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1656181880}
   - 114: {fileID: 1656181881}
+  - 114: {fileID: 1656181882}
   m_Layer: 0
   m_Name: CamOffset
   m_TagString: Untagged
@@ -605,6 +617,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Following: {fileID: 611393346}
   Tightness: 2.5
+--- !u!114 &1656181882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1656181879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5380f64a0d5728a44824fab494d9aada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChangeThreshold: .25
+  UpwardsBias: 1.5
+  TiltTightness: 5
+  RotationTightness: 2.5
 --- !u!1 &1710816488
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,7 +752,7 @@ MonoBehaviour:
   BaseDifficulty: 1
   DifficultyIncreaseFactor: 1.04999995
   BaseWavePeriod: 30000
-  WavePeriodFactor: .949999988
+  WavePeriodFactor: .975000024
   SpawningRadius: 20
   SpawningGroupRadius: 5
   EnemyList:
