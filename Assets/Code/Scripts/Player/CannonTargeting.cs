@@ -8,7 +8,8 @@ public class CannonTargeting : MonoBehaviour {
 	public RectTransform Target;
 	public Transform ShipRoot;
 	public float RotationAdjustFactor = 1F;
-	public CannonFiring cf;
+	
+	private CannonFiring cf;
 	
 	void Start () {
 		this.cf = this.GetComponent<CannonFiring>();
