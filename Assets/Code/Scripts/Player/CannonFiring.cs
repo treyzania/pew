@@ -30,9 +30,12 @@ public class CannonFiring : MonoBehaviour {
 				m.transform.rotation = this.BarrelEnd.rotation;
 				
 				MissileMover mm = m.GetComponent<MissileMover>();
+				MissileExploder me = m.GetComponent<MissileExploder>();
 				
 				// Up because of how the rotation is.
 				mm.Velocity = m.transform.up * InitialMissileVelocity;
+				
+				me.TargetTag = "Enemy";
 				
 				//Debug.Log(m.transform.position);
 				

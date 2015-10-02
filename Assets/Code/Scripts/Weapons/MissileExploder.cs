@@ -4,19 +4,22 @@ using System.Collections;
 public class MissileExploder : MonoBehaviour {
 
 	public float BaseDamage = 0F;
+	public string TargetTag;
 	
 	void OnTriggerEnter(Collider col) {
 		
 		HealthManager hm = col.gameObject.GetComponent<HealthManager>();
 		
-		//Debug.Log("I hit something!");
-		
 		if (hm != null) {
 			
-			//Debug.Log("Dealing damage!");
-			hm.DealDamage(BaseDamage);
+			Debug.Log("Ka boom.");
 			
-			GameObject.Destroy(this.gameObject);
+			if (hm.gameObject.CompareTag(TargetTag)) {
+				
+				hm.DealDamage(BaseDamage);
+				GameObject.Destroy(this.gameObject);
+				
+			}
 			
 		}
 		
