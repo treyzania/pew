@@ -18,7 +18,7 @@ public class CannonFiring : MonoBehaviour {
 	
 	public void TryFire() {
 		
-		Debug.Log("Firing cannon. " + timeSinceFiring + ", " + Time.fixedDeltaTime);
+		//Debug.Log("Firing cannon. " + timeSinceFiring + ", " + Time.fixedDeltaTime);
 		
 		if (timeSinceFiring >= FireThreshold) {
 			
@@ -29,12 +29,15 @@ public class CannonFiring : MonoBehaviour {
 				m.transform.position = this.BarrelEnd.position;
 				m.transform.rotation = this.BarrelEnd.rotation;
 				
-				Rigidbody rb = m.GetComponent<Rigidbody>();
+				MissileMover mm = m.GetComponent<MissileMover>();
+				MissileExploder me = m.GetComponent<MissileExploder>();
 				
 				// Up because of how the rotation is.
-				rb.velocity = m.transform.up * InitialMissileVelocity;
+				mm.Velocity = m.transform.up * InitialMissileVelocity;
 				
-				Debug.Log(m.transform.position);
+				me.TargetTag = "Enemy";
+				
+				//Debug.Log(m.transform.position);
 				
 			}
 			
