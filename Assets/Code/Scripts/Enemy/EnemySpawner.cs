@@ -44,6 +44,8 @@ public class EnemySpawner : MonoBehaviour {
 		GameObject playerObject = Ship.PlayerInstance.Container;
 		float effectiveDifficulty = BaseDifficulty * playerAptitude * Mathf.Pow(DifficultyIncreaseFactor, (float) WaveNumber);
 		
+		if (playerObject == null) return; // Oops.
+		
 		Debug.Log("Starting wave at difficulty " + effectiveDifficulty);
 		
 		EnemyEntry enemy = SelectEnemy(effectiveDifficulty);

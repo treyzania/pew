@@ -20,6 +20,8 @@ public class MissileFiringBehavior : MonoBehaviour {
 	
 	void Update() {
 		
+		if (Ship.PlayerInstance.Container == null) return; // Oops.
+		
 		Vector3 delta = Ship.PlayerInstance.Container.gameObject.transform.position - this.transform.position;
 		
 		if (delta.sqrMagnitude <= Mathf.Pow(AttackRadius, 2)) {

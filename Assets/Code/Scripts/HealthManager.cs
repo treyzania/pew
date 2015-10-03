@@ -26,6 +26,9 @@ public class HealthManager : MonoBehaviour {
 		
 		if (Health <= 0) {
 			
+			PointValue points = this.GetComponent<PointValue>();
+			if (points != null) points.AwardPoints();
+			
 			GameObject.Destroy(this.gameObject);
 			// TODO Effects.
 			
