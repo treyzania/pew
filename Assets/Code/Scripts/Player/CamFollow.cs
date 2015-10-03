@@ -16,7 +16,9 @@ public class CamFollow : MonoBehaviour {
 		
 		//float distanceSq = (this.transform.position - this.Following.position).sqrMagnitude;
 		
-		this.transform.position = Vector3.Lerp(this.transform.position, this.Following.position, Time.deltaTime * this.Tightness);
+		if (this.Following != null) {
+			this.transform.position = Vector3.Lerp(this.transform.position, this.Following.position, Time.deltaTime * this.Tightness);
+		}
 		
 	}
 	
