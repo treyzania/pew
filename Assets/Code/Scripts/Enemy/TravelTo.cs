@@ -21,27 +21,31 @@ public class TravelTo : MonoBehaviour {
 	
 	void Update() {
 		
-		Vector3 diff = Target.transform.position - this.transform.position;
-		Vector3 dir = diff.normalized;
-		float dist = diff.magnitude;
-		
-		if (dist > this.CutoffDistance) {
+		if (this.Target != null) {
 			
-			rb.AddForce(dir * Mathf.Min(MaxForce, BaseForce * Mathf.Pow(ForcePercent, dist)));
-			if (ttt) ttt.enabled = true;
+			Vector3 diff = Target.transform.position - this.transform.position;
+			Vector3 dir = diff.normalized;
+			float dist = diff.magnitude;
 			
-		} else {
-			
-			if (this.rb.velocity.sqrMagnitude > Mathf.Pow(IdleVelocity, 2)) {
-				rb.AddForce(-1 * this.rb.velocity * this.rb.mass * IdleSlowdownFactor);
-				if (ttt) ttt.enabled = false;
+			if (dist > this.CutoffDistance) {
+				
+				rb.AddForce(dir * Mathf.Min(MaxForce, BaseForce * Mathf.Pow(ForcePercent, dist)));
+				if (ttt) ttt.enabled = true;
+				
+			} else {
+				
+				if (this.rb.velocity.sqrMagnitude > Mathf.Pow(IdleVelocity, 2)) {
+					rb.AddForce(-1 * this.rb.velocity * this.rb.mass * IdleSlowdownFactor);
+					if (ttt) ttt.enabled = false;
+				}
+				
+				this.transform.rotation = Quaternion.Slerp(
+					this.transform.rotation,
+					Quaternion.LookRotation(diff, Vector3.up),
+					RotationSpeed * Time.deltaTime
+					);
 			}
 			
-			this.transform.rotation = Quaternion.Slerp(
-				this.transform.rotation,
-				Quaternion.LookRotation(diff, Vector3.up),
-				RotationSpeed * Time.deltaTime
-			);
 		}
 		
 	}
