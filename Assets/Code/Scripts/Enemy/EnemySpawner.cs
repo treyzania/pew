@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections.Generic;
 using Pew.Player;
 using Pew.Enemies;
@@ -44,6 +45,8 @@ public class EnemySpawner : MonoBehaviour {
 		GameObject playerObject = Ship.PlayerInstance.Container;
 		float effectiveDifficulty = BaseDifficulty * playerAptitude * Mathf.Pow(DifficultyIncreaseFactor, (float) WaveNumber);
 		
+		GameTracker.Active.PutValue("difficulty", Convert.ToString(effectiveDifficulty));
+		
 		if (playerObject == null) return; // Oops.
 		
 		Debug.Log("Starting wave at difficulty " + effectiveDifficulty);
@@ -53,7 +56,7 @@ public class EnemySpawner : MonoBehaviour {
 		int enemyCount = Mathf.CeilToInt(effectiveDifficulty / enemy.Difficulty); // Combined difficulty is roughly proportional to player aptitude.
 		
 		// Calculate the location of the group.
-		Vector2 groupOffset = SpawningRadius * Random.insideUnitCircle.normalized;
+		Vector2 groupOffset = SpawningRadius * UnityEngine.Random.insideUnitCircle.normalized;
 		Vector3 groupsLocation = playerObject.transform.position + new Vector3(groupOffset.x, 0, groupOffset.y);
 		
 		Debug.Log("Spawning " + enemyCount + " enemies at " + groupOffset);
@@ -61,7 +64,7 @@ public class EnemySpawner : MonoBehaviour {
 		for (int i = 0; i < enemyCount; i++) {
 			
 			// Calculate the location of each specific enemy.
-			Vector2 enemyOffset = SpawningGroupRadius * Random.insideUnitCircle;
+			Vector2 enemyOffset = SpawningGroupRadius * UnityEngine.Random.insideUnitCircle;
 			Vector3 enemyLocation = groupsLocation + new Vector3(enemyOffset.x, 0, enemyOffset.y);
 			
 			// Actually spawn it.
@@ -81,7 +84,7 @@ public class EnemySpawner : MonoBehaviour {
 		
 		while (ee == null) {
 			
-			EnemyEntry testEntry = EnemyList[Mathf.FloorToInt(Random.Range(0, EnemyList.Length))];
+			EnemyEntry testEntry = EnemyList[Mathf.FloorToInt(UnityEngine.Random.Range(0, EnemyList.Length))];
 			if (testEntry.Difficulty <= maxDifficulty) ee = testEntry;
 			
 		}

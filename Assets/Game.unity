@@ -216,7 +216,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
@@ -263,10 +263,10 @@ RectTransform:
   - {fileID: 130385058}
   m_Father: {fileID: 1661443486}
   m_RootOrder: 1
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -701, y: 398}
-  m_SizeDelta: {x: 162, y: 61}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 133.299988, y: -84}
+  m_SizeDelta: {x: 181, y: 69}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &437099592
 MonoBehaviour:
@@ -705,8 +705,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 7.15255737e-07}
-  m_SizeDelta: {x: 88.6999969, y: 75}
+  m_AnchoredPosition: {x: 9.89437103e-06, y: -3.62400024e-05}
+  m_SizeDelta: {x: 181, y: 146}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1548508775
 MonoBehaviour:
@@ -720,7 +720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_Color: {r: .610294104, g: .610294104, b: .610294104, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -731,7 +731,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 42
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
@@ -1049,10 +1049,10 @@ RectTransform:
   - {fileID: 1548508774}
   m_Father: {fileID: 1661443486}
   m_RootOrder: 2
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -701, y: 228}
-  m_SizeDelta: {x: -1473, y: -762}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 133.300003, y: -234.300003}
+  m_SizeDelta: {x: 181, y: 146}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1948646041
 MonoBehaviour:
@@ -1298,7 +1298,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2006270911}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1068932114}
   m_Name: 
@@ -1422,16 +1422,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 433468, guid: 3b3aab3daee37064ca4f056caac41a69, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 11406204, guid: 3b3aab3daee37064ca4f056caac41a69, type: 2}
-      propertyPath: ImageComponent
+    - target: {fileID: 11444306, guid: 3b3aab3daee37064ca4f056caac41a69, type: 2}
+      propertyPath: ScoreDisplayObject
       value: 
-      objectReference: {fileID: 1704231948}
+      objectReference: {fileID: 1948646041}
     - target: {fileID: 11412538, guid: 3b3aab3daee37064ca4f056caac41a69, type: 2}
       propertyPath: Target
       value: 
       objectReference: {fileID: 2006270912}
+    - target: {fileID: 11406204, guid: 3b3aab3daee37064ca4f056caac41a69, type: 2}
+      propertyPath: ImageComponent
+      value: 
+      objectReference: {fileID: 1704231948}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b3aab3daee37064ca4f056caac41a69, type: 2}
   m_IsPrefabParent: 0
