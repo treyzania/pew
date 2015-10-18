@@ -32,6 +32,9 @@ public class HealthManager : MonoBehaviour {
 			GameObject.Destroy(this.gameObject);
 			// TODO Effects.
 			
+			PlayerDeath pd = this.GetComponent<PlayerDeath>();
+			if (pd != null) pd.HandleDeath();
+			
 		}
 		
 	}

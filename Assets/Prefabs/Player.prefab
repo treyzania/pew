@@ -32,6 +32,7 @@ GameObject:
   - 114: {fileID: 11439458}
   - 114: {fileID: 11434020}
   - 114: {fileID: 11406204}
+  - 114: {fileID: 11444306}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -795,6 +796,18 @@ MonoBehaviour:
   RotationFactor: 10
   RotationAdjustCutoff: .100000001
   DeadzoneCutoff: .0250000004
+--- !u!114 &11444306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0482df3ff89fc974a946a4f2b0bf1c15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreDisplayObject: {fileID: 0}
 --- !u!114 &11470242
 MonoBehaviour:
   m_ObjectHideFlags: 1
