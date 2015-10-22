@@ -38,4 +38,8 @@ namespace Pew.Player {
 		
 	}
 	
+	public class StoredPlayerData {
+		
+	}
+	
 }
