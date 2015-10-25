@@ -750,7 +750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   ShipRoot: {fileID: 433468}
-  RotationAdjustFactor: 10
+  RotationAdjustFactor: 20
 --- !u!114 &11420858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -764,7 +764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BarrelEnd: {fileID: 401086}
   Missile: {fileID: 163480, guid: a180434b35e75e445a3d5e3c5ccab42f, type: 2}
-  InitialMissileVelocity: 5
+  InitialMissileVelocity: 7.5
   FireThreshold: .0500000007
 --- !u!114 &11434020
 MonoBehaviour:
@@ -791,8 +791,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d98fe764377409947baef53bc45738c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VelocityFactor: 1
-  VelocityExponent: .5
+  VelocityFactor: 1.5
+  VelocityExponent: .400000006
   RotationFactor: 10
   RotationAdjustCutoff: .100000001
   DeadzoneCutoff: .0250000004

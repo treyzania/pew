@@ -17,6 +17,8 @@ public class PlayerDeath : MonoBehaviour {
 	
 	public void HandleDeath() {
 		
+		StoredPlayerData.PLAYER_DATA.Save();
+		
 		GameTracker.Active.PutValue("score", Convert.ToString(ScoreDisplayObject.Score));
 		GameTracker.Active.PutValue("time", Convert.ToString(Time.timeSinceLevelLoad));
 		

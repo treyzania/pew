@@ -227,7 +227,7 @@ MonoBehaviour:
   BarrelEnds:
   - {fileID: 462210}
   - {fileID: 422490}
-  FiringVelocity: 10
+  FiringVelocity: 15
   MissileDamage: 2
   FiringRate: 2
   AttackRadius: 10
@@ -269,6 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PointsAwarded: 10
+  MoneyAwarded: 5
 --- !u!114 &11498374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -317,7 +318,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: FiringVelocity
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MissileDamage
@@ -334,6 +335,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: PointsAwarded
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MoneyAwarded
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Pew.Player;
 
 public class PointValue : MonoBehaviour {
 
 	public int PointsAwarded;
+	public int MoneyAwarded;
 	
 	public void AwardPoints() {
 		
@@ -14,6 +16,7 @@ public class PointValue : MonoBehaviour {
 		if (sd == null) return;
 		
 		sd.AddPoints(PointsAwarded);
+		StoredPlayerData.PLAYER_DATA.Money += MoneyAwarded;
 		
 	}
 	
