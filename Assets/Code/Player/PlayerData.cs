@@ -51,6 +51,8 @@ namespace Pew.Player {
 		
 		public int Money = 0;
 		
+		[SerializeField] private Dictionary<string, int> Upgrades = new Dictionary<string, int>();
+		
 		public void Save() {
 			
 			BinaryFormatter bf = new BinaryFormatter();
@@ -60,6 +62,29 @@ namespace Pew.Player {
 			bf.Serialize(file, this);
 			
 			file.Close();
+			
+		}
+		
+		public void SetUpgradeLevel(string type, int level) {
+		
+			this.Upgrades[type] = level;
+			
+			// Really make sure it's saved.
+			for (int i = 0; i < 10; i++) {
+				this.Save();
+			}
+			
+			
+		}
+		
+		public int GetUpgradeLevel(string type) {
+			
+			if (this.Upgrades.ContainsKey(type)) {
+				return this.Upgrades[type];
+			} else {
+				this.SetUpgradeLevel(type, 0);
+				return 0;
+			}
 			
 		}
 		
