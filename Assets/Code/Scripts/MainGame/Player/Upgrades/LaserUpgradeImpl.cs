@@ -11,10 +11,10 @@ public class LaserUpgradeImpl : UpgradeImplBase {
 		this.DoMaterialChange();
 		
 		// Configure the damage and firerate stuff.
-		CannonFiring cf = this.GetComponent<CannonFiring>();
+		LaserFiring lf = this.GetComponent<LaserFiring>();
 		
-		cf.FireThreshold = this.LaserValues[this.TrackIndex].FireRate;
-		cf.DamageDealt = this.LaserValues[this.TrackIndex].Damage;
+		lf.FireThreshold = this.LaserValues[this.TrackIndex].FireRate;
+		lf.DamageDealt = this.LaserValues[this.TrackIndex].Damage;
 		
 		// Disable it to speed things up.
 		this.enabled = false;

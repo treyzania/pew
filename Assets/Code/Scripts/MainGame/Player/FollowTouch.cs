@@ -4,10 +4,10 @@ using System.Collections;
 
 public class FollowTouch : MonoBehaviour {
 
-	public CannonFiring cannon = null;
+	public LaserFiring laser = null;
 	
 	void Start () {
-	
+		
 	}
 	
 	void Update () {
@@ -27,9 +27,9 @@ public class FollowTouch : MonoBehaviour {
 		
 		Debug.Log("Clicked!");
 		
-		if (cannon != null) {
+		if (laser != null) {
 			
-			cannon.TryFire();
+			laser.TryFire();
 			
 		}
 		

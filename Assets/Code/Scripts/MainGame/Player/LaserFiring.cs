@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CannonFiring : MonoBehaviour {
+public class LaserFiring : MonoBehaviour {
 
 	public Transform BarrelEnd = null;
 	public GameObject Missile = null;
