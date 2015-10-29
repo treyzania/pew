@@ -16,7 +16,7 @@ GameObject:
   - 114: {fileID: 11482842}
   - 114: {fileID: 11445970}
   m_Layer: 0
-  m_Name: EnemyMissile
+  m_Name: EnemyLaser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

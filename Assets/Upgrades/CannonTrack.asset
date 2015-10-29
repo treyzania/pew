@@ -22,7 +22,7 @@ MonoBehaviour:
   - Name: Plasma Cannon
     Description: Superheated plasma melts nearby enemies.
     Price: 10000
-    AptitudeBonus: 0
+    AptitudeBonus: 50
     PartMaterial: {fileID: 2100000, guid: 3544bd47512ef5143913820fbae3626b, type: 2}
   - Name: Tactical Nuke
     Description: Creates a small nuclear explosion that deals a lot damage.
