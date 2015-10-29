@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35adf55238210dd4d84be83b5bf2e7af, type: 3}
+  m_Name: LaserTrack
+  m_EditorClassIdentifier: 
+  Name: Lasers
+  Part: 1
+  Entries:
+  - Name: Basic Laser
+    Description: '[You shouldn''t be able to see this.]'
+    Price: 0
+    AptitudeBonus: 0
+    PartMaterial: {fileID: 2100000, guid: 7f217f8534783374790db3aaa0153025, type: 2}
+  - Name: Focused Infrared Laser
+    Description: Shoots superheated pulses of light to damage the enemy.
+    Price: 200
+    AptitudeBonus: 10
+    PartMaterial: {fileID: 2100000, guid: 2b3cd271a8ef6a045829bc8852f4d769, type: 2}
+  - Name: Alpha Projection Matrix
+    Description: Alpha particles are accelerated by laser pulses.
+    Price: 1500
+    AptitudeBonus: 25
+    PartMaterial: {fileID: 2100000, guid: 3544bd47512ef5143913820fbae3626b, type: 2}
+  - Name: Gamma Concentrator
+    Description: Dense pulses of gamma rays disentegrate small parts of the enemy.
+    Price: 5000
+    AptitudeBonus: 50
+    PartMaterial: {fileID: 2100000, guid: 3544bd47512ef5143913820fbae3626b, type: 2}
+  - Name: Septum Megawatt
+    Description: The pecular electrical properties of gold are abused to massively
+      amplyfy the pulses.
+    Price: 75000
+    AptitudeBonus: 100
+    PartMaterial: {fileID: 2100000, guid: 2baf3b2b88e8f004e91e497a840adcac, type: 2}
+  - Name: Low-Orbbit Ion Cannon
+    Description: A cannon normally firing onto planets from orbit somehow fits onto
+      the ship.
+    Price: 500000
+    AptitudeBonus: 250
+    PartMaterial: {fileID: 2100000, guid: bb3f55fc208ced640af507bc2d16b2ea, type: 2}
+  - Name: 500TW Antimatter Railgun
+    Description: Uses electrical charge to impart absurd amounts of momentum to antihydrogen
+      particles.
+    Price: 2500000
+    AptitudeBonus: 1000
+    PartMaterial: {fileID: 2100000, guid: 56589c10a33338f448793b6861e5f9fb, type: 2}
