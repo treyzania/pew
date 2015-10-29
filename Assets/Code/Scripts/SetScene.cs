@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Pew.Player;
 
 public class SetScene : MonoBehaviour {
 	
@@ -7,6 +8,7 @@ public class SetScene : MonoBehaviour {
 	
 	public void DoChange() {
 		
+		StoredPlayerData.PLAYER_DATA.Save();
 		Application.LoadLevel(this.LevelName);
 		
 	}
