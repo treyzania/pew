@@ -19,9 +19,9 @@ MonoBehaviour:
     Price: 0
     AptitudeBonus: 0
     PartMaterial: {fileID: 2100000, guid: 7f217f8534783374790db3aaa0153025, type: 2}
-  - Name: AK-47 Array Expansion
-    Description: It's a bunch of AK-47's duct taped onto the side of the ship, hooked
-      up to the throttle.
+  - Name: Machine Gun Augmentation
+    Description: It's a bunch of AK-47's duct taped onto the side of the ship, pointing
+      backwards.
     Price: 100
     AptitudeBonus: 5
     PartMaterial: {fileID: 2100000, guid: 2b3cd271a8ef6a045829bc8852f4d769, type: 2}
