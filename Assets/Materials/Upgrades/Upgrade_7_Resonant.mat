@@ -8,8 +8,8 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Upgrade_7_Resonant
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 1
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
@@ -113,7 +113,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .558000028
+        second: .550000012
       data:
         first:
           name: _BumpScale
@@ -150,11 +150,11 @@ Material:
       data:
         first:
           name: _EmissionColor
-        second: {r: .0676207617, g: 0, b: .185000002, a: 1}
+        second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
           name: _Color
-        second: {r: .09823744, g: .520967782, b: .580882311, a: 1}
+        second: {r: 0, g: .450811386, b: .514705896, a: 1}
       data:
         first:
           name: _EmissionColorUI
