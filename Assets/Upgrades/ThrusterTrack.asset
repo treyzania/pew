@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35adf55238210dd4d84be83b5bf2e7af, type: 3}
+  m_Name: ThrusterTrack
+  m_EditorClassIdentifier: 
+  Name: Thrusters
+  Part: 5
+  Entries:
+  - Name: Basic Thruster
+    Description: '[You shouldn''t be able to see this.]'
+    Price: 0
+    AptitudeBonus: 0
+    PartMaterial: {fileID: 2100000, guid: 7f217f8534783374790db3aaa0153025, type: 2}
+  - Name: 47AK47s
+    Description: Focuses the thrust into a more direct powerful stream.
+    Price: 0
+    AptitudeBonus: 0
+    PartMaterial: {fileID: 2100000, guid: 2b3cd271a8ef6a045829bc8852f4d769, type: 2}
+  - Name: 
+    Description: 
+    Price: 0
+    AptitudeBonus: 0
+    PartMaterial: {fileID: 2100000, guid: 3544bd47512ef5143913820fbae3626b, type: 2}
+  - Name: 2MHz Nuclear Pulse
+    Description: Small, controlled, nuclear explosions in the rear push the ship forward.
+    Price: 0
+    AptitudeBonus: 0
+    PartMaterial: {fileID: 2100000, guid: 2baf3b2b88e8f004e91e497a840adcac, type: 2}
+  - Name: Frame Shift Drive
+    Description: Instead of moving the ship through space, it moves space around the
+      ship.
+    Price: 1500000
+    AptitudeBonus: 0
+    PartMaterial: {fileID: 2100000, guid: 50004906c63105d4e80f528685ae3feb, type: 2}
