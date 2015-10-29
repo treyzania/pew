@@ -948,7 +948,7 @@ MonoBehaviour:
     Damage: 50
   - FireRate: .100000001
     Damage: 100
-  - FireRate: .850000024
+  - FireRate: .0850000009
     Damage: 500
   - FireRate: .075000003
     Damage: 1000
