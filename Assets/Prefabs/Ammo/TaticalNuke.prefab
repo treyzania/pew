@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 488856}
   - 33: {fileID: 3367346}
-  - 136: {fileID: 13680752}
   - 23: {fileID: 2335346}
   m_Layer: 0
   m_Name: Cylinder
@@ -27,7 +26,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 473490}
   - 33: {fileID: 3354304}
-  - 136: {fileID: 13681820}
   - 23: {fileID: 2392506}
   m_Layer: 0
   m_Name: Capsule
@@ -44,8 +42,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 428182}
+  - 54: {fileID: 5444528}
   - 114: {fileID: 11493972}
-  - 114: {fileID: 11460262}
+  - 114: {fileID: 11405036}
+  - 136: {fileID: 13681086}
   m_Layer: 0
   m_Name: TaticalNuke
   m_TagString: Untagged
@@ -153,7 +153,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101954}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &11460262
+--- !u!54 &5444528
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183846}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &11405036
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -161,10 +176,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 183846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a24e99e2e3818f641ba67b6496629e13, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d7b4ba060c02be4abffcdf4363ddca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseDamage: 0
+  BaseDamage: 150
+  MaxRange: 10
+  RadiusExponent: .75
   TargetTag: 
 --- !u!114 &11493972
 MonoBehaviour:
@@ -178,39 +195,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocity: {x: 0, y: 0, z: 0}
---- !u!136 &13680752
+--- !u!136 &13681086
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101954}
+  m_GameObject: {fileID: 183846}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: .5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &13681820
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 152756}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: .5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: .140000001
+  m_Height: .649999976
+  m_Direction: 0
+  m_Center: {x: -.180000007, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: BaseDamage
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MaxRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: RadiusExponent
+      value: .75
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 183846}

@@ -35,10 +35,14 @@ public class LaserFiring : MonoBehaviour {
 				MissileExploder me = m.GetComponent<MissileExploder>();
 				
 				// Up because of how the rotation is.
-				mm.Velocity = m.transform.up * InitialMissileVelocity;
+				if (mm != null) mm.Velocity = m.transform.up * InitialMissileVelocity;
 				
-				me.TargetTag = "Enemy";
-				me.BaseDamage = this.DamageDealt;
+				if (me != null) {
+					
+					me.TargetTag = "Enemy";
+					me.BaseDamage = this.DamageDealt;
+					
+				}
 				
 				//Debug.Log(m.transform.position);
 				

@@ -10,9 +10,10 @@ GameObject:
   - 4: {fileID: 444238}
   - 33: {fileID: 3365892}
   - 135: {fileID: 13510074}
+  - 54: {fileID: 5489552}
   - 23: {fileID: 2366416}
   - 114: {fileID: 11404724}
-  - 114: {fileID: 11445560}
+  - 114: {fileID: 11437136}
   m_Layer: 0
   m_Name: PlasmaBall
   m_TagString: Untagged
@@ -63,6 +64,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187600}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &5489552
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187600}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &11404724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocity: {x: 0, y: 0, z: 0}
---- !u!114 &11445560
+--- !u!114 &11437136
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -83,10 +99,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 187600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a24e99e2e3818f641ba67b6496629e13, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d7b4ba060c02be4abffcdf4363ddca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseDamage: 0
+  BaseDamage: 50
+  MaxRange: 2.5
+  RadiusExponent: 1.25
   TargetTag: 
 --- !u!135 &13510074
 SphereCollider:
@@ -95,7 +113,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187600}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .5
@@ -106,7 +124,27 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: BaseDamage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MaxRange
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: RadiusExponent
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 187600}

@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 410524}
   - 33: {fileID: 3339908}
-  - 136: {fileID: 13673586}
   - 23: {fileID: 2342688}
   m_Layer: 0
   m_Name: Cylinder
@@ -26,8 +25,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 430924}
+  - 54: {fileID: 5405118}
   - 114: {fileID: 11417458}
-  - 114: {fileID: 11428150}
+  - 114: {fileID: 11454156}
+  - 136: {fileID: 13636682}
   m_Layer: 0
   m_Name: BasicCannon
   m_TagString: Untagged
@@ -91,6 +92,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106146}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &5405118
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132442}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &11417458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocity: {x: 0, y: 0, z: 0}
---- !u!114 &11428150
+--- !u!114 &11454156
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -111,23 +127,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 132442}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a24e99e2e3818f641ba67b6496629e13, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d7b4ba060c02be4abffcdf4363ddca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseDamage: 0
+  BaseDamage: 20
+  MaxRange: 1
+  RadiusExponent: 1
   TargetTag: 
---- !u!136 &13673586
+--- !u!136 &13636682
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106146}
+  m_GameObject: {fileID: 132442}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: .5
-  m_Height: 2
-  m_Direction: 1
+  m_Radius: .100000001
+  m_Height: .649999976
+  m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
@@ -135,7 +153,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: BaseDamage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 132442}

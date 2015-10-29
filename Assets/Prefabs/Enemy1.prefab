@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PointsAwarded: 10
-  MoneyAwarded: 500
+  MoneyAwarded: 20
 --- !u!114 &11498374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -338,7 +338,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MoneyAwarded
-      value: 500
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MaxHealth

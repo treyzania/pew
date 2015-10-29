@@ -5,7 +5,7 @@ public class MissileAoe : MonoBehaviour {
 	
 	public float BaseDamage = 0F;
 	[Range(0, 10)] public float MaxRange = 1F;
-	[Range(0.2, 5)] public float RadiusExponent = 1F;
+	[Range(0.2F, 5)] public float RadiusExponent = 1F;
 	
 	public string TargetTag;
 	
@@ -25,6 +25,8 @@ public class MissileAoe : MonoBehaviour {
 				/*
 				 * -2 because we want it in the denominator, and it's already being squared.
 				 */
+				
+				Debug.Log("Ka bang.");
 				
 				hm.DealDamage(damageDone);
 				GameObject.Destroy(this.gameObject);
