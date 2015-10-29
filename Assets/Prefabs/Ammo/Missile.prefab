@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaseDamage: 25
+  TargetTag: 
 --- !u!114 &11458842
 MonoBehaviour:
   m_ObjectHideFlags: 1

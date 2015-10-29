@@ -16,7 +16,7 @@ public class HullUpgradeImpl : UpgradeImplBase {
 		hm.MaxHealth = this.HealthValues[this.TrackIndex];
 		hm.Health = hm.MaxHealth; // Make sure it's okay.
 		
-		// Disable it for later.
+		// Disable it to speed things up.
 		this.enabled = false;
 		
 	}

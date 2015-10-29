@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaseDamage: 0
+  TargetTag: 
 --- !u!136 &13620606
 CapsuleCollider:
   m_ObjectHideFlags: 1

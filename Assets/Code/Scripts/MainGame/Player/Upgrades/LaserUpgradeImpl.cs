@@ -10,12 +10,13 @@ public class LaserUpgradeImpl : UpgradeImplBase {
 		
 		this.DoMaterialChange();
 		
-		// Configure the data stuff.
+		// Configure the damage and firerate stuff.
 		CannonFiring cf = this.GetComponent<CannonFiring>();
 		
-		cf.DamageDealt = this.LaserValues[this.TrackIndex].Damage;
 		cf.FireThreshold = this.LaserValues[this.TrackIndex].FireRate;
+		cf.DamageDealt = this.LaserValues[this.TrackIndex].Damage;
 		
+		// Disable it to speed things up.
 		this.enabled = false;
 		
 	}
@@ -23,7 +24,7 @@ public class LaserUpgradeImpl : UpgradeImplBase {
 	[System.Serializable]
 	public class LaserUpgradeEntry {
 		
-		public float FireRate;
+		[Range(0, 1)] public float FireRate; // Per second.
 		public float Damage;
 		
 	}

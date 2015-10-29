@@ -21,8 +21,9 @@ namespace Pew.Player {
 		Hull,
 		Laser,
 		LaserAmmo,
-		Cannons,
-		CannonAmmo
+		Cannon,
+		CannonAmmo,
+		Thruster
 		
 	}
 	
