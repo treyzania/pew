@@ -108,9 +108,9 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 32
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 32
     m_Alignment: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f39ebd2b44afb1489cad05b69590b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpgradeTrack: []
+  UpgradeTrack: {fileID: 11400000, guid: d39e6eed5dc0ccb4f8b4c33b2707e24f, type: 2}
 --- !u!114 &11478482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -184,9 +184,9 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 42
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 42
     m_Alignment: 3
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -260,7 +260,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11479276}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11473540}
+        m_MethodName: OnButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!222 &22202346
@@ -301,8 +312,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 165.899994, y: -32.75}
-  m_SizeDelta: {x: -331.799988, y: -65.5}
+  m_AnchoredPosition: {x: 142.899994, y: -32.75}
+  m_SizeDelta: {x: -285.799988, y: -66}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22471142
 RectTransform:

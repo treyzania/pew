@@ -33,6 +33,7 @@ GameObject:
   - 114: {fileID: 11434020}
   - 114: {fileID: 11406204}
   - 114: {fileID: 11444306}
+  - 114: {fileID: 11429412}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -213,6 +214,7 @@ GameObject:
   - 4: {fileID: 432410}
   - 114: {fileID: 11412538}
   - 114: {fileID: 11420858}
+  - 114: {fileID: 11467298}
   m_Layer: 0
   m_Name: Mount_Turret
   m_TagString: Untagged
@@ -766,6 +768,22 @@ MonoBehaviour:
   Missile: {fileID: 163480, guid: a180434b35e75e445a3d5e3c5ccab42f, type: 2}
   InitialMissileVelocity: 7.5
   FireThreshold: .0500000007
+  DamageDealt: 0
+--- !u!114 &11429412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1b158e6ca0a3b429fce18ff135429e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeTrack: {fileID: 11400000, guid: d39e6eed5dc0ccb4f8b4c33b2707e24f, type: 2}
+  RelevantObjects:
+  - {fileID: 153904}
+  HealthValues: 64000000c8000000f4010000e803000088130000a8610000a0860100
 --- !u!114 &11434020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -808,6 +826,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreDisplayObject: {fileID: 0}
+--- !u!114 &11467298
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 179514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b45e1906b061e84f93876e274fab4db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeTrack: {fileID: 11400000, guid: 35465a64df1dbcc42890f0dd2b2f33ef, type: 2}
+  RelevantObjects:
+  - {fileID: 189850}
+  - {fileID: 173656}
+  LaserValues:
+  - FireRate: .25
+    Damage: 10
+  - FireRate: .174999997
+    Damage: 25
+  - FireRate: .125
+    Damage: 50
+  - FireRate: .100000001
+    Damage: 100
+  - FireRate: .850000024
+    Damage: 500
+  - FireRate: .075000003
+    Damage: 1000
+  - FireRate: .0500000007
+    Damage: 5000
 --- !u!114 &11470242
 MonoBehaviour:
   m_ObjectHideFlags: 1

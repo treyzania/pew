@@ -242,8 +242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389393b21d62cbc4eaf203fa584f28bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
-  MaxHealth: 100
+  Health: 25
+  MaxHealth: 25
   DefenseFactor: 1
 --- !u!114 &11428604
 MonoBehaviour:
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PointsAwarded: 10
-  MoneyAwarded: 5
+  MoneyAwarded: 500
 --- !u!114 &11498374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -338,7 +338,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MoneyAwarded
-      value: 5
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MaxHealth
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Health
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -224,7 +224,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Reset Scene
+  m_Text: Quit
 --- !u!222 &130385060
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -244,7 +244,7 @@ GameObject:
   - 114: {fileID: 437099593}
   - 114: {fileID: 437099592}
   m_Layer: 5
-  m_Name: Reset
+  m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -276,9 +276,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 437099590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5458d351c94b7c14d9da0db6d98e73ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 645adc3913ca78b4eaef700741b2dfc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelName: Menu
 --- !u!114 &437099593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,7 +320,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 437099592}
-        m_MethodName: DoReset
+        m_MethodName: DoChange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1512,18 +1513,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 11406204, guid: 3b3aab3daee37064ca4f056caac41a69, type: 2}
-      propertyPath: ImageComponent
-      value: 
-      objectReference: {fileID: 1704231948}
-    - target: {fileID: 11412538, guid: 3b3aab3daee37064ca4f056caac41a69, type: 2}
-      propertyPath: Target
-      value: 
-      objectReference: {fileID: 2006270912}
     - target: {fileID: 11444306, guid: 3b3aab3daee37064ca4f056caac41a69, type: 2}
       propertyPath: ScoreDisplayObject
       value: 
       objectReference: {fileID: 1948646041}
+    - target: {fileID: 11412538, guid: 3b3aab3daee37064ca4f056caac41a69, type: 2}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 2006270912}
+    - target: {fileID: 11406204, guid: 3b3aab3daee37064ca4f056caac41a69, type: 2}
+      propertyPath: ImageComponent
+      value: 
+      objectReference: {fileID: 1704231948}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b3aab3daee37064ca4f056caac41a69, type: 2}
   m_IsPrefabParent: 0
