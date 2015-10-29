@@ -305,10 +305,10 @@ RectTransform:
   - {fileID: 1430195838}
   m_Father: {fileID: 195574754}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 130.799988, y: -67.8999939}
-  m_SizeDelta: {x: 215, y: 92}
+  m_AnchorMin: {x: .016402524, y: .860780537}
+  m_AnchorMax: {x: .167402536, y: .973561049}
+  m_AnchoredPosition: {x: -.200012207, y: .100006104}
+  m_SizeDelta: {x: -1, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &1234986205
 GameObject:
