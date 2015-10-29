@@ -10,8 +10,6 @@ public class MakeUpgradeTrack {
 		
 		UpgradeTrack asset = ScriptableObject.CreateInstance<UpgradeTrack>();
 		
-		asset.GetType = typeof(UpgradeTrack);
-		
 		AssetDatabase.CreateAsset(asset, "Assets/NewUpgradeTrack.asset");
 		AssetDatabase.SaveAssets();
 		
