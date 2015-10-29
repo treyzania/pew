@@ -6,9 +6,11 @@ public class CannonFiring : MonoBehaviour {
 	public Transform BarrelEnd = null;
 	public GameObject Missile = null;
 	public float InitialMissileVelocity = 5F;
-	[Range(0, 10)] public float FireThreshold = 1F;
+	public float FireThreshold = 1F;
 	
 	private float timeSinceFiring = 0F;
+	
+	public float DamageDealt;
 	
 	void Start() {
 		
@@ -36,6 +38,7 @@ public class CannonFiring : MonoBehaviour {
 				mm.Velocity = m.transform.up * InitialMissileVelocity;
 				
 				me.TargetTag = "Enemy";
+				me.BaseDamage = this.DamageDealt;
 				
 				//Debug.Log(m.transform.position);
 				

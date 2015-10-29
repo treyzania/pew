@@ -14,10 +14,9 @@ public class ButtonBuy : MonoBehaviour {
 	
 	void Start() {
 		
-		StoredPlayerData.PLAYER_DATA.Money = 1000000000;
 		StoredPlayerData.PLAYER_DATA.Save();
 		
-		this.UpgradeIndex = StoredPlayerData.PLAYER_DATA.GetUpgradeLevel(UpgradeTrack.Name);
+		this.UpgradeIndex = StoredPlayerData.PLAYER_DATA.GetUpgradeLevel(UpgradeTrack.Part);
 		
 		// Get references to the various fields in the UI.
 		Transform content = this.transform.FindChild("ShopContent");
@@ -47,7 +46,7 @@ public class ButtonBuy : MonoBehaviour {
 			
 			// Take the money out.
 			StoredPlayerData.PLAYER_DATA.Money -= ue.Price;
-			StoredPlayerData.PLAYER_DATA.SetUpgradeLevel(this.UpgradeTrack.Name, ++this.UpgradeIndex); // Incs the index everywhere.
+			StoredPlayerData.PLAYER_DATA.SetUpgradeLevel(this.UpgradeTrack.Part, ++this.UpgradeIndex); // Incs the index everywhere.
 			
 			StoredPlayerData.PLAYER_DATA.Save(); // Not entirely necessary.
 			

@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using Pew.Items;
@@ -12,31 +11,20 @@ namespace Pew.Player {
 		
 		public static Ship PlayerInstance;
 		
-		// Structure.
-		public Hull ShipHull;
-		public Cannon ShipCannons;
-		public Laser ShipLasers;
-		public Reactor ShipReactor;
-		public ThrusterSet ShipThrusters;
-		public Shield ShipShield;
-		
 		// Stats and actual gameplay stuff.
-		public float Health, EnergyStored;
+		public float Health;
 		public GameObject Container; // Null if not in game.
 		
 		public Ship() {
 			
 		}
 		
-		public void DoDamage(float damage, DamageType theType) {
-			
-			float armor = this.ShipHull.Armor;
-			float shield = this.ShipShield.ProtectionFactor;
-		}
-		
 		public int GetPlayerAptitude() {
-			// TODO Aptitude algorithm.
-			return 10;
+			
+			int apt = 10; // Base value.
+			
+			return apt;
+			
 		}
 		
 	}
@@ -51,7 +39,7 @@ namespace Pew.Player {
 		
 		public int Money = 0;
 		
-		[SerializeField] private Dictionary<string, int> Upgrades = new Dictionary<string, int>();
+		[SerializeField] public Dictionary<ShipPart, int> Upgrades = new Dictionary<ShipPart, int>();
 		
 		public void Save() {
 			
@@ -65,7 +53,7 @@ namespace Pew.Player {
 			
 		}
 		
-		public void SetUpgradeLevel(string type, int level) {
+		public void SetUpgradeLevel(ShipPart type, int level) {
 		
 			this.Upgrades[type] = level;
 			
@@ -77,7 +65,7 @@ namespace Pew.Player {
 			
 		}
 		
-		public int GetUpgradeLevel(string type) {
+		public int GetUpgradeLevel(ShipPart type) {
 			
 			if (this.Upgrades.ContainsKey(type)) {
 				return this.Upgrades[type];
