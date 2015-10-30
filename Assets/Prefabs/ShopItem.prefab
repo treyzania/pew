@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f39ebd2b44afb1489cad05b69590b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpgradeTrack: {fileID: 11400000, guid: d39e6eed5dc0ccb4f8b4c33b2707e24f, type: 2}
+  UpgradeTrack: {fileID: 11400000, guid: e32e589d936bd3748a1f73bb87e8635a, type: 2}
 --- !u!114 &11474918
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -175,9 +175,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
   m_MinWidth: -1
-  m_MinHeight: 300
+  m_MinHeight: -1
   m_PreferredWidth: -1
-  m_PreferredHeight: -1
+  m_PreferredHeight: 300
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
 --- !u!114 &11478482
