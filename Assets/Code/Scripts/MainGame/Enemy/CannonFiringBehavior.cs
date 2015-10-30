@@ -41,10 +41,10 @@ public class CannonFiringBehavior : MonoBehaviour {
 					missile.transform.rotation = t.transform.rotation;
 					
 					MissileMover mm = missile.GetComponent<MissileMover>();
-					MissileAoe ma = missile.GetComponent<MissileExploder>();
+					MissileAoe ma = missile.GetComponent<MissileAoe>();
 					
 					if (mm != null) mm.Velocity = delta.normalized * FiringVelocity;
-					if (ma != null) me.TargetTag = "Player";
+					if (ma != null) ma.TargetTag = "Player";
 					
 				}
 				
