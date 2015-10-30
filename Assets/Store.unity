@@ -294,6 +294,11 @@ Prefab:
       propertyPath: m_Name
       value: Cannons
       objectReference: {fileID: 0}
+    - target: {fileID: 11473540, guid: 1eacbb77975922b41b995009f8676b8d, type: 2}
+      propertyPath: UpgradeTrack
+      value: 
+      objectReference: {fileID: 11400000, guid: e32e589d936bd3748a1f73bb87e8635a,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1eacbb77975922b41b995009f8676b8d, type: 2}
   m_IsPrefabParent: 0
@@ -911,15 +916,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22490622, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 121.708099
+      value: 129.592468
       objectReference: {fileID: 0}
     - target: {fileID: 22490622, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 223.416199
+      value: 239.184937
       objectReference: {fileID: 0}
     - target: {fileID: 22490622, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 123.248016
+      value: 141.76001
       objectReference: {fileID: 0}
     - target: {fileID: 11434120, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_FontData.m_Alignment
@@ -927,19 +932,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22478106, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 345.124298
+      value: 368.777405
       objectReference: {fileID: 0}
     - target: {fileID: 22478106, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -65.6240082
+      value: -74.8800049
       objectReference: {fileID: 0}
     - target: {fileID: 22478106, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 223.416199
+      value: 239.184937
       objectReference: {fileID: 0}
     - target: {fileID: 22478106, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 123.248016
+      value: 141.76001
       objectReference: {fileID: 0}
     - target: {fileID: 11413744, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_FontData.m_FontSize
@@ -955,7 +960,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22490622, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -65.6240082
+      value: -74.8800049
       objectReference: {fileID: 0}
     - target: {fileID: 22478106, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchorMin.y
@@ -1261,7 +1266,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 764738019}
   m_Direction: 2
   m_Value: 1
-  m_Size: .234756678
+  m_Size: .269466639
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1544,6 +1549,11 @@ Prefab:
       propertyPath: m_Name
       value: Hulls
       objectReference: {fileID: 0}
+    - target: {fileID: 11473540, guid: 1eacbb77975922b41b995009f8676b8d, type: 2}
+      propertyPath: UpgradeTrack
+      value: 
+      objectReference: {fileID: 11400000, guid: d39e6eed5dc0ccb4f8b4c33b2707e24f,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1eacbb77975922b41b995009f8676b8d, type: 2}
   m_IsPrefabParent: 0
