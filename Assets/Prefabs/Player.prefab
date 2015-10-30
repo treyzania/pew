@@ -827,7 +827,7 @@ MonoBehaviour:
   VelocityExponent: .400000006
   RotationFactor: 10
   MaxVelocity: 10
-  RotationAdjustCutoff: .100000001
+  RotationAdjustCutoff: .0500000007
   DeadzoneCutoff: .0250000004
 --- !u!114 &11413998
 MonoBehaviour:

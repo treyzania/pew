@@ -39,7 +39,7 @@ public class GyroMove : MonoBehaviour {
 		if (dir.magnitude > DeadzoneCutoff) this.transform.position += norm * mag;
 		
 		// Update the rotation.
-		if (dir.magnitude > this.RotationAdjustCutoff) {
+		if (mag > this.RotationAdjustCutoff) {
 			
 			this.lastFacingTarget = Quaternion.LookRotation(norm, Vector3.up);
 			this.transform.rotation = Quaternion.Slerp(
