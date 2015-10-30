@@ -2,7 +2,7 @@
 using System.Collections;
 using Pew.Player;
 
-public class LaserFiringBehavior : MonoBehaviour {
+public class CannonFiringBehavior : MonoBehaviour {
 
 	public GameObject MisslePrefab = null;
 	public Transform[] BarrelEnds = null;
