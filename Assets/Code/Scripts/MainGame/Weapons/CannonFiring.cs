@@ -28,7 +28,7 @@ public class CannonFiring : MonoBehaviour {
 				GameObject m = GameObject.Instantiate(this.Missile);
 				
 				m.transform.position = t.position;
-				m.transform.rotation = t.localRotation;
+				m.transform.rotation = t.rotation;
 				
 				MissileMover mm = m.GetComponent<MissileMover>();
 				MissileAoe ma = m.GetComponent<MissileAoe>();
@@ -36,7 +36,7 @@ public class CannonFiring : MonoBehaviour {
 				if (ma != null) ma.TargetTag = "Enemy";
 				
 				// Up because of how the rotation is.
-				if (mm != null) mm.Velocity = m.transform.forward * InitialMissileVelocity * -1;
+				if (mm != null) mm.Velocity = m.transform.up * InitialMissileVelocity;
 				
 			}
 			
