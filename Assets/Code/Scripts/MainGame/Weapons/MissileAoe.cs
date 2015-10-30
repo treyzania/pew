@@ -6,6 +6,7 @@ public class MissileAoe : MonoBehaviour {
 	public float BaseDamage = 0F;
 	[Range(0, 10)] public float MaxRange = 1F;
 	[Range(0.2F, 5)] public float RadiusExponent = 1F;
+	public float MaxDamage = 100F;
 	
 	public string TargetTag;
 	
@@ -28,7 +29,7 @@ public class MissileAoe : MonoBehaviour {
 				
 				Debug.Log("Ka bang.");
 				
-				hm.DealDamage(damageDone);
+				hm.DealDamage(Mathf.Min(damageDone, MaxDamage));
 				GameObject.Destroy(this.gameObject);
 				
 			}

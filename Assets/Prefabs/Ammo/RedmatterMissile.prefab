@@ -194,6 +194,7 @@ MonoBehaviour:
   BaseDamage: 1000
   MaxRange: 10
   RadiusExponent: .5
+  MaxDamage: 50000
   TargetTag: 
 --- !u!136 &13668152
 CapsuleCollider:
@@ -238,6 +239,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_CollisionDetection
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MaxDamage
+      value: 50000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
