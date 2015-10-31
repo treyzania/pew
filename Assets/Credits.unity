@@ -320,6 +320,7 @@ GameObject:
   - 224: {fileID: 1234986206}
   - 222: {fileID: 1234986208}
   - 114: {fileID: 1234986207}
+  - 95: {fileID: 1234986209}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -384,6 +385,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1234986205}
+--- !u!95 &1234986209
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1234986205}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ec44ed89bbfb8a643a6ab780cd33c635, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1380387056
 GameObject:
   m_ObjectHideFlags: 0
