@@ -868,11 +868,11 @@ MonoBehaviour:
   - Missile: {fileID: 183846, guid: c76e8ea03c528834c89fefcd1e68a37a, type: 2}
     Cost: 150
     Velocity: 7.5
-    ReloadTime: 10
+    ReloadTime: 5
   - Missile: {fileID: 163680, guid: 1e768b36c5e16814ca3693037afac09f, type: 2}
     Cost: 300
     Velocity: 10
-    ReloadTime: 20
+    ReloadTime: 10
 --- !u!114 &11433250
 MonoBehaviour:
   m_ObjectHideFlags: 1
