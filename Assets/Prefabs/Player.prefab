@@ -828,7 +828,7 @@ MonoBehaviour:
   RotationFactor: 10
   MaxVelocity: 10
   RotationAdjustCutoff: .0250000004
-  DeadzoneCutoff: .0250000004
+  DeadzoneCutoff: .0500000007
 --- !u!114 &11413998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2138,7 +2138,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: DeadzoneCutoff
+      value: .0500000007
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 131734}

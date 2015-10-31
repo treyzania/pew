@@ -36,7 +36,7 @@ public class GyroMove : MonoBehaviour {
 		float mag = Mathf.Min(inertiaFactor * VelocityFactor * throttleFactor, this.MaxVelocity);
 		
 		// Update the position.
-		if (dir.magnitude > DeadzoneCutoff) this.transform.position += norm * mag;
+		if (mag > DeadzoneCutoff) this.transform.position += norm * mag;
 		
 		// Update the rotation.
 		if (mag > this.RotationAdjustCutoff) {
