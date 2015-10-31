@@ -196,6 +196,7 @@ MonoBehaviour:
   RadiusExponent: .5
   MaxDamage: 50000
   TargetTag: 
+  SpawnAfter: {fileID: 188626, guid: f4b46acac7490264dafbd08be826d5c4, type: 2}
 --- !u!136 &13668152
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -244,6 +245,10 @@ Prefab:
       propertyPath: MaxDamage
       value: 50000
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SpawnAfter
+      value: 
+      objectReference: {fileID: 188626, guid: f4b46acac7490264dafbd08be826d5c4, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 163680}

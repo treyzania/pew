@@ -20,6 +20,7 @@ public class LaserFiringBehavior : MonoBehaviour {
 	
 	void Update() {
 		
+		if (Ship.PlayerInstance == null) return;
 		if (Ship.PlayerInstance.Container == null) return; // Oops.
 		
 		Vector3 delta = Ship.PlayerInstance.Container.gameObject.transform.position - this.transform.position;

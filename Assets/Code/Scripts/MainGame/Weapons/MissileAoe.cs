@@ -10,6 +10,8 @@ public class MissileAoe : MonoBehaviour {
 	
 	public string TargetTag;
 	
+	public GameObject SpawnAfter;
+	
 	void OnTriggerEnter(Collider ignored) {
 		
 		Collider[] cols = Physics.OverlapSphere(this.transform.position, this.MaxRange);
@@ -31,6 +33,8 @@ public class MissileAoe : MonoBehaviour {
 				
 				hm.DealDamage(Mathf.Min(damageDone, MaxDamage));
 				GameObject.Destroy(this.gameObject);
+				
+				GameObject.Instantiate(this.SpawnAfter, this.transform.position, Quaternion.identity);
 				
 			}
 			

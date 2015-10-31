@@ -30,10 +30,14 @@ public class HealthManager : MonoBehaviour {
 			if (points != null) points.AwardPoints();
 			
 			GameObject.Destroy(this.gameObject);
-			// TODO Effects.
+			
+			// TODO Modularize.
 			
 			PlayerDeath pd = this.GetComponent<PlayerDeath>();
 			if (pd != null) pd.HandleDeath();
+			
+			EnemyDeath ed = this.GetComponent<EnemyDeath>();
+			if (ed != null) ed.HandleDeath();
 			
 		}
 		
