@@ -286,8 +286,8 @@ MonoBehaviour:
   - {fileID: 429396}
   - {fileID: 446792}
   FiringVelocity: 15
-  MissileDamage: 10
-  FiringRate: 2
+  MissileDamage: 15
+  FiringRate: 1.25
   AttackRadius: 7
 --- !u!114 &11474768
 MonoBehaviour:
@@ -312,7 +312,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: .409999996
+  m_Radius: .400000006
   m_Height: 1.5
   m_Direction: 0
   m_Center: {x: 0, y: 0, z: .125}
@@ -322,7 +322,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: FiringRate
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MissileDamage
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Radius
+      value: .400000006
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 134246}

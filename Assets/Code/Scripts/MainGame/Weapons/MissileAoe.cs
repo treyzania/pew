@@ -11,8 +11,11 @@ public class MissileAoe : MonoBehaviour {
 	public string TargetTag;
 	
 	public GameObject SpawnAfter;
+	public float SAScale = 1F;
 	
 	void OnTriggerEnter(Collider ignored) {
+		
+		if (!ignored.gameObject.CompareTag(this.TargetTag)) return;
 		
 		Collider[] cols = Physics.OverlapSphere(this.transform.position, this.MaxRange);
 		
@@ -34,7 +37,8 @@ public class MissileAoe : MonoBehaviour {
 				hm.DealDamage(Mathf.Min(damageDone, MaxDamage));
 				GameObject.Destroy(this.gameObject);
 				
-				GameObject.Instantiate(this.SpawnAfter, this.transform.position, Quaternion.identity);
+				GameObject after = (GameObject) GameObject.Instantiate(this.SpawnAfter, this.transform.position, Quaternion.identity);
+				after.transform.localScale = Vector3.one * this.SAScale;
 				
 			}
 			
