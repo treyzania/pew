@@ -18,21 +18,16 @@ public class AdDisplayer : MonoBehaviour {
 	
 	void Start () {
 		
+		//UnityAdsHelper.Initialize();
+		
 		// If you steal this code, I'll get the money from it anyways.
-		//Advertisement.Initialize("1008015", false);
+		Advertisement.Initialize("1008015", false);
 		
 	}
 	
 	public void OnButton() {
 		
-		/*
-		if (this.ShouldShowAdvertisement()) {
-			Debug.Log("Showing advertisement...");
-			this.ShowAdWhenReady();
-		}
-		*/
-		
-		Application.LoadLevel(this.NextScene);
+		if (this.ShouldShowAdvertisement()) this.StartCoroutine(this.ShowAdWhenReady());
 		
 	}
 	
@@ -48,10 +43,25 @@ public class AdDisplayer : MonoBehaviour {
 		
 	}
 	
-	private void ShowAdWhenReady() {
+	private IEnumerator ShowAdWhenReady() {
 		
-		while (!Advertisement.IsReady());
-		Advertisement.Show();
+		while (!Advertisement.isReady()) yield return null;
+		Debug.Log("Ad ready!");
+		
+		Advertisement.Show(null, new ShowOptions {
+			
+			// Voodoo.
+			resultCallback = ShowResult => {
+				this.PostAdAction();
+			}
+			
+		});
+		
+	}
+	
+	private void PostAdAction() {
+		
+		Application.LoadLevel(this.NextScene);
 		
 	}
 	
