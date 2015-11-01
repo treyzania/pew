@@ -11,10 +11,4 @@ namespace Pew.Enemies {
 		
 	}
 	
-	public class Enemies {
-		
-		public Dictionary<GameObject, float> enemies = new Dictionary<GameObject, float>();
-		
-	}
-	
 }
