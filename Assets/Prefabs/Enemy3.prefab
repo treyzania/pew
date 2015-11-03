@@ -360,9 +360,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b912de0638ab84dbadec811abfad4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MisslePrefab: {fileID: 161402}
+  MisslePrefab: {fileID: 132442, guid: 29a57631c0ddb3542824fef771fa9940, type: 2}
   BarrelEnds:
-  - {fileID: 430924, guid: 29a57631c0ddb3542824fef771fa9940, type: 2}
+  - {fileID: 416070}
   FiringVelocity: 5
   FiringRate: 10
   AttackRadius: 12
