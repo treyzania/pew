@@ -30,7 +30,7 @@ GameObject:
   - 114: {fileID: 11454156}
   - 136: {fileID: 13636682}
   m_Layer: 0
-  m_Name: BasicCannon
+  m_Name: BasicMissile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,12 +130,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7b4ba060c02be4abffcdf4363ddca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseDamage: 20
-  MaxRange: 1
-  RadiusExponent: 1
+  BaseDamage: 50
+  MaxRange: 2.5
+  RadiusExponent: .5
   MaxDamage: 100
   TargetTag: 
   SpawnAfter: {fileID: 168252, guid: 099d294e1b1a85540a1f5856d3176657, type: 2}
+  SAScale: 1
 --- !u!136 &13636682
 CapsuleCollider:
   m_ObjectHideFlags: 1

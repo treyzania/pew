@@ -102,12 +102,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7b4ba060c02be4abffcdf4363ddca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseDamage: 50
+  BaseDamage: 100
   MaxRange: 2.5
-  RadiusExponent: 1.25
-  MaxDamage: 2000
+  RadiusExponent: .75
+  MaxDamage: 350
   TargetTag: 
-  SpawnAfter: {fileID: 168252, guid: 099d294e1b1a85540a1f5856d3176657, type: 2}
+  SpawnAfter: {fileID: 148618, guid: 07b6b141a3b6cec458bb8ce4ba7bfcd6, type: 2}
   SAScale: 2
 --- !u!135 &13510074
 SphereCollider:
@@ -163,7 +163,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: SpawnAfter
       value: 
-      objectReference: {fileID: 168252, guid: 099d294e1b1a85540a1f5856d3176657, type: 2}
+      objectReference: {fileID: 148618, guid: 07b6b141a3b6cec458bb8ce4ba7bfcd6, type: 2}
     - target: {fileID: 0}
       propertyPath: SAScale
       value: 2
