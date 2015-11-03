@@ -1391,9 +1391,11 @@ MonoBehaviour:
   - Prefab: {fileID: 179138, guid: 25b366815c000d94da1acc4f330bdef9, type: 2}
     Difficulty: 3
   - Prefab: {fileID: 134246, guid: 757502354cd95a941b66e0cbea4d962a, type: 2}
-    Difficulty: 20
-  - Prefab: {fileID: 103982, guid: 2c3c8f1ef5b505d4abb6edb28f26e7ff, type: 2}
     Difficulty: 50
+  - Prefab: {fileID: 103982, guid: 2c3c8f1ef5b505d4abb6edb28f26e7ff, type: 2}
+    Difficulty: 75
+  - Prefab: {fileID: 188392, guid: baed35bff1cb6914eae6be46b07056b3, type: 2}
+    Difficulty: 15
 --- !u!4 &1814417212
 Transform:
   m_ObjectHideFlags: 0
