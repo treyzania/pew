@@ -12,7 +12,7 @@ public class MissileExploder : MonoBehaviour {
 		
 		if (hm != null) {
 			
-			Debug.Log("Ka boom.");
+			//Debug.Log("Ka boom.");
 			
 			if (hm.gameObject.CompareTag(TargetTag)) {
 				
