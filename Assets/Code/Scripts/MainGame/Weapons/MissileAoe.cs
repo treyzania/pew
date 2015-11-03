@@ -13,34 +13,37 @@ public class MissileAoe : MonoBehaviour {
 	public GameObject SpawnAfter;
 	public float SAScale = 1F;
 	
-	void OnTriggerEnter(Collider ignored) {
-		
-		if (!ignored.gameObject.CompareTag(this.TargetTag)) return;
+	void OnTriggerEnter(Collider hit) {
 		
 		Collider[] cols = Physics.OverlapSphere(this.transform.position, this.MaxRange);
 		
-		foreach (Collider col in cols) {
+		if (hit.gameObject.CompareTag(this.TargetTag)) {
 			
-			HealthManager hm = col.gameObject.GetComponent<HealthManager>();
-			
-			if (hm != null && hm.gameObject.CompareTag(TargetTag)) {
+			foreach (Collider col in cols) {
 				
-				float distanceSq = (col.transform.position - this.transform.position).sqrMagnitude;
-				float damageDone = BaseDamage * Mathf.Pow(distanceSq, this.RadiusExponent / -2F);
+				HealthManager hm = col.gameObject.GetComponent<HealthManager>();
 				
-				/*
-				 * -2 because we want it in the denominator, and it's already being squared.
-				 */
-				
-				Debug.Log("Ka bang.");
-				
-				hm.DealDamage(Mathf.Min(damageDone, MaxDamage));
-				GameObject.Destroy(this.gameObject);
-				
-				GameObject after = (GameObject) GameObject.Instantiate(this.SpawnAfter, this.transform.position, Quaternion.identity);
-				after.transform.localScale = Vector3.one * this.SAScale;
+				if (hm != null && hm.gameObject.CompareTag(TargetTag)) {
+					
+					float distanceSq = (col.transform.position - this.transform.position).sqrMagnitude;
+					float damageDone = BaseDamage * Mathf.Pow(distanceSq, this.RadiusExponent / -2F);
+					
+					/*
+					 * -2 because we want it in the denominator, and it's already being squared.
+					 */
+					
+					Debug.Log("Ka bang.");
+					
+					hm.DealDamage(Mathf.Min(damageDone, MaxDamage));
+					
+				}
 				
 			}
+			
+			GameObject.Destroy(this.gameObject);
+			
+			GameObject after = (GameObject) GameObject.Instantiate(this.SpawnAfter, this.transform.position, Quaternion.identity);
+			after.transform.localScale = Vector3.one * this.SAScale;
 			
 		}
 		
