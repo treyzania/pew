@@ -322,7 +322,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: .34799999}
+  m_LocalPosition: {x: 0, y: 0, z: .661000013}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 483070}
@@ -841,6 +841,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreDisplayObject: {fileID: 0}
+  gameOverAnimator: {fileID: 0}
+  SpawnAfterDeath:
+  - {fileID: 179080, guid: 0b38db1859e6b944c94f4462b91b25fa, type: 2}
+  - {fileID: 141950, guid: 1cac8d48e7034584dae9e88558107449, type: 2}
 --- !u!114 &11414812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -998,6 +1002,8 @@ MonoBehaviour:
   StartPoints:
   - {fileID: 474554}
   - {fileID: 438130}
+  ReloadBar: {fileID: 0}
+  ReloadTightness: 2
   Missile: {fileID: 0}
   InitialMissileVelocity: 5
   FiringCost: 0
@@ -1093,7 +1099,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 4.58464861
+      scalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1220,7 +1226,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: .150000006
+      scalar: .25
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1292,7 +1298,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     type: 4
-    radius: .5
+    radius: .400000006
     angle: 20
     length: 5
     boxX: 1
@@ -1348,7 +1354,7 @@ ParticleSystem:
     time3: 0
     m_BurstCount: 0
   SizeModule:
-    enabled: 1
+    enabled: 0
     curve:
       scalar: 1
       maxCurve:
@@ -1423,16 +1429,16 @@ ParticleSystem:
       maxGradient:
         key0:
           serializedVersion: 2
-          rgba: 4278226687
+          rgba: 4294929152
         key1:
           serializedVersion: 2
-          rgba: 4278190335
+          rgba: 4278255615
         key2:
           serializedVersion: 2
-          rgba: 0
+          rgba: 36607
         key3:
           serializedVersion: 2
-          rgba: 0
+          rgba: 255
         key4:
           serializedVersion: 2
           rgba: 0
@@ -1446,23 +1452,23 @@ ParticleSystem:
           serializedVersion: 2
           rgba: 0
         ctime0: 0
-        ctime1: 65535
-        ctime2: 0
-        ctime3: 0
+        ctime1: 5975
+        ctime2: 12529
+        ctime3: 65535
         ctime4: 0
         ctime5: 0
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
-        atime2: 0
+        atime1: 16962
+        atime2: 65150
         atime3: 0
         atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
-        m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_NumColorKeys: 4
+        m_NumAlphaKeys: 3
       minGradient:
         key0:
           serializedVersion: 2

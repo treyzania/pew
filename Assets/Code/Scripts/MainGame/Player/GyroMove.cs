@@ -14,12 +14,10 @@ public class GyroMove : MonoBehaviour {
 	
 	private ShipManager sm;
 	private Quaternion lastFacingTarget;
-	private Transform modelTree;
 	
 	void Start () {
 		
 		this.sm = this.GetComponent<ShipManager>();
-		this.modelTree = this.transform.FindChild("ModelTree");
 		
 		this.lastFacingTarget = Quaternion.identity;
 		
