@@ -791,7 +791,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1879413277}
   m_Direction: 0
   m_Value: 0
-  m_Size: .999999881
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -916,15 +916,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22490622, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 129.592468
+      value: 150.204819
       objectReference: {fileID: 0}
     - target: {fileID: 22490622, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 239.184937
+      value: 280.409637
       objectReference: {fileID: 0}
     - target: {fileID: 22490622, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 141.76001
+      value: 176.080017
       objectReference: {fileID: 0}
     - target: {fileID: 11434120, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_FontData.m_Alignment
@@ -932,19 +932,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22478106, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 368.777405
+      value: 461.614441
       objectReference: {fileID: 0}
     - target: {fileID: 22478106, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -74.8800049
+      value: -92.0400085
       objectReference: {fileID: 0}
     - target: {fileID: 22478106, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 239.184937
+      value: 342.409637
       objectReference: {fileID: 0}
     - target: {fileID: 22478106, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 141.76001
+      value: 176.080017
       objectReference: {fileID: 0}
     - target: {fileID: 11413744, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_FontData.m_FontSize
@@ -960,7 +960,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22490622, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -74.8800049
+      value: -92.0400085
       objectReference: {fileID: 0}
     - target: {fileID: 22478106, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchorMin.y
@@ -1266,7 +1266,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 764738019}
   m_Direction: 2
   m_Value: 1
-  m_Size: .269466639
+  m_Size: .333816737
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1549,11 +1549,6 @@ Prefab:
       propertyPath: m_Name
       value: Hulls
       objectReference: {fileID: 0}
-    - target: {fileID: 11473540, guid: 1eacbb77975922b41b995009f8676b8d, type: 2}
-      propertyPath: UpgradeTrack
-      value: 
-      objectReference: {fileID: 11400000, guid: d39e6eed5dc0ccb4f8b4c33b2707e24f,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1eacbb77975922b41b995009f8676b8d, type: 2}
   m_IsPrefabParent: 0
