@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Collections;
 using Pew.Player;
@@ -6,12 +7,15 @@ using Pew.Player;
 public class PlayerDeath : MonoBehaviour {
 
 	public ScoreDisplay ScoreDisplayObject;
+	public Animator gameOverAnimator;
+	public GameObject[] SpawnAfterDeath;
 	
-	private long startTime;
+	private Image meter;
 	
 	void Start () {
 		
 		GameTracker.Active = new GameTracker();
+		this.meter = this.GetComponent<HealthMeter>().ImageComponent;
 		
 	}
 	
@@ -22,8 +26,15 @@ public class PlayerDeath : MonoBehaviour {
 		GameTracker.Active.PutValue("score", Convert.ToString(ScoreDisplayObject.Score));
 		GameTracker.Active.PutValue("time", Convert.ToString(Time.timeSinceLevelLoad));
 		
-		Application.LoadLevel("DeathScene");
+		gameOverAnimator.SetBool("PlayerDead", true);
+		
+		GameObject.Destroy(this.meter.gameObject);
+		
+		// Post death thing.
+		foreach (GameObject go in this.SpawnAfterDeath) GameObject.Instantiate(go);
 		
 	}
+	
+	
 	
 }
