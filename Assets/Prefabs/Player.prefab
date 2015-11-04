@@ -1003,7 +1003,7 @@ MonoBehaviour:
   - {fileID: 474554}
   - {fileID: 438130}
   ReloadBar: {fileID: 0}
-  ReloadTightness: 2
+  ReloadTightness: 3.5
   Missile: {fileID: 0}
   InitialMissileVelocity: 5
   FiringCost: 0
