@@ -12,9 +12,11 @@ public class LaserFiring : MonoBehaviour {
 	
 	public float DamageDealt;
 	
+	private AudioSource SoundEffect;
+	
 	void Start() {
 		
-		// HULLO!
+		this.SoundEffect = this.GetComponent<AudioSource>();
 		
 	}
 	
@@ -44,7 +46,7 @@ public class LaserFiring : MonoBehaviour {
 					
 				}
 				
-				//Debug.Log(m.transform.position);
+				this.SoundEffect.Play();
 				
 			}
 			

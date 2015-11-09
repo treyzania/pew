@@ -16,9 +16,12 @@ public class CannonFiring : MonoBehaviour {
 	public float FireThreshold = 1F;
 	private float timeSinceFiring = 0F;
 	
+	private AudioSource SoundEffect;
+	
 	void Start() {
 		
 		this.timeSinceFiring = float.MaxValue;
+		this.SoundEffect = this.GetComponent<AudioSource>();
 		
 	}
 	
@@ -54,6 +57,8 @@ public class CannonFiring : MonoBehaviour {
 			
 			StoredPlayerData.PLAYER_DATA.Money -= this.FiringCost;
 			this.timeSinceFiring = 0F;
+			
+			this.SoundEffect.Play();
 			
 		}
 		

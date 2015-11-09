@@ -867,7 +867,6 @@ GameObject:
   - 20: {fileID: 1163838898}
   - 92: {fileID: 1163838897}
   - 124: {fileID: 1163838896}
-  - 81: {fileID: 1163838895}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -875,13 +874,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1163838895
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1163838894}
-  m_Enabled: 1
 --- !u!124 &1163838896
 Behaviour:
   m_ObjectHideFlags: 0
@@ -1354,6 +1346,7 @@ GameObject:
   - 4: {fileID: 1656181880}
   - 114: {fileID: 1656181881}
   - 114: {fileID: 1656181882}
+  - 81: {fileID: 1656181883}
   m_Layer: 0
   m_Name: CamOffset
   m_TagString: Untagged
@@ -1402,6 +1395,13 @@ MonoBehaviour:
   UpwardsBias: 1.5
   TiltTightness: 5
   RotationTightness: 2.5
+--- !u!81 &1656181883
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1656181879}
+  m_Enabled: 1
 --- !u!1 &1661443482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1603,14 +1603,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11433622, guid: 53f169c6f6d476e4a8759bb3ee5feb86, type: 2}
-      propertyPath: Target
-      value: 
-      objectReference: {fileID: 2006270912}
-    - target: {fileID: 11498212, guid: 53f169c6f6d476e4a8759bb3ee5feb86, type: 2}
-      propertyPath: ImageComponent
-      value: 
-      objectReference: {fileID: 1704231948}
     - target: {fileID: 11413998, guid: 53f169c6f6d476e4a8759bb3ee5feb86, type: 2}
       propertyPath: ScoreDisplayObject
       value: 
@@ -1619,10 +1611,22 @@ Prefab:
       propertyPath: gameOverAnimator
       value: 
       objectReference: {fileID: 454132357}
+    - target: {fileID: 11498212, guid: 53f169c6f6d476e4a8759bb3ee5feb86, type: 2}
+      propertyPath: ImageComponent
+      value: 
+      objectReference: {fileID: 1704231948}
+    - target: {fileID: 11433622, guid: 53f169c6f6d476e4a8759bb3ee5feb86, type: 2}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 2006270912}
     - target: {fileID: 11479570, guid: 53f169c6f6d476e4a8759bb3ee5feb86, type: 2}
       propertyPath: ReloadBar
       value: 
       objectReference: {fileID: 2000591312}
+    - target: {fileID: 8246178, guid: 53f169c6f6d476e4a8759bb3ee5feb86, type: 2}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53f169c6f6d476e4a8759bb3ee5feb86, type: 2}
   m_IsPrefabParent: 0
