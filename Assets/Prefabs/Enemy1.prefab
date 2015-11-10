@@ -242,7 +242,7 @@ MonoBehaviour:
   - {fileID: 462210}
   - {fileID: 422490}
   FiringVelocity: 15
-  MissileDamage: 2
+  MissileDamage: 3
   FiringRate: 2
   AttackRadius: 10
 --- !u!114 &11426676
@@ -336,7 +336,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MissileDamage
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: AttackRadius
