@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 442506}
   - 114: {fileID: 11490166}
   - 82: {fileID: 8238292}
+  - 165: {fileID: 16579140}
   m_Layer: 0
   m_Name: EnemyDeath1
   m_TagString: Untagged
@@ -141,6 +142,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeAlive: .75
+--- !u!165 &16579140
+AudioHighPassFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105638}
+  m_Enabled: 1
+  m_CutoffFrequency: 150
+  m_HighpassResonanceQ: 1
 --- !u!198 &19813908
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1252,6 +1262,46 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Volume
       value: .349999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Room
+      value: -1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_RoomHF
+      value: -6000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_RoomRolloff
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_DecayTime
+      value: .170000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_DecayHFRatio
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_ReflectionsLevel
+      value: -1204
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_ReverbLevel
+      value: 207
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_ReverbDelay
+      value: .00200000009
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_ReverbPreset
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_CutoffFrequency
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
