@@ -1004,20 +1004,20 @@ MonoBehaviour:
   - {fileID: 129354}
   MissileValues:
   - Missile: {fileID: 132442, guid: 29a57631c0ddb3542824fef771fa9940, type: 2}
-    Cost: 2
+    Cost: 10
     Velocity: 2.5
     ReloadTime: 5
   - Missile: {fileID: 187600, guid: 2c507c613fb68ed458e533f9199d846e, type: 2}
-    Cost: 30
+    Cost: 50
     Velocity: 5
     ReloadTime: 2.5
   - Missile: {fileID: 183846, guid: c76e8ea03c528834c89fefcd1e68a37a, type: 2}
-    Cost: 150
+    Cost: 250
     Velocity: 7.5
     ReloadTime: 5
   - Missile: {fileID: 163680, guid: 1e768b36c5e16814ca3693037afac09f, type: 2}
-    Cost: 300
-    Velocity: 10
+    Cost: 1000
+    Velocity: 7.5
     ReloadTime: 10
 --- !u!114 &11433250
 MonoBehaviour:
@@ -1089,17 +1089,17 @@ MonoBehaviour:
   - FireRate: .200000003
     Damage: 10
   - FireRate: .174999997
-    Damage: 25
+    Damage: 15
   - FireRate: .125
-    Damage: 50
+    Damage: 25
   - FireRate: .100000001
-    Damage: 100
+    Damage: 60
   - FireRate: .0850000009
-    Damage: 500
+    Damage: 150
   - FireRate: .075000003
-    Damage: 1000
+    Damage: 500
   - FireRate: .0500000007
-    Damage: 5000
+    Damage: 1200
 --- !u!114 &11465432
 MonoBehaviour:
   m_ObjectHideFlags: 1

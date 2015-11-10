@@ -20,11 +20,7 @@ namespace Pew.Player {
 		}
 		
 		public int GetPlayerAptitude() {
-			
-			int apt = 10; // Base value.
-			
-			return apt;
-			
+			return StoredPlayerData.PLAYER_DATA.GetAptitude();
 		}
 		
 	}
@@ -39,7 +35,7 @@ namespace Pew.Player {
 		
 		public int Money = 0;
 		
-		[SerializeField] public Dictionary<ShipPart, int> Upgrades = new Dictionary<ShipPart, int>();
+		[SerializeField] public Dictionary<ShipPart, SavedUpgradeEntry> Upgrades = new Dictionary<ShipPart, SavedUpgradeEntry>();
 		
 		public void Save() {
 			
@@ -53,26 +49,50 @@ namespace Pew.Player {
 			
 		}
 		
-		public void SetUpgradeLevel(ShipPart type, int level) {
+		public void SetUpgradeLevel(ShipPart type, SavedUpgradeEntry sue) {
 		
-			this.Upgrades[type] = level;
-			
-			// Really make sure it's saved.
-			for (int i = 0; i < 10; i++) {
-				this.Save();
-			}
-			
+			this.Upgrades[type] = sue;
+			this.Save();
 			
 		}
 		
 		public int GetUpgradeLevel(ShipPart type) {
 			
 			if (this.Upgrades.ContainsKey(type)) {
-				return this.Upgrades[type];
+				return this.Upgrades[type].Level;
 			} else {
-				this.SetUpgradeLevel(type, 0);
+				this.SetUpgradeLevel(type, new SavedUpgradeEntry());
 				return 0;
 			}
+			
+		}
+		
+		public int GetAptitude() {
+			
+			int total = 1; // No dividing by 0.
+			
+			foreach (SavedUpgradeEntry sue in Upgrades.Values) {
+				total += sue.Aptitude;
+			}
+			
+			return total;
+			
+		}
+		
+	}
+	
+	[System.Serializable]
+	public class SavedUpgradeEntry {
+		
+		public int Level;
+		public int Aptitude;
+		
+		public SavedUpgradeEntry(int level, int apt) {
+			this.Level = level;
+			this.Aptitude = apt;
+		}
+		
+		public SavedUpgradeEntry() : this(0, 0) {
 			
 		}
 		

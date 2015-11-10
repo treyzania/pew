@@ -46,7 +46,16 @@ public class ButtonBuy : MonoBehaviour {
 			
 			// Take the money out.
 			StoredPlayerData.PLAYER_DATA.Money -= ue.Price;
-			StoredPlayerData.PLAYER_DATA.SetUpgradeLevel(this.UpgradeTrack.Part, ++this.UpgradeIndex); // Incs the index everywhere.
+			
+			// Increment things.
+			this.UpgradeIndex++;
+			StoredPlayerData.PLAYER_DATA.SetUpgradeLevel(
+				this.UpgradeTrack.Part,
+				new SavedUpgradeEntry(
+					this.UpgradeIndex,
+					this.UpgradeTrack.Entries[this.UpgradeIndex].AptitudeBonus
+				)
+			);
 			
 			StoredPlayerData.PLAYER_DATA.Save(); // Not entirely necessary.
 			

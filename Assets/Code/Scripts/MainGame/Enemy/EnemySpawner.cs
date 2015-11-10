@@ -7,6 +7,7 @@ using Pew.Enemies;
 public class EnemySpawner : MonoBehaviour {
 
 	public float BaseDifficulty = 10F;
+	public float ApparentAptitude = 0F;
 	public float DifficultyIncreaseFactor = 1.05F;
 	public long BaseWavePeriod = 30000; // Millis, 30s.
 	public float WavePeriodFactor = 0.90F;
@@ -42,9 +43,9 @@ public class EnemySpawner : MonoBehaviour {
 	
 	public void StartWave() {
 		
-		float playerAptitude = Ship.PlayerInstance.GetPlayerAptitude(); // Move?
+		this.ApparentAptitude = Ship.PlayerInstance.GetPlayerAptitude(); // Move?
 		GameObject playerObject = Ship.PlayerInstance.Container;
-		float effectiveDifficulty = BaseDifficulty * playerAptitude * Mathf.Pow(DifficultyIncreaseFactor, (float) WaveNumber);
+		float effectiveDifficulty = BaseDifficulty * ApparentAptitude * Mathf.Pow(DifficultyIncreaseFactor, (float) WaveNumber);
 		
 		GameTracker.Active.PutValue("difficulty", Convert.ToString(effectiveDifficulty));
 		
