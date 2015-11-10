@@ -151,20 +151,20 @@ AudioReverbFilter:
   m_Enabled: 1
   m_DryLevel: 0
   m_Room: -1000
-  m_RoomHF: -151
+  m_RoomHF: -100
   m_RoomRolloff: 0
-  m_DecayTime: 7.55999994
-  m_DecayHFRatio: .910000026
-  m_ReflectionsLevel: -626
-  m_ReverbLevel: 774
-  m_ReverbDelay: .0299999993
+  m_DecayTime: 1.49000001
+  m_DecayHFRatio: .829999983
+  m_ReflectionsLevel: -2602
+  m_ReverbLevel: 200
+  m_ReverbDelay: .0109999999
   m_Diffusion: 100
   m_Density: 100
   m_HFReference: 5000
   m_RoomLF: 0
   m_LFReference: 250
   m_ReflectionsDelay: 0
-  m_ReverbPreset: 26
+  m_ReverbPreset: 1
 --- !u!198 &19838624
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1225,7 +1225,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_RoomHF
-      value: -151
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_RoomRolloff
@@ -1233,27 +1233,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_DecayTime
-      value: 7.55999994
+      value: 1.49000001
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_DecayHFRatio
-      value: .910000026
+      value: .829999983
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_ReflectionsLevel
-      value: -626
+      value: -2602
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_ReverbLevel
-      value: 774
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_ReverbDelay
-      value: .0299999993
+      value: .0109999999
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_ReverbPreset
-      value: 26
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: looping
