@@ -280,8 +280,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b487e59d2ca7eb049839359a5e7eb3e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PointsAwarded: 50
-  MoneyAwarded: 100
+  PointsAwarded: 250
+  MoneyAwarded: 500
 --- !u!114 &11432988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -392,6 +392,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: AttackRadius
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: PointsAwarded
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MoneyAwarded
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
