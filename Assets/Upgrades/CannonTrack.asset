@@ -22,16 +22,16 @@ MonoBehaviour:
   - Name: Plasma Cannon
     Description: Superheated plasma melts nearby enemies.
     Price: 10000
-    AptitudeBonus: 50
+    AptitudeBonus: 10
     PartMaterial: {fileID: 2100000, guid: 3544bd47512ef5143913820fbae3626b, type: 2}
   - Name: Tactical Nuke
     Description: Creates a small nuclear explosion that deals a lot damage.
     Price: 150000
-    AptitudeBonus: 500
+    AptitudeBonus: 75
     PartMaterial: {fileID: 2100000, guid: 50004906c63105d4e80f528685ae3feb, type: 2}
   - Name: Unstable Redmatter Warhead
     Description: Createss a small black hole that evaporates due to Hawking radiation,
       but not before dealing large amounts of damage.
     Price: 2000000
-    AptitudeBonus: 1000
+    AptitudeBonus: 150
     PartMaterial: {fileID: 2100000, guid: bb3f55fc208ced640af507bc2d16b2ea, type: 2}

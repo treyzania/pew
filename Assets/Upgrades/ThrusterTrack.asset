@@ -23,22 +23,22 @@ MonoBehaviour:
     Description: It's a bunch of AK-47's duct taped onto the side of the ship, pointing
       backwards.
     Price: 100
-    AptitudeBonus: 5
+    AptitudeBonus: 1
     PartMaterial: {fileID: 2100000, guid: 2b3cd271a8ef6a045829bc8852f4d769, type: 2}
   - Name: Afterburner Focusing Shield
     Description: Contains the jet thrust and fuces it into a more powerful stream.
     Price: 2500
-    AptitudeBonus: 10
+    AptitudeBonus: 5
     PartMaterial: {fileID: 2100000, guid: 3544bd47512ef5143913820fbae3626b, type: 2}
   - Name: 500kHz Nuclear Pulse Vectoring
     Description: Small, controlled, nuclear explosions in the engine push the ship
       forward.
     Price: 100000
-    AptitudeBonus: 100
+    AptitudeBonus: 15
     PartMaterial: {fileID: 2100000, guid: 2baf3b2b88e8f004e91e497a840adcac, type: 2}
   - Name: Frame Shift Drive
     Description: Instead of moving the ship through space, it moves space around the
       ship.
     Price: 1500000
-    AptitudeBonus: 250
+    AptitudeBonus: 50
     PartMaterial: {fileID: 2100000, guid: 50004906c63105d4e80f528685ae3feb, type: 2}

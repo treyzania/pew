@@ -22,30 +22,30 @@ MonoBehaviour:
   - Name: Upgraded Hull
     Description: It's reinforced with more steel.
     Price: 200
-    AptitudeBonus: 0
+    AptitudeBonus: 2
     PartMaterial: {fileID: 2100000, guid: 2b3cd271a8ef6a045829bc8852f4d769, type: 2}
   - Name: Advanced Hull
     Description: Carbon fiber reinforcements provide better shrapnel absorbtion.
     Price: 5000
-    AptitudeBonus: 0
+    AptitudeBonus: 5
     PartMaterial: {fileID: 2100000, guid: 3544bd47512ef5143913820fbae3626b, type: 2}
   - Name: Galgadorian Hull
     Description: A hull made out of Galgadorian metal.
     Price: 10000
-    AptitudeBonus: 0
+    AptitudeBonus: 10
     PartMaterial: {fileID: 2100000, guid: 2baf3b2b88e8f004e91e497a840adcac, type: 2}
   - Name: Super Hull
     Description: A hull infused with an unstable flux energy.
     Price: 50000
-    AptitudeBonus: 0
+    AptitudeBonus: 20
     PartMaterial: {fileID: 2100000, guid: 50004906c63105d4e80f528685ae3feb, type: 2}
   - Name: Ultimate Hull
     Description: It's just really strong.
     Price: 250000
-    AptitudeBonus: 0
+    AptitudeBonus: 50
     PartMaterial: {fileID: 2100000, guid: bb3f55fc208ced640af507bc2d16b2ea, type: 2}
   - Name: Resonant Hull
     Description: It appears like wants to be in a different realtiy.
     Price: 1000000
-    AptitudeBonus: 0
+    AptitudeBonus: 150
     PartMaterial: {fileID: 2100000, guid: 56589c10a33338f448793b6861e5f9fb, type: 2}

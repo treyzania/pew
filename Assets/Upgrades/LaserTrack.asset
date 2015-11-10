@@ -22,33 +22,33 @@ MonoBehaviour:
   - Name: Focused Infrared Laser
     Description: Shoots superheated pulses of light to damage the enemy.
     Price: 200
-    AptitudeBonus: 10
+    AptitudeBonus: 5
     PartMaterial: {fileID: 2100000, guid: 2b3cd271a8ef6a045829bc8852f4d769, type: 2}
   - Name: Alpha Projection Matrix
     Description: Alpha particles are accelerated by laser pulses.
     Price: 1500
-    AptitudeBonus: 25
+    AptitudeBonus: 10
     PartMaterial: {fileID: 2100000, guid: 3544bd47512ef5143913820fbae3626b, type: 2}
   - Name: Gamma Concentrator
     Description: Dense pulses of gamma rays disentegrate small parts of the enemy.
     Price: 5000
-    AptitudeBonus: 50
+    AptitudeBonus: 25
     PartMaterial: {fileID: 2100000, guid: 3544bd47512ef5143913820fbae3626b, type: 2}
   - Name: Septum Megawatt
     Description: The pecular electrical properties of gold are abused to massively
       amplyfy the pulses.
     Price: 75000
-    AptitudeBonus: 100
+    AptitudeBonus: 60
     PartMaterial: {fileID: 2100000, guid: 2baf3b2b88e8f004e91e497a840adcac, type: 2}
   - Name: Low-Orbbit Ion Cannon
     Description: A cannon normally firing onto planets from orbit somehow fits onto
       the ship.
     Price: 500000
-    AptitudeBonus: 250
+    AptitudeBonus: 150
     PartMaterial: {fileID: 2100000, guid: bb3f55fc208ced640af507bc2d16b2ea, type: 2}
   - Name: 500TW Antimatter Railgun
     Description: Uses electrical charge to impart absurd amounts of momentum to antihydrogen
       particles.
     Price: 2500000
-    AptitudeBonus: 1000
+    AptitudeBonus: 250
     PartMaterial: {fileID: 2100000, guid: 56589c10a33338f448793b6861e5f9fb, type: 2}
