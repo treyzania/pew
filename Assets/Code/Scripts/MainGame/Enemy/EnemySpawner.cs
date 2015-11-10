@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour {
 	public float WavePeriodFactor = 0.90F;
 	public float SpawningRadius = 35F;
 	public float SpawningGroupRadius = 10F;
+	public int MaxEnemiesPerWave = 25;
 	
 	private int WaveNumber = 0; // Starts at 0.
 	private long MillisToWave = 5000; // Gives the player time to get ready, 5s.
@@ -53,7 +54,7 @@ public class EnemySpawner : MonoBehaviour {
 		
 		EnemyEntry enemy = SelectEnemy(effectiveDifficulty);
 		
-		int enemyCount = Mathf.CeilToInt(effectiveDifficulty / enemy.Difficulty); // Combined difficulty is roughly proportional to player aptitude.
+		int enemyCount = Mathf.FloorToInt(effectiveDifficulty / enemy.Difficulty); // Combined difficulty is roughly proportional to player aptitude.
 		
 		// Calculate the location of the group.
 		Vector2 groupOffset = SpawningRadius * UnityEngine.Random.insideUnitCircle.normalized;
@@ -85,7 +86,11 @@ public class EnemySpawner : MonoBehaviour {
 		while (ee == null) {
 			
 			EnemyEntry testEntry = EnemyList[Mathf.FloorToInt(UnityEngine.Random.Range(0, EnemyList.Length))];
-			if (testEntry.Difficulty <= maxDifficulty) ee = testEntry;
+			
+			if (
+				testEntry.Difficulty <= maxDifficulty && 
+				Mathf.FloorToInt(maxDifficulty / testEntry.Difficulty) <= this.MaxEnemiesPerWave
+			) ee = testEntry;
 			
 		}
 		
