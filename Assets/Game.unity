@@ -1660,6 +1660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaseDifficulty: 1
+  ApparentAptitude: 0
   DifficultyIncreaseFactor: 1.10000002
   BaseWavePeriod: 30000
   WavePeriodFactor: .949999988

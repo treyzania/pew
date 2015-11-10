@@ -20,7 +20,7 @@ namespace Pew.Player {
 		}
 		
 		public int GetPlayerAptitude() {
-			return StoredPlayerData.PLAYER_DATA.GetAptitude();
+			return StoredPlayerData.PLAYER_DATA.GetAptitude() + 10; // 10 is the base value.
 		}
 		
 	}
@@ -69,7 +69,7 @@ namespace Pew.Player {
 		
 		public int GetAptitude() {
 			
-			int total = 1; // No dividing by 0.
+			int total = 0; // No dividing by 0.
 			
 			foreach (SavedUpgradeEntry sue in Upgrades.Values) {
 				total += sue.Aptitude;

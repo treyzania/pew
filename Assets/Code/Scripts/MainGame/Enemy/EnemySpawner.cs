@@ -55,7 +55,7 @@ public class EnemySpawner : MonoBehaviour {
 		
 		EnemyEntry enemy = SelectEnemy(effectiveDifficulty);
 		
-		int enemyCount = Mathf.FloorToInt(effectiveDifficulty / enemy.Difficulty); // Combined difficulty is roughly proportional to player aptitude.
+		int enemyCount = Mathf.Max(Mathf.FloorToInt(effectiveDifficulty / enemy.Difficulty), 1); // Combined difficulty is roughly proportional to player aptitude.
 		
 		// Calculate the location of the group.
 		Vector2 groupOffset = SpawningRadius * UnityEngine.Random.insideUnitCircle.normalized;
@@ -83,8 +83,9 @@ public class EnemySpawner : MonoBehaviour {
 	private EnemyEntry SelectEnemy(float maxDifficulty) {
 		
 		EnemyEntry ee = null;
+		int tries = 100;
 		
-		while (ee == null) {
+		while (ee == null && tries > 0) {
 			
 			EnemyEntry testEntry = EnemyList[Mathf.FloorToInt(UnityEngine.Random.Range(0, EnemyList.Length))];
 			
@@ -93,7 +94,11 @@ public class EnemySpawner : MonoBehaviour {
 				Mathf.FloorToInt(maxDifficulty / testEntry.Difficulty) <= this.MaxEnemiesPerWave
 			) ee = testEntry;
 			
+			tries--;
+			
 		}
+		
+		if (tries == 0) ee = this.EnemyList[0];
 		
 		return ee;
 		
