@@ -684,7 +684,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22490622, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 68.4373703
+      value: 69.0091782
       objectReference: {fileID: 0}
     - target: {fileID: 22490622, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchoredPosition.y
@@ -692,7 +692,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22490622, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 116.874741
+      value: 118.018356
       objectReference: {fileID: 0}
     - target: {fileID: 22490622, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_SizeDelta.y
@@ -708,7 +708,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22478106, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 245.812103
+      value: 247.527527
       objectReference: {fileID: 0}
     - target: {fileID: 22478106, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchoredPosition.y
@@ -716,7 +716,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22478106, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 237.874741
+      value: 239.018356
       objectReference: {fileID: 0}
     - target: {fileID: 22478106, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_SizeDelta.y
@@ -1603,14 +1603,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11433622, guid: 53f169c6f6d476e4a8759bb3ee5feb86, type: 2}
-      propertyPath: Target
-      value: 
-      objectReference: {fileID: 2006270912}
-    - target: {fileID: 11498212, guid: 53f169c6f6d476e4a8759bb3ee5feb86, type: 2}
-      propertyPath: ImageComponent
-      value: 
-      objectReference: {fileID: 1704231948}
     - target: {fileID: 11413998, guid: 53f169c6f6d476e4a8759bb3ee5feb86, type: 2}
       propertyPath: ScoreDisplayObject
       value: 
@@ -1619,6 +1611,14 @@ Prefab:
       propertyPath: gameOverAnimator
       value: 
       objectReference: {fileID: 454132357}
+    - target: {fileID: 11498212, guid: 53f169c6f6d476e4a8759bb3ee5feb86, type: 2}
+      propertyPath: ImageComponent
+      value: 
+      objectReference: {fileID: 1704231948}
+    - target: {fileID: 11433622, guid: 53f169c6f6d476e4a8759bb3ee5feb86, type: 2}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 2006270912}
     - target: {fileID: 11479570, guid: 53f169c6f6d476e4a8759bb3ee5feb86, type: 2}
       propertyPath: ReloadBar
       value: 

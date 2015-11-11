@@ -94,11 +94,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 427606}
-  - 33: {fileID: 3390112}
   - 65: {fileID: 6573050}
   - 23: {fileID: 2362874}
+  - 33: {fileID: 3351200}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Thruster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -363,9 +363,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128918}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: -0, y: .0500000007, z: -.200000003}
+  m_LocalScale: {x: .349999994, y: .349999994, z: .349999994}
   m_Children: []
   m_Father: {fileID: 456436}
   m_RootOrder: 0
@@ -689,6 +689,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117444}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &3351200
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128918}
+  m_Mesh: {fileID: 4300000, guid: 482cdcd5b7c1ace458904111e9fe35d5, type: 3}
 --- !u!33 &3368242
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -696,13 +703,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101492}
   m_Mesh: {fileID: 4300000, guid: c1227566e234f2448b1a01ef5436029e, type: 3}
---- !u!33 &3390112
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128918}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &3393648
 MeshFilter:
   m_ObjectHideFlags: 1
