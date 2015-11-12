@@ -4,6 +4,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using Pew.Items;
 using Pew.Combat;
+using Pew.Google;
 
 namespace Pew.Player {
 	
@@ -31,7 +32,7 @@ namespace Pew.Player {
 		public const string PLAYER_DATA_FILE_NAME = "data.pew";
 		
 		public static StoredPlayerData PLAYER_DATA = new StoredPlayerData();
-		public static bool WasLoaded = false;
+		public static bool WasLocalSave = false;
 		
 		public int Money = 0;
 		
@@ -39,13 +40,21 @@ namespace Pew.Player {
 		
 		public void Save() {
 			
-			BinaryFormatter bf = new BinaryFormatter();
-			FileStream file = File.Create(Application.persistentDataPath + "/" + PLAYER_DATA_FILE_NAME);
-			
-			// Simple enough.
-			bf.Serialize(file, this);
-			
-			file.Close();
+			if (!WasLocalSave) {
+				
+				GoogleSaveFrontend.Save();
+				
+			} else {
+				
+				BinaryFormatter bf = new BinaryFormatter();
+				FileStream file = File.Create(Application.persistentDataPath + "/" + PLAYER_DATA_FILE_NAME);
+				
+				// Simple enough.
+				bf.Serialize(file, this);
+				
+				file.Close();
+				
+			}
 			
 		}
 		
