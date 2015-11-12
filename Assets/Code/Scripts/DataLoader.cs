@@ -11,7 +11,7 @@ public class DataLoader : MonoBehaviour {
 	void Start () {
 		
 		GoogleSaveFrontend.Init();
-		StoredPlayerData.PLAYER_DATA = GoogleSaveFrontend.LoadGame();
+		GoogleSaveFrontend.LoadGame();
 		
 		// If this somehow fails, then it can handle itself normally by creating a new save.
 		

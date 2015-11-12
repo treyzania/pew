@@ -326,7 +326,7 @@ namespace Pew.Google {
 			
 		}
 		
-		private void OnLevelSaved(bool success) {
+		private static void OnLevelSaved(bool success) {
 			
 			// Later.
 			
