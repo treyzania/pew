@@ -149,8 +149,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: pew
+  AndroidKeystoreName: D:/User Data/Treyzania/Documents/Projects/pew.git/pew.keystore
+  AndroidKeyaliasName: pewkey1
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
   androidEnableBanner: 1
