@@ -78,14 +78,15 @@ namespace Pew.Google {
 		/// <param name="save">Save.</param>
 		/// <param name="saveCreatedCallback">Invoked when save has been created.</param>
 		private static void CreateNewSave(ISavedGameMetadata save, Action<ISavedGameMetadata> saveCreatedCallback) {
+		
 			ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
 			
 			SavedGameMetadataUpdate.Builder builder = new SavedGameMetadataUpdate.Builder ();
 			builder = builder
-				.WithUpdatedPlayedTime(save.TotalTimePlayed.Add(new TimeSpan (0, 0, (int) Time.realtimeSinceStartup)))
+				.WithUpdatedPlayedTime(save.TotalTimePlayed.Add(new TimeSpan(0, 0, (int) Time.realtimeSinceStartup)))
 				.WithUpdatedDescription("Saved at " + DateTime.Now);
 			
-			SavedGameMetadataUpdate updatedMetadata = builder.Build ();
+			SavedGameMetadataUpdate updatedMetadata = builder.Build();
 			
 			SaveDataBundle newBundle = new SaveDataBundle(new StoredPlayerData());
 			
@@ -121,15 +122,17 @@ namespace Pew.Google {
 				
 				// save name is generated only when save has not been commited yet
 				saveGameClient.OpenWithAutomaticConflictResolution(
+					
 					savedGame.Filename == string.Empty ? "Save" + UnityEngine.Random.Range(1000000,9999999).ToString() : savedGame.Filename,
 					DataSource.ReadCacheOrNetwork,
 					ConflictResolutionStrategy.UseLongestPlaytime,
 					(SavedGameRequestStatus reqStatus, ISavedGameMetadata openedGame) => {
-					if(reqStatus == SavedGameRequestStatus.Success) {
-						m_saveBundleMetadata = openedGame;
-						if(callback != null) callback.Invoke(m_saveBundleMetadata);
+						if(reqStatus == SavedGameRequestStatus.Success) {
+							m_saveBundleMetadata = openedGame;
+							if(callback != null) callback.Invoke(m_saveBundleMetadata);
+						}
+						
 					}
-				}
 				);
 				
 			} else {
@@ -299,13 +302,31 @@ namespace Pew.Google {
 		}
 	}
 	
-	public class GoogleSaveFrontend {
+	public class GoogleFrontend {
 		
+		private static bool Initialized;
 		private static AndroidSaveSystem m_saveSystem;
 		
 		public static void Init() {
 			
-			if (m_saveSystem == null) m_saveSystem = new AndroidSaveSystem();
+			if (!Initialized) {
+				
+				PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder()
+					.EnableSavedGames()
+						.Build();
+				
+				PlayGamesPlatform.InitializeInstance(config);
+				PlayGamesPlatform.DebugLogEnabled = true;
+				PlayGamesPlatform.Activate();
+				
+				Social.localUser.Authenticate((bool success) => {
+					Debug.Log("Sign in status: " + success);
+				});
+				
+				if (m_saveSystem == null) m_saveSystem = new AndroidSaveSystem();
+				Initialized = true;
+				
+			}
 			
 		}
 		

@@ -10,8 +10,8 @@ public class DataLoader : MonoBehaviour {
 	
 	void Start () {
 		
-		GoogleSaveFrontend.Init();
-		GoogleSaveFrontend.LoadGame();
+		GoogleFrontend.Init();
+		GoogleFrontend.LoadGame();
 		
 		// If this somehow fails, then it can handle itself normally by creating a new save.
 		
