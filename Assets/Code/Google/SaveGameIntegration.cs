@@ -57,7 +57,7 @@ namespace Pew.Google {
 							return;
 						}
 						
-						if (callback != null) callback.Invoke(status,saveGame);
+						if (callback != null) callback.Invoke(status, saveGame);
 						
 						if (OnSaveGameSelected != null && status == SelectUIStatus.SavedGameSelected) OnSaveGameSelected.Invoke();
 					}
@@ -219,43 +219,42 @@ namespace Pew.Google {
 			ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
 			
 			savedGameClient.OpenWithAutomaticConflictResolution(
+				
 				m_saveBundleMetadata.Filename == string.Empty ? fileName : m_saveBundleMetadata.Filename,
 				DataSource.ReadCacheOrNetwork,
 				ConflictResolutionStrategy.UseLongestPlaytime,
 				(SavedGameRequestStatus reqStatus, ISavedGameMetadata openedGame) => {
-				
-				if(reqStatus == SavedGameRequestStatus.Success) {
 					
-					// adding real time since startup so we can determine longes playtime and resolve future conflicts easilly
-					m_saveBundleMetadata = openedGame; 
-					SavedGameMetadataUpdate.Builder builder = new SavedGameMetadataUpdate.Builder ();
-					builder = builder
-						.WithUpdatedPlayedTime (m_saveBundleMetadata.TotalTimePlayed.Add (new TimeSpan (0, 0, (int)Time.realtimeSinceStartup)))
+					if(reqStatus == SavedGameRequestStatus.Success) {
+						
+						// adding real time since startup so we can determine longes playtime and resolve future conflicts easilly
+						m_saveBundleMetadata = openedGame; 
+						SavedGameMetadataUpdate.Builder builder = new SavedGameMetadataUpdate.Builder ();
+						builder = builder
+							.WithUpdatedPlayedTime (m_saveBundleMetadata.TotalTimePlayed.Add (new TimeSpan (0, 0, (int)Time.realtimeSinceStartup)))
 							.WithUpdatedDescription ("Saved game at " + DateTime.Now);
-					
-					SavedGameMetadataUpdate updatedMetadata = builder.Build ();
-					
-						m_saveBundleMetadata,
-						updatedMetadata,
-						SaveDataBundle.ToByteArray(file),
-						(SavedGameRequestStatus status,ISavedGameMetadata game) => {
 						
-						if (status == SavedGameRequestStatus.Success) {
-							m_saveBundleMetadata = game;
-							m_currentSaveBundle = file;
-						}
+						SavedGameMetadataUpdate updatedMetadata = builder.Build ();
 						
-						if (callback != null) callback.Invoke(status == SavedGameRequestStatus.Success);
-						
-					}
-					
-					);
+						savedGameClient.CommitUpdate(
+							m_saveBundleMetadata,
+							updatedMetadata,
+							SaveDataBundle.ToByteArray(file),
+							(SavedGameRequestStatus status,ISavedGameMetadata game) => {
+								
+								if (status == SavedGameRequestStatus.Success) {
 									m_saveBundleMetadata = game;
+									m_currentSaveBundle = file;
+								}
+							
+							if (callback != null) callback.Invoke(status == SavedGameRequestStatus.Success);
+							
+						});
 					
+					}
+				
 				}
 				
-			}
-			
 			);
 			
 		}
@@ -310,7 +309,11 @@ namespace Pew.Google {
 	public class GoogleFrontend {
 		
 		private static bool Initialized;
-		private static AndroidSaveSystem m_saveSystem;
+		private static AndroidSaveSystem SaveSystem;
+		
+		public static bool UseLocalStorage;
+		
+		private GoogleFrontend() {} // Let's not initialize this, m'kay?
 		
 		public static void Init() {
 			
@@ -318,17 +321,30 @@ namespace Pew.Google {
 				
 				PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder()
 					.EnableSavedGames()
-						.Build();
+					.Build();
 				
 				PlayGamesPlatform.InitializeInstance(config);
 				PlayGamesPlatform.DebugLogEnabled = true;
 				PlayGamesPlatform.Activate();
 				
 				Social.localUser.Authenticate((bool success) => {
+					
 					Debug.Log("Sign in status: " + success);
+					
+					UseLocalStorage = !success; // :/
+					
+					if (success) {
+						
+						SaveSystem = new AndroidSaveSystem();
+						
+					} else {
+						
+						// Okaaaaay...  This is going to be painful.
+						
+					}
+					
 				});
 				
-				if (m_saveSystem == null) m_saveSystem = new AndroidSaveSystem();
 				Initialized = true;
 				
 			}
@@ -337,24 +353,55 @@ namespace Pew.Google {
 		
 		public static void LoadGame() {
 			
-			m_saveSystem.LoadSavedGame(Social.localUser, (SaveDataBundle dataBundle) => {
+			StoredPlayerData local = StoredPlayerData.LocalLoad();
+			StoredPlayerData cloud = null;
+			
+			SaveSystem.LoadSavedGame(Social.localUser, (SaveDataBundle dataBundle) => {
 				
-				StoredPlayerData.PLAYER_DATA = dataBundle.data;
+				cloud = dataBundle.data;
 				StoredPlayerData.WasLocalSave = false;
 				
 			});
+			
+			// Load the save times data.  Should this data be obfuscated or encrypted?
+			DateTime localSaveTime = StoredPlayerData.GetTimeValue(StoredPlayerData.TIME_LOCAL_KEY);
+			DateTime cloudSaveTime = StoredPlayerData.GetTimeValue(StoredPlayerData.TIME_CLOUD_KEY);
+			
+			// If the cloud save time is reasonable, then figure out the most recent one, otherwise create a new save.
+			if (cloudSaveTime != DateTime.MinValue) {
+				StoredPlayerData.PLAYER_DATA = (localSaveTime >= cloudSaveTime) ? local : cloud;
+			} else {
+				StoredPlayerData.PLAYER_DATA = new StoredPlayerData();
+				Save();
+			}
 			
 		}
 		
 		public static void Save() {
 			
-			if (m_saveSystem != null && m_saveSystem.CurrentSave != null) m_saveSystem.SaveGame(m_saveSystem.CurrentSave, OnLevelSaved);
+			StoredPlayerData data = StoredPlayerData.PLAYER_DATA;
 			
-		}
-		
-		private static void OnLevelSaved(bool success) {
+			// Try cloud storage.
+			if (SaveSystem != null && SaveSystem.CurrentSave != null) {
+				
+				SaveSystem.SaveGame(new SaveDataBundle(data), (bool success) => {
+					
+					if (success) {
+						
+						StoredPlayerData.UpdateTimeValue(StoredPlayerData.TIME_CLOUD_KEY);
+						
+					} else {
+						
+						Debug.Log("Cloud save failed!");
+						
+					}
+					
+				});
+				
+			}
 			
-			// Later.
+			// Always do local storage.
+			data.LocalSave();
 			
 		}
 		

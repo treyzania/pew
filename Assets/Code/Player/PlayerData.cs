@@ -1,10 +1,12 @@
 using UnityEngine;
+using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using Pew.Items;
 using Pew.Combat;
 using Pew.Google;
+using Pew.Util;
 
 namespace Pew.Player {
 	
@@ -30,6 +32,10 @@ namespace Pew.Player {
 	public class StoredPlayerData {
 		
 		public const string PLAYER_DATA_FILE_NAME = "data.pew";
+		public const string SAVES_TIMES_VALUES_FILE_NAME = "times.properties";
+		
+		public const string TIME_CLOUD_KEY = "cloud";
+		public const string TIME_LOCAL_KEY = "local";
 		
 		public static StoredPlayerData PLAYER_DATA = new StoredPlayerData();
 		public static bool WasLocalSave = false;
@@ -40,21 +46,29 @@ namespace Pew.Player {
 		
 		public void Save() {
 			
-			if (!WasLocalSave) {
+			if (!GoogleFrontend.UseLocalStorage) {
 				
 				GoogleFrontend.Save();
-				
+
 			} else {
 				
-				BinaryFormatter bf = new BinaryFormatter();
-				FileStream file = File.Create(Application.persistentDataPath + "/" + PLAYER_DATA_FILE_NAME);
-				
-				// Simple enough.
-				bf.Serialize(file, this);
-				
-				file.Close();
+				this.LocalSave();
 				
 			}
+			
+		}
+		
+		public void LocalSave() {
+			
+			BinaryFormatter bf = new BinaryFormatter();
+			FileStream file = File.Create(Application.persistentDataPath + "/" + PLAYER_DATA_FILE_NAME);
+			
+			// Simple enough.
+			bf.Serialize(file, this);
+			file.Close();
+			
+			// Update the time values.
+			StoredPlayerData.UpdateTimeValue(StoredPlayerData.TIME_LOCAL_KEY);
 			
 		}
 		
@@ -78,13 +92,56 @@ namespace Pew.Player {
 		
 		public int GetAptitude() {
 			
-			int total = 0; // No dividing by 0.
+			int total = 0; // No dividing by 0, so this is okay.
 			
-			foreach (SavedUpgradeEntry sue in Upgrades.Values) {
-				total += sue.Aptitude;
-			}
+			foreach (SavedUpgradeEntry sue in Upgrades.Values) total += sue.Aptitude;
 			
 			return total;
+			
+		}
+		
+		public static void UpdateTimeValue(string name) {
+			
+			Properties times = new Properties(SAVES_TIMES_VALUES_FILE_NAME);
+			
+			times.Set(name, DateTime.UtcNow);
+			times.Save();
+			
+		}
+		
+		public static DateTime GetTimeValue(string name) {
+			
+			Properties times = new Properties(SAVES_TIMES_VALUES_FILE_NAME);
+			
+			DateTime dt = new DateTime(); // Should be null?
+			DateTime.TryParse(times.Get(name, DateTime.MinValue.ToString()), out dt);
+			
+			return dt;
+			
+		}
+		
+		public static StoredPlayerData LocalLoad() {
+			
+			string path = Application.persistentDataPath + "/" + StoredPlayerData.PLAYER_DATA_FILE_NAME;
+			
+			if (File.Exists(path)) {
+				
+				BinaryFormatter bf = new BinaryFormatter();
+				FileStream file = File.Open(path, FileMode.Open);
+				StoredPlayerData cache = null;
+				
+				cache = (StoredPlayerData) bf.Deserialize(file);
+				StoredPlayerData.WasLocalSave = true;
+				
+				file.Close();
+				
+				return cache;
+				
+			} else {
+				
+				return new StoredPlayerData();
+				
+			}
 			
 		}
 		
