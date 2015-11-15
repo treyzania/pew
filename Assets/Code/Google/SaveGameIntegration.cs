@@ -230,7 +230,6 @@ namespace Pew.Google {
 					
 					SavedGameMetadataUpdate updatedMetadata = builder.Build ();
 					
-					savedGameClient.CommitUpdate(
 						m_saveBundleMetadata,
 						updatedMetadata,
 						SaveDataBundle.ToByteArray(file),
