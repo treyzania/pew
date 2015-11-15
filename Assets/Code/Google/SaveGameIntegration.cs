@@ -50,17 +50,17 @@ namespace Pew.Google {
 					allowCreateNew,
 					allowDelete,
 					(SelectUIStatus status, ISavedGameMetadata saveGame) => {
-					
-					// some error occured, just show window again
-					if (status != SelectUIStatus.SavedGameSelected) {
-						ShowSaveSystemUI(user,callback);
-						return;
+						
+						// some error occured, just show window again
+						if (status != SelectUIStatus.SavedGameSelected) {
+							ShowSaveSystemUI(user,callback);
+							return;
+						}
+						
+						if (callback != null) callback.Invoke(status,saveGame);
+						
+						if (OnSaveGameSelected != null && status == SelectUIStatus.SavedGameSelected) OnSaveGameSelected.Invoke();
 					}
-					
-					if (callback != null) callback.Invoke(status,saveGame);
-					
-					if (OnSaveGameSelected != null && status == SelectUIStatus.SavedGameSelected) OnSaveGameSelected.Invoke();
-				}
 				);
 				
 			} else {
@@ -127,12 +127,14 @@ namespace Pew.Google {
 					DataSource.ReadCacheOrNetwork,
 					ConflictResolutionStrategy.UseLongestPlaytime,
 					(SavedGameRequestStatus reqStatus, ISavedGameMetadata openedGame) => {
+						
 						if(reqStatus == SavedGameRequestStatus.Success) {
 							m_saveBundleMetadata = openedGame;
 							if(callback != null) callback.Invoke(m_saveBundleMetadata);
 						}
 						
 					}
+					
 				);
 				
 			} else {
@@ -156,6 +158,7 @@ namespace Pew.Google {
 			} else {
 				LoadGame(SelectUIStatus.SavedGameSelected, m_saveBundleMetadata);
 			}
+			
 		}
 		
 		static void LoadGame(SelectUIStatus status, ISavedGameMetadata game) {
@@ -183,14 +186,16 @@ namespace Pew.Google {
 						
 						Debug.Log("Reading save finished with status: " + reqStatus.ToString());
 						
-						if (reqStatus == SavedGameRequestStatus.Success){
-							SaveDataBundle bundle = SaveDataBundle.FromByteArray (data);
+						if (reqStatus == SavedGameRequestStatus.Success) {
+							
+							SaveDataBundle bundle = SaveDataBundle.FromByteArray(data);
 							m_currentSaveBundle = bundle;
-							if (OnSaveLoaded != null)
-							{
+							
+							if (OnSaveLoaded != null) {
 								OnSaveLoaded.Invoke (bundle);
 								OnSaveLoaded = null;
 							}
+							
 						}
 						
 					});
@@ -245,6 +250,7 @@ namespace Pew.Google {
 					}
 					
 					);
+									m_saveBundleMetadata = game;
 					
 				}
 				
