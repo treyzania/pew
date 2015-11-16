@@ -42,7 +42,7 @@ namespace Pew.Util {
 			if (!File.Exists(filename))
 				File.Create(filename);
 			
-			System.IO.StreamWriter file = new StreamWriter(filename);
+			StreamWriter file = new StreamWriter(filename);
 			
 			foreach (string prop in list.Keys) {
 				
