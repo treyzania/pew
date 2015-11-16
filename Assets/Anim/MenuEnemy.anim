@@ -17,27 +17,27 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: {x: 0, y: .00307996711, z: 0}
+        value: {x: 2.80999994, y: .00307996711, z: -.140000001}
         inSlope: {x: 0, y: -.0255682264, z: 0}
         outSlope: {x: 0, y: -.0255682264, z: 0}
         tangentMode: 0
       - time: .0500000007
-        value: {x: 0, y: .00180155574, z: 0}
+        value: {x: 2.80999994, y: .00180155574, z: -.140000001}
         inSlope: {x: 0, y: -.0700060055, z: 0}
         outSlope: {x: 0, y: -.0700060055, z: 0}
         tangentMode: 0
       - time: 1
-        value: {x: 0, y: -.106920034, z: 0}
+        value: {x: 2.80999994, y: -.106920034, z: -.140000001}
         inSlope: {x: 0, y: -8.62926245e-05, z: 0}
         outSlope: {x: 0, y: -8.62926245e-05, z: 0}
         tangentMode: 0
       - time: 1.95000005
-        value: {x: 0, y: .00163760677, z: 0}
+        value: {x: 2.80999994, y: .00163760677, z: -.140000001}
         inSlope: {x: 0, y: .0715592131, z: 0}
         outSlope: {x: 0, y: .0715592131, z: 0}
         tangentMode: 0
       - time: 2
-        value: {x: 0, y: .00307996711, z: 0}
+        value: {x: 2.80999994, y: .00307996711, z: -.140000001}
         inSlope: {x: 0, y: .0288472343, z: 0}
         outSlope: {x: 0, y: .0288472343, z: 0}
         tangentMode: 0
@@ -110,6 +110,44 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
     attribute: m_LocalPosition.y
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 2.80999994
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 2
+        value: 2.80999994
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.x
+    path: 
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -.140000001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 2
+        value: -.140000001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalPosition.z
     path: 
     classID: 4
     script: {fileID: 0}
