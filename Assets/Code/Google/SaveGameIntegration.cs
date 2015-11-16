@@ -356,24 +356,28 @@ namespace Pew.Google {
 			StoredPlayerData local = StoredPlayerData.LocalLoad();
 			StoredPlayerData cloud = null;
 			
-			SaveSystem.LoadSavedGame(Social.localUser, (SaveDataBundle dataBundle) => {
+			if (SaveSystem != null) {
 				
-				cloud = dataBundle.data;
-				StoredPlayerData.WasLocalSave = false;
+				SaveSystem.LoadSavedGame(Social.localUser, (SaveDataBundle dataBundle) => {
+					
+					cloud = dataBundle.data;
+					StoredPlayerData.WasLocalSave = false;
+					
+				});
 				
-			});
+			} else {
+				Debug.LogWarning("Save system is null!");
+			}
+			
+			Debug.Log("Locally loaded game: " + local);
 			
 			// Load the save times data.  Should this data be obfuscated or encrypted?
 			DateTime localSaveTime = StoredPlayerData.GetTimeValue(StoredPlayerData.TIME_LOCAL_KEY);
 			DateTime cloudSaveTime = StoredPlayerData.GetTimeValue(StoredPlayerData.TIME_CLOUD_KEY);
 			
-			// If the cloud save time is reasonable, then figure out the most recent one, otherwise create a new save.
-			if (cloudSaveTime != DateTime.MinValue) {
-				StoredPlayerData.PLAYER_DATA = (localSaveTime >= cloudSaveTime) ? local : cloud;
-			} else {
-				StoredPlayerData.PLAYER_DATA = new StoredPlayerData();
-				Save();
-			}
+			Debug.Log("LOCAL time: " + localSaveTime + "; CLOUD time: " + cloudSaveTime);
+			Debug.Log("Using most recent save...");
+			StoredPlayerData.PLAYER_DATA = (localSaveTime >= cloudSaveTime) ? local : cloud;
 			
 		}
 		
@@ -384,6 +388,8 @@ namespace Pew.Google {
 			// Try cloud storage.
 			if (SaveSystem != null && SaveSystem.CurrentSave != null) {
 				
+				Debug.Log("SaveSystem and its current save are non-null.");
+				
 				SaveSystem.SaveGame(new SaveDataBundle(data), (bool success) => {
 					
 					if (success) {
@@ -392,12 +398,14 @@ namespace Pew.Google {
 						
 					} else {
 						
-						Debug.Log("Cloud save failed!");
+						Debug.LogWarning("Cloud save failed!");
 						
 					}
 					
 				});
 				
+			} else {
+				Debug.LogWarning("SaveSystem and/or its current save may be null!");
 			}
 			
 			// Always do local storage.

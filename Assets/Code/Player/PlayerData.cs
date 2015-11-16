@@ -46,19 +46,14 @@ namespace Pew.Player {
 		
 		public void Save() {
 			
-			if (!GoogleFrontend.UseLocalStorage) {
-				
-				GoogleFrontend.Save();
-
-			} else {
-				
-				this.LocalSave();
-				
-			}
+			Debug.Log("Saving game...");
+			GoogleFrontend.Save();
 			
 		}
 		
 		public void LocalSave() {
+			
+			Debug.Log("Caching local save...");
 			
 			BinaryFormatter bf = new BinaryFormatter();
 			FileStream file = File.Create(Application.persistentDataPath + "/" + PLAYER_DATA_FILE_NAME);
@@ -103,8 +98,10 @@ namespace Pew.Player {
 		public static void UpdateTimeValue(string name) {
 			
 			Properties times = new Properties(Application.persistentDataPath + "/" + SAVES_TIMES_VALUES_FILE_NAME);
+			DateTime dt = DateTime.UtcNow;
 			
-			times.Set(name, DateTime.UtcNow);
+			Debug.Log("Updating time for \"" + name + "\" as " + dt.ToString());
+			times.Set(name, dt);
 			times.Save();
 			
 		}
@@ -116,6 +113,8 @@ namespace Pew.Player {
 			DateTime dt = new DateTime(); // Should be null?
 			DateTime.TryParse(times.Get(name, DateTime.MinValue.ToString()), out dt);
 			
+			Debug.Log("Loading time for \"" + name + "\" as " + dt.ToString());
+			
 			return dt;
 			
 		}
@@ -123,6 +122,8 @@ namespace Pew.Player {
 		public static StoredPlayerData LocalLoad() {
 			
 			string path = Application.persistentDataPath + "/" + StoredPlayerData.PLAYER_DATA_FILE_NAME;
+			
+			Debug.Log("Loading cached game save...");
 			
 			if (File.Exists(path)) {
 				
@@ -139,6 +140,7 @@ namespace Pew.Player {
 				
 			} else {
 				
+				Debug.LogWarning("None found!  Creating new object...");
 				return new StoredPlayerData();
 				
 			}

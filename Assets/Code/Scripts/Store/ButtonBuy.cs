@@ -14,8 +14,6 @@ public class ButtonBuy : MonoBehaviour {
 	
 	void Start() {
 		
-		StoredPlayerData.PLAYER_DATA.Save();
-		
 		this.UpgradeIndex = StoredPlayerData.PLAYER_DATA.GetUpgradeLevel(UpgradeTrack.Part);
 		
 		// Get references to the various fields in the UI.
