@@ -61,19 +61,25 @@ namespace Pew.Util {
 		public void Reload(string filename) {
 			
 			this.filename = filename;
-			list = new Dictionary<string, string>();
+			this.list = new Dictionary<string, string>();
 			
-			if (File.Exists(filename)) {
-				loadFromFile(filename);
+			if (File.Exists(this.filename)) {
+				LoadFromFile();
 			} else {
-				File.Create(filename);
+				File.Create(this.filename);
 			}
 			
 		}
 		
-		private void loadFromFile(string file) {
+		private void LoadFromFile() {
 			
-			foreach (string line in File.ReadAllLines(file)) {
+			/*
+			 * Having an array reference like this instead of directly referencing it in the loop
+			 * ensures that we can't accientally open the file again before we finish closing it.
+			 */
+			string[] lines = File.ReadAllLines(this.filename);
+			
+			foreach (string line in lines) {
 				
 				if ((!string.IsNullOrEmpty(line)) &&
 				    (!line.StartsWith(";")) &&
