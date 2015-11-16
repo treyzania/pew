@@ -102,7 +102,7 @@ namespace Pew.Player {
 		
 		public static void UpdateTimeValue(string name) {
 			
-			Properties times = new Properties(SAVES_TIMES_VALUES_FILE_NAME);
+			Properties times = new Properties(Application.persistentDataPath + "/" + SAVES_TIMES_VALUES_FILE_NAME);
 			
 			times.Set(name, DateTime.UtcNow);
 			times.Save();
@@ -111,7 +111,7 @@ namespace Pew.Player {
 		
 		public static DateTime GetTimeValue(string name) {
 			
-			Properties times = new Properties(SAVES_TIMES_VALUES_FILE_NAME);
+			Properties times = new Properties(Application.persistentDataPath + "/" + SAVES_TIMES_VALUES_FILE_NAME);
 			
 			DateTime dt = new DateTime(); // Should be null?
 			DateTime.TryParse(times.Get(name, DateTime.MinValue.ToString()), out dt);

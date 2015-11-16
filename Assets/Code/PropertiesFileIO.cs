@@ -39,10 +39,10 @@ namespace Pew.Util {
 			
 			this.filename = filename;
 			
-			if (!System.IO.File.Exists(filename))
-				System.IO.File.Create(filename);
+			if (!File.Exists(filename))
+				File.Create(filename);
 			
-			System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
+			System.IO.StreamWriter file = new StreamWriter(filename);
 			
 			foreach (string prop in list.Keys) {
 				
@@ -73,7 +73,7 @@ namespace Pew.Util {
 		
 		private void loadFromFile(string file) {
 			
-			foreach (string line in System.IO.File.ReadAllLines(file)) {
+			foreach (string line in File.ReadAllLines(file)) {
 				
 				if ((!string.IsNullOrEmpty(line)) &&
 				    (!line.StartsWith(";")) &&
