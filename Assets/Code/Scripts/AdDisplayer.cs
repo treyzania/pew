@@ -44,7 +44,7 @@ public class AdDisplayer : MonoBehaviour {
 		while (!Advertisement.IsReady()) yield return null;
 		Debug.Log("Ad ready!");
 		
-		Advertisement.Show(null, new ShowOptions {
+		Advertisement.Show(null, new ShowOptions() {
 			
 			// Voodoo.
 			resultCallback = ShowResult => {
