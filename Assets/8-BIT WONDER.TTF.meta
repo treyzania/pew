@@ -4,14 +4,14 @@ timeCreated: 1446599670
 licenseType: Free
 TrueTypeFontImporter:
   serializedVersion: 2
-  fontSize: 16
+  fontSize: 24
   forceTextureCase: -2
   characterSpacing: 1
   characterPadding: 0
   includeFontData: 1
   use2xBehaviour: 0
   fontNames:
-  - 8Bit Wonder
+  - 8-Bit Wonder
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 2

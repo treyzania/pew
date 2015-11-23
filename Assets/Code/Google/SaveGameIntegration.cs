@@ -315,7 +315,9 @@ namespace Pew.Google {
 		
 		private GoogleFrontend() {} // Let's not initialize this, m'kay?
 		
-		public static void Init() {
+		public static void Init(Action<bool> callback) {
+			
+			OnScreenLog.Log("Initializing social integration...");
 			
 			if (!Initialized) {
 				
@@ -329,9 +331,12 @@ namespace Pew.Google {
 				
 				Social.localUser.Authenticate((bool success) => {
 					
+					OnScreenLog.Log("Auth success: " + success);
 					Debug.Log("Sign in status: " + success);
 					
 					UseLocalStorage = !success; // :/
+					
+					//SaveSystem = new AndroidSaveSystem();
 					
 					if (success) {
 						
@@ -343,6 +348,9 @@ namespace Pew.Google {
 						
 					}
 					
+					// Must be done after everything else is initialized.
+					callback.Invoke(success);
+					
 				});
 				
 				Initialized = true;
@@ -351,33 +359,43 @@ namespace Pew.Google {
 			
 		}
 		
-		public static void LoadGame() {
+		public static void LoadGame(Action postLoad) {
 			
+			OnScreenLog.Log("Loading game...");
 			StoredPlayerData local = StoredPlayerData.LocalLoad();
 			StoredPlayerData cloud = null;
 			
 			if (SaveSystem != null) {
 				
+				OnScreenLog.Log("Save system not null. (GOOD)");
+				
 				SaveSystem.LoadSavedGame(Social.localUser, (SaveDataBundle dataBundle) => {
+					
+					OnScreenLog.Log("SaveSys LSG callback invoked.");
 					
 					cloud = dataBundle.data;
 					StoredPlayerData.WasLocalSave = false;
+					
+					Debug.Log("Locally loaded game: " + local);
+					
+					// Load the save times data.  Should this data be obfuscated or encrypted?
+					DateTime localSaveTime = StoredPlayerData.GetTimeValue(StoredPlayerData.TIME_LOCAL_KEY);
+					DateTime cloudSaveTime = StoredPlayerData.GetTimeValue(StoredPlayerData.TIME_CLOUD_KEY);
+					
+					Debug.Log("LOCAL time: " + localSaveTime + "; CLOUD time: " + cloudSaveTime);
+					OnScreenLog.Log("LOCAL time: " + localSaveTime + "; CLOUD time: " + cloudSaveTime);
+					Debug.Log("Using most recent save...");
+					StoredPlayerData.PLAYER_DATA = (localSaveTime >= cloudSaveTime) ? local : cloud;
+					
+					OnScreenLog.Log("Invoking postload callback...");
+					postLoad.Invoke();
 					
 				});
 				
 			} else {
 				Debug.LogWarning("Save system is null!");
+				OnScreenLog.Log("Save system is null!");
 			}
-			
-			Debug.Log("Locally loaded game: " + local);
-			
-			// Load the save times data.  Should this data be obfuscated or encrypted?
-			DateTime localSaveTime = StoredPlayerData.GetTimeValue(StoredPlayerData.TIME_LOCAL_KEY);
-			DateTime cloudSaveTime = StoredPlayerData.GetTimeValue(StoredPlayerData.TIME_CLOUD_KEY);
-			
-			Debug.Log("LOCAL time: " + localSaveTime + "; CLOUD time: " + cloudSaveTime);
-			Debug.Log("Using most recent save...");
-			StoredPlayerData.PLAYER_DATA = (localSaveTime >= cloudSaveTime) ? local : cloud;
 			
 		}
 		
