@@ -11,8 +11,8 @@ public class DeathStatsDisplay : MonoBehaviour {
 		
 		if (GameTracker.Active != null) {
 			
-			this.TimeText.text = GameTracker.Active.GetValue("time") + " s";
-			this.DifficultyText.text = GameTracker.Active.GetValue("difficulty");
+			this.TimeText.text = Mathf.Round(float.Parse(GameTracker.Active.GetValue("time"))).ToString();
+			this.DifficultyText.text = Mathf.Round(float.Parse(GameTracker.Active.GetValue("difficulty"))).ToString();
 			this.ScoreText.text = GameTracker.Active.GetValue("score");
 			
 		} else {

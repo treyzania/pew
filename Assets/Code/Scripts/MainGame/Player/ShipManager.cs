@@ -2,9 +2,10 @@
 using System.Collections;
 using Pew.Player;
 
+// TODO Remove this class.
+
 public class ShipManager : MonoBehaviour {
 
-	public float CurrentThrottle = 0F;
 	public Ship TheShip;
 	
 	// Use this for initialization

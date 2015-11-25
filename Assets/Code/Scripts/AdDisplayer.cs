@@ -6,6 +6,7 @@ using Pew.Player;
 public class AdDisplayer : MonoBehaviour {
 	
 	public const float E = 2.71828F; // Close enough.
+	public static bool ShowAds = true;
 	
 	public string NextScene;
 	
@@ -18,12 +19,22 @@ public class AdDisplayer : MonoBehaviour {
 	
 	void Start () {
 		
-		this.StartCoroutine(InitAction());
+		ShowAds = true;
+		
+		//this.StartCoroutine(InitAction());
+		
 	}
 	
 	public void OnButton() {
 		
-		if (this.ShouldShowAdvertisement()) this.StartCoroutine(this.ShowAdWhenReady());
+		if (this.ShouldShowAdvertisement()) {
+			this.StartCoroutine(this.ShowAdWhenReady());
+		} else {
+			
+			// Just jump there directly.
+			Application.LoadLevel(this.NextScene);
+			
+		}
 		
 	}
 	
@@ -35,7 +46,7 @@ public class AdDisplayer : MonoBehaviour {
 		// Logistic function!
 		float prob = this.MaximumValue / (1 + Mathf.Pow(E, -1 * this.Steepness * (duration - this.SigmoidPoint)));
 		
-		return (Random.Range(0, 1) <=  prob) || this.AlwaysShow;
+		return ((Random.Range(0, 1) <=  prob) || this.AlwaysShow) && ShowAds;
 		
 	}
 	
@@ -44,7 +55,7 @@ public class AdDisplayer : MonoBehaviour {
 		while (!Advertisement.IsReady()) yield return null;
 		Debug.Log("Ad ready!");
 		
-		Advertisement.Show(null, new ShowOptions() {
+		Advertisement.Show("video", new ShowOptions() {
 			
 			// Voodoo.
 			resultCallback = ShowResult => {
@@ -64,7 +75,7 @@ public class AdDisplayer : MonoBehaviour {
 	private IEnumerator InitAction() {
 		
 		// If you steal this code, I'll get the money from it anyways.
-		Advertisement.Initialize("1008015", false);
+		//Advertisement.Initialize("1008015", false);
 		yield break;
 		
 	}

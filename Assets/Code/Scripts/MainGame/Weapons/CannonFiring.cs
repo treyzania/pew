@@ -36,7 +36,7 @@ public class CannonFiring : MonoBehaviour {
 	
 	public void TryFire() {
 		
-		if (timeSinceFiring >= FireThreshold && this.Missile != null && StoredPlayerData.PLAYER_DATA.Money >= this.FiringCost) {
+		if (this.CanFire()) {
 			
 			foreach (Transform t in this.StartPoints) {
 				
@@ -55,12 +55,53 @@ public class CannonFiring : MonoBehaviour {
 				
 			}
 			
-			StoredPlayerData.PLAYER_DATA.Money -= this.FiringCost;
+			this.TakeMoney(this.FiringCost);
 			this.timeSinceFiring = 0F;
 			
 			this.SoundEffect.Play();
 			
 		}
+		
+	}
+	
+	private bool CanFire() {
+		
+		bool timeRight = timeSinceFiring >- FireThreshold;
+		bool hasMissile = this.Missile != null;
+		bool hasMoney = (StoredPlayerData.PLAYER_DATA.Money + float.Parse(GameTracker.Active.GetValue("money_awarded"))) >= this.FiringCost;
+		
+		return timeRight && hasMissile && hasMoney;
+		
+	}
+	
+	private bool TakeMoney(int qty) {
+		
+		// Get the values out.
+		int stored = StoredPlayerData.PLAYER_DATA.Money;
+		int onHand = int.Parse(GameTracker.Active.GetValue("money_awarded"));
+		
+		// Technically, this could yield either negative values of free missiles.  Probably the latter.
+		
+		if (onHand >= qty || stored >= qty) {
+			
+			// (onHand >= qty ? onHand : stored) -= qty; No nice things here...
+			
+			if (onHand >= qty) {
+				onHand -= qty;
+			} else {
+				stored -= qty;
+			}
+			
+			// Put them back now.
+			StoredPlayerData.PLAYER_DATA.Money = stored;
+			GameTracker.Active.PutValue("money_awarded", onHand.ToString());
+			
+			return true;
+			
+		}
+		
+		// We wouldn't get here if we failed.
+		return false;
 		
 	}
 	

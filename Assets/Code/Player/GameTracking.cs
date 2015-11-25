@@ -14,11 +14,20 @@ namespace Pew.Player {
 		}
 		
 		public void PutValue(string k, string v) {
-			this.Map[k] = v;
+			
+			if (this.Map.ContainsKey(k)) {
+				this.Map[k] = v;
+			} else {
+				this.Map.Add(k, v);
+			}
+			
 		}
 		
 		public string GetValue(string k) {
+			
+			if (!this.Map.ContainsKey(k)) this.Map.Add(k, "0"); // Might work properly for numbers.
 			return this.Map[k];
+			
 		}
 		
 	}
