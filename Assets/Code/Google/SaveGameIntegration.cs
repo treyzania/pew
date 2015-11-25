@@ -392,9 +392,13 @@ namespace Pew.Google {
 					
 				});
 				
+				OnScreenLog.Log("<b>Awaiting callback to proceed.  This can take some time.</b>");
+				
 			} else {
+				
 				Debug.LogWarning("Save system is null!");
 				OnScreenLog.Log("Save system is null!");
+				
 			}
 			
 		}
