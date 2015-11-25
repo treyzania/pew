@@ -16,7 +16,8 @@ public class PointValue : MonoBehaviour {
 		if (sd == null) return;
 		
 		sd.AddPoints(PointsAwarded);
-		StoredPlayerData.PLAYER_DATA.Money += MoneyAwarded;
+		GameTracker gt = GameTracker.Active;
+		gt.PutValue("money_awarded", GameTracker.Active.GetValue("money_awarded") + this.MoneyAwarded);
 		
 	}
 	

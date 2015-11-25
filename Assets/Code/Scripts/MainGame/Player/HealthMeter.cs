@@ -6,8 +6,8 @@ public class HealthMeter : MonoBehaviour {
 
 	public Image ImageComponent;
 	
-	public float MaxHealth = 100F;
-	public float CurrentHealth = 100F;
+	private float MaxHealth = 100F;
+	private float CurrentHealth = 100F;
 	
 	private HealthManager hm;
 	
