@@ -139,7 +139,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 6f605070db4bd6c41bd60e56dcfc386e, type: 3}
-    m_FontSize: 72
+    m_FontSize: 54
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -161,7 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f39ebd2b44afb1489cad05b69590b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpgradeTrack: {fileID: 11400000, guid: d39e6eed5dc0ccb4f8b4c33b2707e24f, type: 2}
+  UpgradeTrack: {fileID: 11400000, guid: e32e589d936bd3748a1f73bb87e8635a, type: 2}
+  ImmediatePurchase: 1
 --- !u!114 &11474918
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -410,7 +411,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 124066}
