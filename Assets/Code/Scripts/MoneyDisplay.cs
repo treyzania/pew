@@ -9,7 +9,10 @@ public class MoneyDisplay : MonoBehaviour {
 	
 	void Update () {
 		
-		textElement.text = (StoredPlayerData.PLAYER_DATA.Money + float.Parse(GameTracker.Active.GetValue("money_awarded"))).ToString();
+		int total = StoredPlayerData.PLAYER_DATA.Money;
+		if (GameTracker.Active != null) total += (int) float.Parse(GameTracker.Active.GetValue("money_awarded"));
+		
+		textElement.text = total.ToString();
 		
 	}
 	
