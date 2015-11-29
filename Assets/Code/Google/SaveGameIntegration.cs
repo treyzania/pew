@@ -383,7 +383,7 @@ namespace Pew.Google {
 					if (dataBundle == null) postLoad.Invoke(false);
 					
 					// Simple enough.
-					StoredPlayerData.PLAYER_DATA = dataBuncle.data;
+					StoredPlayerData.PLAYER_DATA = dataBundle.data;
 					
 					OnScreenLog.Log("Invoking postload callback...");
 					postLoad.Invoke(true);
@@ -408,7 +408,7 @@ namespace Pew.Google {
 		
 		public static void Save() {
 			
-			if (!Initialized) Init((/* Nothing */) => {/* Nothing */});
+			if (!Initialized) Init((bool success) => {/* Nothing */});
 			
 			StoredPlayerData data = StoredPlayerData.PLAYER_DATA;
 			
