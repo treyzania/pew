@@ -137,7 +137,7 @@ MonoBehaviour:
     of reasons.
 
 
-    If you don''t have an Internet connection right now, that''s probaby the issue.  If
+    If you don''t have an Internet connection right now, that''s might be the issue.  If
     you do, then you need to be sure that you logged into Google Play Games correctly.'
 --- !u!222 &108726194
 CanvasRenderer:

@@ -34,7 +34,7 @@ public class DataLoader : MonoBehaviour {
 						
 					} else {
 						
-						// No scene selected, quit the game.
+						// Something really weird happened, just quit.
 						Application.Quit();
 						
 					}
