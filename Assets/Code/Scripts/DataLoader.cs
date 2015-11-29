@@ -9,6 +9,7 @@ using Pew.Google;
 public class DataLoader : MonoBehaviour {
 	
 	public string NextScene = "Menu";
+	public string ErrorScene = "NoGPG";
 	
 	private bool CanSwitch = false;
 	
@@ -21,19 +22,29 @@ public class DataLoader : MonoBehaviour {
 			
 			if (success) {
 				
-				GoogleFrontend.LoadGame((/* no args */) => {
+				GoogleFrontend.LoadGame((bool hadSelection) => {
 					
-					OnScreenLog.Log("Beginning menu switch...");
-					
-					// Let's move into the actual game if it succeeds.
-					Application.LoadLevel(this.NextScene);
-					Debug.Log("Next scene loaded");
+					if (hadSelection) {
+						
+						OnScreenLog.Log("Beginning menu switch...");
+						
+						// Let's move into the actual game if it succeeds.
+						Application.LoadLevel(this.NextScene);
+						Debug.Log("Next scene loaded");
+						
+					} else {
+						
+						// No scene selected, quit the game.
+						Application.Quit();
+						
+					}
 					
 				});
 				
 			} else {
 				
 				OnScreenLog.Log("Authentication failed!!!\n<color=red><b>Cannot load game!</b></color>");
+				Application.LoadLevelAdditive(this.ErrorScene);
 				
 			}
 			

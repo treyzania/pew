@@ -316,7 +316,8 @@ namespace Pew.Google {
 		private GoogleFrontend() {} // Let's not initialize this, m'kay?
 		
 		public static void Init(Action<bool> callback) {
-			
+
+#if !UNITY_EDITOR
 			OnScreenLog.Log("Initializing social integration...");
 			Debug.Log("Initializing social integration...");
 			
@@ -359,14 +360,18 @@ namespace Pew.Google {
 				Initialized = true;
 				
 			}
+
+#else
+			Initialized = true;		
+#endif
 			
 		}
 		
-		public static void LoadGame(Action postLoad) {
+		public static void LoadGame(Action<bool> postLoad) {
 			
 			OnScreenLog.Log("Loading game...");
-			StoredPlayerData local = StoredPlayerData.LocalLoad();
-			StoredPlayerData cloud = null;
+			
+#if !UNITY_EDITOR
 			
 			if (SaveSystem != null) {
 				
@@ -375,23 +380,13 @@ namespace Pew.Google {
 				SaveSystem.LoadSavedGame(Social.localUser, (SaveDataBundle dataBundle) => {
 					
 					OnScreenLog.Log("SaveSys LSG callback invoked.");
+					if (dataBundle == null) postLoad.Invoke(false);
 					
-					cloud = dataBundle.data;
-					StoredPlayerData.WasLocalSave = false;
-					
-					OnScreenLog.Log("Locally loaded game: " + local);
-					
-					// Load the save times data.  Should this data be obfuscated or encrypted?
-					DateTime localSaveTime = StoredPlayerData.GetTimeValue(StoredPlayerData.TIME_LOCAL_KEY);
-					DateTime cloudSaveTime = StoredPlayerData.GetTimeValue(StoredPlayerData.TIME_CLOUD_KEY);
-					
-					Debug.Log("LOCAL time: " + localSaveTime + "; CLOUD time: " + cloudSaveTime);
-					OnScreenLog.Log("LOCAL time: " + localSaveTime + "; CLOUD time: " + cloudSaveTime);
-					Debug.Log("Using most recent save...");
-					StoredPlayerData.PLAYER_DATA = (localSaveTime >= cloudSaveTime) ? local : cloud;
+					// Simple enough.
+					StoredPlayerData.PLAYER_DATA = dataBuncle.data;
 					
 					OnScreenLog.Log("Invoking postload callback...");
-					postLoad.Invoke();
+					postLoad.Invoke(true);
 					
 				});
 				
@@ -404,11 +399,20 @@ namespace Pew.Google {
 				
 			}
 			
+#else
+			// Simple enough.
+			StoredPlayerData.PLAYER_DATA = StoredPlayerData.LocalLoad();
+#endif
+			
 		}
 		
 		public static void Save() {
 			
+			if (!Initialized) Init((/* Nothing */) => {/* Nothing */});
+			
 			StoredPlayerData data = StoredPlayerData.PLAYER_DATA;
+			
+#if !UNITY_EDITOR
 			
 			// Try cloud storage.
 			if (SaveSystem != null && SaveSystem.CurrentSave != null) {
@@ -433,9 +437,10 @@ namespace Pew.Google {
 				Debug.LogWarning("SaveSystem and/or its current save may be null!");
 			}
 			
-			// Always do local storage.
+#else
 			data.LocalSave();
-			
+#endif
+				
 		}
 		
 	}
