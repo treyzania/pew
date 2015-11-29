@@ -36,7 +36,7 @@ namespace Pew.Google {
 		/// <param name="callback">Invokes, when save game has been selected. Check for status for errors, or </param>
 		public void ShowSaveSystemUI(ILocalUser user, Action<SelectUIStatus, ISavedGameMetadata> callback) {
 			
-			uint maxNumToDisplay = 3;
+			uint maxNumToDisplay = 1;
 			bool allowCreateNew = true;
 			bool allowDelete = true;
 			
@@ -318,6 +318,7 @@ namespace Pew.Google {
 		public static void Init(Action<bool> callback) {
 			
 			OnScreenLog.Log("Initializing social integration...");
+			Debug.Log("Initializing social integration...");
 			
 			if (!Initialized) {
 				
@@ -328,6 +329,8 @@ namespace Pew.Google {
 				PlayGamesPlatform.InitializeInstance(config);
 				PlayGamesPlatform.DebugLogEnabled = true;
 				PlayGamesPlatform.Activate();
+				
+				Debug.Log("Play Games platform activated.");
 				
 				Social.localUser.Authenticate((bool success) => {
 					
@@ -376,7 +379,7 @@ namespace Pew.Google {
 					cloud = dataBundle.data;
 					StoredPlayerData.WasLocalSave = false;
 					
-					Debug.Log("Locally loaded game: " + local);
+					OnScreenLog.Log("Locally loaded game: " + local);
 					
 					// Load the save times data.  Should this data be obfuscated or encrypted?
 					DateTime localSaveTime = StoredPlayerData.GetTimeValue(StoredPlayerData.TIME_LOCAL_KEY);

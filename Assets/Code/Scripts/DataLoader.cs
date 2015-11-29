@@ -23,6 +23,8 @@ public class DataLoader : MonoBehaviour {
 				
 				GoogleFrontend.LoadGame((/* no args */) => {
 					
+					OnScreenLog.Log("Beginning menu switch...");
+					
 					// Let's move into the actual game if it succeeds.
 					Application.LoadLevel(this.NextScene);
 					Debug.Log("Next scene loaded");
