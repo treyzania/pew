@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using Pew.Player;
 using Pew.Google;
+using GooglePlayGames;
 
 public class ButtonBuy : MonoBehaviour {
 
@@ -62,6 +63,10 @@ public class ButtonBuy : MonoBehaviour {
 	}
 	
 	private void DoPurchase() {
+		
+		PlayGamesPlatform.Instance.IncrementAchievement(GPConstants.achievement_bling, 1, (bool success) => {
+			if (!success) return; // TODO Make the user aware that something got messed up.
+		});
 		
 		// Take the money out.
 		StoredPlayerData.PLAYER_DATA.Money -= this.GetNextUpgrade().Price;
