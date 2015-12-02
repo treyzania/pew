@@ -9,6 +9,8 @@ public class PostGamePlayGamesIntegration : MonoBehaviour {
 	
 	void Start() {
 		
+		Debug.Log("PGPGI init begun...");
+		
 		PgpgiActive = this;
 		this.DoChecks();
 		
@@ -16,17 +18,31 @@ public class PostGamePlayGamesIntegration : MonoBehaviour {
 	
 	public void DoChecks() {
 		
+		Debug.Log("Trying PGPGI...");
+		
 		if (GameTracker.Active != null) {
 			
-			float totalMoney = float.Parse(GameTracker.Active.GetValue("money_awarded")) + (float) StoredPlayerData.PLAYER_DATA.Money;
+			float maybeOut = 0F;
+			float.TryParse(GameTracker.Active.GetValue("money_awarded"), out maybeOut);
+			int totalMoney = (int) maybeOut + StoredPlayerData.PLAYER_DATA.Money;
 			
-			Social.ReportProgress(GPConstants.achievement_the_gates_to_the_universe, totalMoney / 1000000F, (bool success) => {
-				// Something.
-			});
+			Debug.Log("PGPGI apparent money: " + totalMoney);
 			
-			Social.ReportProgress(GPConstants.achievement_phat_stax, totalMoney / 100000F, (bool success) => {
-				// Something.
-			});
+			if (totalMoney >= 1e6) { // 1 million
+				
+				Social.ReportProgress(GPConstants.achievement_the_gates_to_the_universe, 100F, (bool success) => {
+					Debug.Log("gates: " + success);
+				});
+				
+			}
+			
+			if (totalMoney >= 1e5) { // 100k
+				
+				Social.ReportProgress(GPConstants.achievement_phat_stax, 100F, (bool success) => {
+					Debug.Log("stax: " + success);
+				});
+				
+			}
 			
 		}
 		
