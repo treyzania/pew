@@ -28,6 +28,9 @@ public class MoneyDoubler : MonoBehaviour {
 			Debug.LogWarning("There doesn't appear to be an active game tracker.  Check into that, m'kay?");
 		}
 		
+		// Sooo long of a name, eh?
+		PostGamePlayGamesIntegration.PgpgiActive.DoChecks();
+		
 		// ;)
 		AlreadyDone = true;
 		
