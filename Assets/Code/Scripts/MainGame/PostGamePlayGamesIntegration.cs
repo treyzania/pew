@@ -18,7 +18,7 @@ public class PostGamePlayGamesIntegration : MonoBehaviour {
 		
 		if (GameTracker.Active != null) {
 			
-			float totalMoney = float.Parse(GameTracker.Active.GetValue("money_awarded") + ((float) StoredPlayerData.PLAYER_DATA.Money);
+			float totalMoney = float.Parse(GameTracker.Active.GetValue("money_awarded")) + (float) StoredPlayerData.PLAYER_DATA.Money;
 			
 			Social.ReportProgress(GPConstants.achievement_the_gates_to_the_universe, totalMoney / 1000000F, (bool success) => {
 				// Something.
