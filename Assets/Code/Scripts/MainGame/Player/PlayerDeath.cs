@@ -31,7 +31,7 @@ public class PlayerDeath : MonoBehaviour {
 		GameObject.Destroy(this.meter.gameObject);
 		
 		// Post death thing.
-		foreach (GameObject go in this.SpawnAfterDeath) GameObject.Instantiate(go);
+		foreach (GameObject go in this.SpawnAfterDeath) GameObject.Instantiate(go, this.transform.position, this.transform.rotation);
 		
 		Social.ReportProgress(GPConstants.achievement_it_takes_practice, 100, (bool success) => {
 			// Nothing!
