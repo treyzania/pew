@@ -13,6 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Hull
   Part: 0
+  Icon: {fileID: 21300000, guid: c1371c5b763afaf4e8ca8aa1a193b737, type: 3}
   Entries:
   - Name: Basic Hull
     Description: '[You shouldn''t be able to see this.]'

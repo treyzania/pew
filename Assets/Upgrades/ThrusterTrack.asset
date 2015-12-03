@@ -13,6 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Thrusters
   Part: 5
+  Icon: {fileID: 21300000, guid: 872c5b61242ab6945881d4def8d71dfb, type: 3}
   Entries:
   - Name: Basic Thruster
     Description: '[You shouldn''t be able to see this.]'

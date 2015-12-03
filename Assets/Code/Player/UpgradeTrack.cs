@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
 namespace Pew.Player {
@@ -8,6 +9,7 @@ namespace Pew.Player {
 		
 		public string Name;
 		public ShipPart Part;
+		public Sprite Icon;
 		public UpgradeEntry[] Entries;
 		
 	}

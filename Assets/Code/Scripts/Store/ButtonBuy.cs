@@ -13,6 +13,7 @@ public class ButtonBuy : MonoBehaviour {
 	private Text title;
 	private Text desc;
 	private Text cost;
+	private Image icon;
 	
 	public bool ImmediatePurchase = true;
 	
@@ -25,6 +26,8 @@ public class ButtonBuy : MonoBehaviour {
 		this.title = content.FindChild("Title").GetComponent<Text>();
 		this.desc = content.FindChild("Description").GetComponent<Text>();
 		this.cost = content.FindChild("Price").GetComponent<Text>();
+		this.icon = content.FindChild("Icon").GetComponent<Image>();
+		this.icon.sprite = this.UpgradeTrack.Icon;
 		
 		this.UpdateDisplay();
 		
