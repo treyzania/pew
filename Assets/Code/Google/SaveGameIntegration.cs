@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using GooglePlayGames.BasicApi.SavedGame;
 using UnityEngine.SocialPlatforms;
-using System;
-using System.Collections.Generic;
 using Pew.Player;
 
 // Largely from http://answers.unity3d.com/questions/894995/.
@@ -418,10 +418,10 @@ namespace Pew.Google {
 		}
 		
 		public static void Save() {
-			Save(1F);
+			Save(1);
 		}
 		
-		public static void Save(float addedTime) {
+		public static void Save(int addedTime) {
 			
 			if (!Initialized) Init((bool success) => {/* Nothing */});
 			
@@ -429,7 +429,7 @@ namespace Pew.Google {
 			
 #if !UNITY_EDITOR
 			
-			AndroidSaveSystem.AddTimeForNextSave(addedTime);
+			AndroidSaveSystem.AddTimeForNextSave(new TimeSpan(0, 0, addedTime));
 			
 			// Try cloud storage.
 			if (SaveSystem != null && SaveSystem.CurrentSave != null) {
