@@ -22,7 +22,7 @@ public class PlayerDeath : MonoBehaviour {
 	
 	public void HandleDeath() {
 		
-		GoogleFrontend.Save(Time.timeSinceLevelLoad);
+		GoogleFrontend.Save((int) Time.timeSinceLevelLoad);
 		
 		GameTracker.Active.PutValue("score", Convert.ToString(ScoreDisplayObject.Score));
 		GameTracker.Active.PutValue("time", Convert.ToString(Time.timeSinceLevelLoad));
