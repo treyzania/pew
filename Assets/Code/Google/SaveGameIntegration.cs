@@ -19,6 +19,8 @@ namespace Pew.Google {
 		private static SaveDataBundle m_currentSaveBundle;
 		private static ISavedGameMetadata m_saveBundleMetadata;
 		
+		private static TimeSpan timePlayed;
+		
 		/// <summary>
 		/// Static reference to current save data. Automatically refreshed by save system.
 		/// </summary>
@@ -178,6 +180,9 @@ namespace Pew.Google {
 						
 					}
 					
+					// Pull the time played
+					timePlayed = game.TotalTimePlayed;
+					
 					// save should be opened now
 					Debug.Log ("Loading save from: " + openedGame.Filename + "\n" + openedGame.Description + "\nOpened = " + openedGame.IsOpen.ToString ());
 					m_saveBundleMetadata = openedGame;
@@ -231,8 +236,10 @@ namespace Pew.Google {
 						m_saveBundleMetadata = openedGame; 
 						SavedGameMetadataUpdate.Builder builder = new SavedGameMetadataUpdate.Builder ();
 						builder = builder
-							.WithUpdatedPlayedTime (m_saveBundleMetadata.TotalTimePlayed.Add (new TimeSpan (0, 0, (int)Time.realtimeSinceStartup)))
-							.WithUpdatedDescription ("Saved game at " + DateTime.Now);
+							.WithUpdatedPlayedTime(timePlayed)
+							.WithUpdatedDescription("Saved game at " + DateTime.Now);
+						
+						//m_saveBundleMetadata.TotalTimePlayed.Add (new TimeSpan (0, 0, (int)Time.realtimeSinceStartup))
 						
 						SavedGameMetadataUpdate updatedMetadata = builder.Build ();
 						
@@ -257,6 +264,10 @@ namespace Pew.Google {
 				
 			);
 			
+		}
+		
+		public static void AddTimeForNextSave(TimeSpan time) {
+			timePlayed += time;
 		}
 		
 	}
@@ -407,12 +418,18 @@ namespace Pew.Google {
 		}
 		
 		public static void Save() {
+			Save(1F);
+		}
+		
+		public static void Save(float addedTime) {
 			
 			if (!Initialized) Init((bool success) => {/* Nothing */});
 			
 			StoredPlayerData data = StoredPlayerData.PLAYER_DATA;
 			
 #if !UNITY_EDITOR
+			
+			AndroidSaveSystem.AddTimeForNextSave(addedTime);
 			
 			// Try cloud storage.
 			if (SaveSystem != null && SaveSystem.CurrentSave != null) {

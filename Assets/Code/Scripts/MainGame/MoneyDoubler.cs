@@ -2,6 +2,7 @@
 using UnityEngine.Advertisements;
 using System.Collections;
 using Pew.Player;
+using Pew.Google;
 
 public class MoneyDoubler : MonoBehaviour {
 	
@@ -30,6 +31,7 @@ public class MoneyDoubler : MonoBehaviour {
 		
 		// Sooo long of a name, eh?
 		PostGamePlayGamesIntegration.PgpgiActive.DoChecks();
+		GoogleFrontend.Save();
 		
 		// ;)
 		AlreadyDone = true;

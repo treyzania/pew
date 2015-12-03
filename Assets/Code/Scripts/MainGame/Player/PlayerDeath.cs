@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System;
 using System.Collections;
 using Pew.Player;
+using Pew.Google;
 
 public class PlayerDeath : MonoBehaviour {
 
@@ -21,7 +22,7 @@ public class PlayerDeath : MonoBehaviour {
 	
 	public void HandleDeath() {
 		
-		StoredPlayerData.PLAYER_DATA.Save();
+		GoogleFrontend.Save(Time.timeSinceLevelLoad);
 		
 		GameTracker.Active.PutValue("score", Convert.ToString(ScoreDisplayObject.Score));
 		GameTracker.Active.PutValue("time", Convert.ToString(Time.timeSinceLevelLoad));
