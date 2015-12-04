@@ -136,7 +136,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.5200005, y: .791999996, z: 6.65999985}
+  m_LocalPosition: {x: -6.1500001, y: .791999996, z: .5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 433058}
@@ -331,7 +331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   MaxForce: 500
-  BaseForce: 80
+  BaseForce: 70
   ForcePercent: 1.10000002
   CutoffDistance: 2.5
   IdleVelocity: .200000003
