@@ -13,12 +13,12 @@ public class EnemySpawner : MonoBehaviour {
 	public float WavePeriodFactor = 0.90F;
 	public float SpawningRadius = 35F;
 	public float SpawningGroupRadius = 10F;
-	public int MaxEnemiesPerWave = 25;
 	
 	private int WaveNumber = 0; // Starts at 0.
 	private long MillisToWave = 5000; // Gives the player time to get ready, 5s.
 	
 	public EnemyEntry[] EnemyList;
+	public EnemyEntry DefaultEnemy;
 	
 	void Start () {
 		
@@ -87,18 +87,18 @@ public class EnemySpawner : MonoBehaviour {
 		
 		while (ee == null && tries > 0) {
 			
-			EnemyEntry testEntry = EnemyList[Mathf.FloorToInt(UnityEngine.Random.Range(0, EnemyList.Length))];
+			EnemyEntry testEntry = this.EnemyList[Mathf.FloorToInt(UnityEngine.Random.Range(0, EnemyList.Length))];
 			
 			if (
 				testEntry.Difficulty <= maxDifficulty && 
-				Mathf.FloorToInt(maxDifficulty / testEntry.Difficulty) <= this.MaxEnemiesPerWave
+				Mathf.FloorToInt(maxDifficulty / testEntry.Difficulty) <= testEntry.MaxSpawnedInGroup
 			) ee = testEntry;
 			
 			tries--;
 			
 		}
 		
-		if (tries == 0) ee = this.EnemyList[0];
+		if (ee == null) ee = this.DefaultEnemy;
 		
 		return ee;
 		

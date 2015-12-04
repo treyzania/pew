@@ -8,6 +8,7 @@ namespace Pew.Enemies {
 		
 		public GameObject Prefab;
 		public float Difficulty;
+		[Range(0, 50)] public uint MaxSpawnedInGroup;
 		
 	}
 	

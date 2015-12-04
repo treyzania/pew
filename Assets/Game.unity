@@ -602,51 +602,51 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22490622, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22490622, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22490622, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 91.0985031
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22490622, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -38.6386108
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22490622, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 142.197006
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22490622, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 69.2772217
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22478106, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22478106, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22478106, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 274.795502
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22478106, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -38.6386108
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22478106, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 225.197006
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22478106, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 69.2772217
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11413744, guid: d37ed4d148c294e4eaabcd984e57270f, type: 2}
       propertyPath: m_Text
@@ -1608,18 +1608,26 @@ MonoBehaviour:
   WavePeriodFactor: .949999988
   SpawningRadius: 20
   SpawningGroupRadius: 5
-  MaxEnemiesPerWave: 25
   EnemyList:
   - Prefab: {fileID: 179138, guid: 25b366815c000d94da1acc4f330bdef9, type: 2}
     Difficulty: 3
+    MaxSpawnedInGroup: 50
   - Prefab: {fileID: 134246, guid: 757502354cd95a941b66e0cbea4d962a, type: 2}
-    Difficulty: 50
+    Difficulty: 35
+    MaxSpawnedInGroup: 20
   - Prefab: {fileID: 138198, guid: 9048a1ba5bf23d243967e966d14c2ba4, type: 2}
-    Difficulty: 75
+    Difficulty: 50
+    MaxSpawnedInGroup: 3
   - Prefab: {fileID: 188392, guid: baed35bff1cb6914eae6be46b07056b3, type: 2}
     Difficulty: 15
+    MaxSpawnedInGroup: 50
   - Prefab: {fileID: 180006, guid: f1b13ed5558432c4cb0cd038b91b7fc1, type: 2}
     Difficulty: 250
+    MaxSpawnedInGroup: 5
+  DefaultEnemy:
+    Prefab: {fileID: 138264, guid: 29053a99069157d458286d5fa3b17ea1, type: 2}
+    Difficulty: 1e+06
+    MaxSpawnedInGroup: 0
 --- !u!4 &1814417212
 Transform:
   m_ObjectHideFlags: 0
