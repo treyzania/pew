@@ -20,6 +20,7 @@ namespace Pew.Google {
 		private static ISavedGameMetadata m_saveBundleMetadata;
 		
 		private static TimeSpan timePlayed;
+		private static Texture2D bannerTexture;
 		
 		/// <summary>
 		/// Static reference to current save data. Automatically refreshed by save system.
@@ -181,7 +182,7 @@ namespace Pew.Google {
 					}
 					
 					// Pull the time played
-					timePlayed = game.TotalTimePlayed;
+					if (game.TotalTimePlayed != null) timePlayed = game.TotalTimePlayed;
 					
 					// save should be opened now
 					Debug.Log ("Loading save from: " + openedGame.Filename + "\n" + openedGame.Description + "\nOpened = " + openedGame.IsOpen.ToString ());
@@ -237,7 +238,8 @@ namespace Pew.Google {
 						SavedGameMetadataUpdate.Builder builder = new SavedGameMetadataUpdate.Builder ();
 						builder = builder
 							.WithUpdatedPlayedTime(timePlayed)
-							.WithUpdatedDescription("Saved game at " + DateTime.Now);
+							.WithUpdatedDescription("Saved game at " + DateTime.Now)
+							.WithUpdatedPngCoverImage(bannerTexture.EncodeToPNG());;
 						
 						//m_saveBundleMetadata.TotalTimePlayed.Add (new TimeSpan (0, 0, (int)Time.realtimeSinceStartup))
 						
@@ -268,6 +270,10 @@ namespace Pew.Google {
 		
 		public static void AddTimeForNextSave(TimeSpan time) {
 			timePlayed += time;
+		}
+		
+		public static void SetBannerTexture(Texture2D t) {
+			bannerTexture = t;
 		}
 		
 	}
