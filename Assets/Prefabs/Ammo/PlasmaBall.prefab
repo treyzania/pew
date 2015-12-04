@@ -51,7 +51,9 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 414564, guid: 099d294e1b1a85540a1f5856d3176657, type: 2}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -102,10 +104,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7b4ba060c02be4abffcdf4363ddca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseDamage: 100
+  BaseDamage: 75
   MaxRange: 2.5
   RadiusExponent: .75
-  MaxDamage: 350
+  MaxDamage: 200
   TargetTag: 
   SpawnAfter: {fileID: 148618, guid: 07b6b141a3b6cec458bb8ce4ba7bfcd6, type: 2}
   SAScale: 2
@@ -130,7 +132,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: BaseDamage
-      value: 50
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MaxRange
@@ -154,7 +156,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MaxDamage
-      value: 2000
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_ProbeAnchor

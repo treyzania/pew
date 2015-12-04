@@ -29,7 +29,6 @@ GameObject:
   - 20: {fileID: 2094190}
   - 124: {fileID: 12461306}
   - 92: {fileID: 9208678}
-  - 81: {fileID: 8150486}
   - 114: {fileID: 11476536}
   m_Layer: 0
   m_Name: SavedGameIconCamera
@@ -1116,7 +1115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ae812ea4d4da8e4aba4cbf5ecc25732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentThrottle: 0
 --- !u!114 &11433622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1175,17 +1173,17 @@ MonoBehaviour:
   - FireRate: .200000003
     Damage: 10
   - FireRate: .174999997
-    Damage: 15
+    Damage: 12
   - FireRate: .125
-    Damage: 25
+    Damage: 17
   - FireRate: .100000001
-    Damage: 60
+    Damage: 30
   - FireRate: .0850000009
-    Damage: 150
+    Damage: 55
   - FireRate: .075000003
-    Damage: 500
+    Damage: 75
   - FireRate: .0500000007
-    Damage: 1200
+    Damage: 100
 --- !u!114 &11465432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1274,8 +1272,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ImageComponent: {fileID: 0}
-  MaxHealth: 100
-  CurrentHealth: 100
+--- !u!124 &12461306
+Behaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105594}
+  m_Enabled: 1
 --- !u!135 &13513746
 SphereCollider:
   m_ObjectHideFlags: 1

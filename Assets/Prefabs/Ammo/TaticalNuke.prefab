@@ -109,7 +109,9 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -133,7 +135,9 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -179,10 +183,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7b4ba060c02be4abffcdf4363ddca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseDamage: 150
+  BaseDamage: 100
   MaxRange: 10
   RadiusExponent: .75
-  MaxDamage: 10000
+  MaxDamage: 1000
   TargetTag: Enemy
   SpawnAfter: {fileID: 114918, guid: 785ff1d2e81d12a4585a0132a966cbe3, type: 2}
   SAScale: 2.5
@@ -220,7 +224,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: BaseDamage
-      value: 150
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MaxRange
@@ -244,7 +248,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MaxDamage
-      value: 10000
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: SpawnAfter

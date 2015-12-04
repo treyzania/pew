@@ -79,7 +79,9 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -136,7 +138,7 @@ MonoBehaviour:
   MaxDamage: 100
   TargetTag: 
   SpawnAfter: {fileID: 168252, guid: 099d294e1b1a85540a1f5856d3176657, type: 2}
-  SAScale: 1
+  SAScale: .649999976
 --- !u!136 &13636682
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -177,6 +179,10 @@ Prefab:
       propertyPath: SpawnAfter
       value: 
       objectReference: {fileID: 168252, guid: 099d294e1b1a85540a1f5856d3176657, type: 2}
+    - target: {fileID: 0}
+      propertyPath: SAScale
+      value: .649999976
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 132442}
