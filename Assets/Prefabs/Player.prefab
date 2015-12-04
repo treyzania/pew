@@ -1171,7 +1171,7 @@ MonoBehaviour:
   - {fileID: 117444}
   LaserValues:
   - FireRate: .200000003
-    Damage: 10
+    Damage: 7
   - FireRate: .174999997
     Damage: 12
   - FireRate: .125
