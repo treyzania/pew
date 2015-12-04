@@ -106,7 +106,7 @@ Transform:
   m_GameObject: {fileID: 180430}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .300000012, y: .300000012, z: .300000012}
+  m_LocalScale: {x: .25, y: .25, z: .25}
   m_Children:
   - {fileID: 453526}
   m_Father: {fileID: 437908}
@@ -118,7 +118,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.5699997, y: .791999996, z: 1.37}
+  m_LocalPosition: {x: -3.03999996, y: .129999995, z: .660000026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 432158}
@@ -168,7 +168,9 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_MinimumChartSize: 4
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
@@ -312,8 +314,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: .400000006
-  m_Height: 1.5
+  m_Radius: .300000012
+  m_Height: 1
   m_Direction: 0
   m_Center: {x: 0, y: 0, z: .125}
 --- !u!1001 &100100000
