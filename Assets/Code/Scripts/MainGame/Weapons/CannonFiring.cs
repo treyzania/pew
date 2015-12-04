@@ -66,7 +66,7 @@ public class CannonFiring : MonoBehaviour {
 	
 	private bool CanFire() {
 		
-		bool timeRight = timeSinceFiring >- FireThreshold;
+		bool timeRight = timeSinceFiring >= FireThreshold;
 		bool hasMissile = this.Missile != null;
 		bool hasMoney = (StoredPlayerData.PLAYER_DATA.Money + float.Parse(GameTracker.Active.GetValue("money_awarded"))) >= this.FiringCost;
 		
