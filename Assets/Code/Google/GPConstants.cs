@@ -24,13 +24,16 @@
 
 public static class GPConstants
 {
-        public const string leaderboard_single_game_score = "CgkIxpXx0LYLEAIQAQ"; // <GPGSID>
+        public const string achievement_bling = "CgkIxpXx0LYLEAIQAw"; // <GPGSID>
+        public const string achievement_pirate_slayer = "CgkIxpXx0LYLEAIQCA"; // <GPGSID>
+        public const string leaderboard_single_game_winnings = "CgkIxpXx0LYLEAIQBw"; // <GPGSID>
+        public const string achievement_the_gates_to_the_universe = "CgkIxpXx0LYLEAIQBg"; // <GPGSID>
+        public const string achievement_starfighter_ace = "CgkIxpXx0LYLEAIQCg"; // <GPGSID>
+        public const string achievement_space_veteran = "CgkIxpXx0LYLEAIQCQ"; // <GPGSID>
+        public const string achievement_dont_get_sucked_in = "CgkIxpXx0LYLEAIQBQ"; // <GPGSID>
         public const string achievement_phat_stax = "CgkIxpXx0LYLEAIQBA"; // <GPGSID>
         public const string achievement_it_takes_practice = "CgkIxpXx0LYLEAIQAg"; // <GPGSID>
-        public const string achievement_dont_get_sucked_in = "CgkIxpXx0LYLEAIQBQ"; // <GPGSID>
-        public const string achievement_the_gates_to_the_universe = "CgkIxpXx0LYLEAIQBg"; // <GPGSID>
-        public const string achievement_bling = "CgkIxpXx0LYLEAIQAw"; // <GPGSID>
-        public const string leaderboard_single_game_winnings = "CgkIxpXx0LYLEAIQBw"; // <GPGSID>
+        public const string leaderboard_single_game_score = "CgkIxpXx0LYLEAIQAQ"; // <GPGSID>
 
 }
 

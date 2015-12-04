@@ -1,10 +1,11 @@
 using UnityEngine;
-using System.collections;
+using System.Collections;
+using GooglePlayGames;
 
-public class GameCountAchievements : MonoBehavior {
+public class GameCountAchievements : MonoBehaviour {
 	
 	public static string[] ACHIEVEMENTS = new string[] {
-		GPConstants.achievement_pirate_splayer,
+		GPConstants.achievement_pirate_slayer,
 		GPConstants.achievement_space_veteran,
 		GPConstants.achievement_starfighter_ace
 	};
