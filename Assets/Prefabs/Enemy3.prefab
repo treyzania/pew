@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 464114}
   - 54: {fileID: 5465014}
-  - 136: {fileID: 13689124}
   - 135: {fileID: 13505434}
   - 114: {fileID: 11433612}
   - 114: {fileID: 11446436}
@@ -333,7 +332,7 @@ MonoBehaviour:
   MaxForce: 500
   BaseForce: 70
   ForcePercent: 1.10000002
-  CutoffDistance: 2.5
+  CutoffDistance: 3.5
   IdleVelocity: .200000003
   IdleSlowdownFactor: .899999976
   RotationSpeed: 20
@@ -377,21 +376,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.25
-  m_Center: {x: 0, y: 0, z: -.75}
---- !u!136 &13689124
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 138198}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: .379999995
-  m_Height: 1.92999995
-  m_Direction: 0
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: .75
+  m_Center: {x: 0, y: 0, z: -.25}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
