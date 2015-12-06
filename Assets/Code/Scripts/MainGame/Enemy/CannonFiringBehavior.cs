@@ -10,6 +10,7 @@ public class CannonFiringBehavior : MonoBehaviour {
 	
 	public float FiringRate = 1F;
 	public float AttackRadius = 5F;
+	public float AttackDotRange = 0.75F;
 	
 	private float Cooldown = 0F;
 	
@@ -28,7 +29,7 @@ public class CannonFiringBehavior : MonoBehaviour {
 			
 			Cooldown -= Time.deltaTime;
 			
-			if (Cooldown <= 0) {
+			if (Cooldown <= 0 && Vector3.Dot(this.transform.forward, delta) >= this.AttackDotRange) {
 				
 				Cooldown = FiringRate;
 				

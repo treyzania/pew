@@ -43,7 +43,8 @@ public class TravelTo : MonoBehaviour {
 					this.transform.rotation,
 					Quaternion.LookRotation(diff, Vector3.up),
 					RotationSpeed * Time.deltaTime
-					);
+				);
+				
 			}
 			
 		}
