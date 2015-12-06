@@ -6,6 +6,8 @@ public class LeaderboardButton : MonoBehaviour {
 
 	void Start () {
 		
+#if !UNITY_EDITOR		
+		
 		// Report values.
 		if (GameTracker.Active != null) {
 			
@@ -22,14 +24,18 @@ public class LeaderboardButton : MonoBehaviour {
 			});
 			
 			// TODO Make these callbacks to something useful.
-			
+						
 		}
+		
+#endif
 		
 	}
 	
 	public void LaunchLeaderboards() {
 		
+#if !UNITY_EDITOR
 		Social.ShowLeaderboardUI();
+#endif
 		
 	}
 	

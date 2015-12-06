@@ -325,10 +325,13 @@ namespace Pew.Google {
 	
 	public class GoogleFrontend {
 		
-		private static bool Initialized;
+		public static bool Initialized { get; private set; }
+		public static bool IsAuthenticated { get; private set; }
 		private static AndroidSaveSystem SaveSystem;
 		
 		public static bool UseLocalStorage;
+		
+		
 		
 		private GoogleFrontend() {} // Let's not initialize this, m'kay?
 		
@@ -375,11 +378,13 @@ namespace Pew.Google {
 				});
 				
 				Initialized = true;
+				IsAuthenticated = true;
 				
 			}
 
 #else
-			Initialized = true;		
+			Initialized = true;
+			IsAuthenticated = false;
 #endif
 			
 		}

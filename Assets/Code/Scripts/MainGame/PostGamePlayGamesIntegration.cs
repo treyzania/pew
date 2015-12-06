@@ -20,6 +20,7 @@ public class PostGamePlayGamesIntegration : MonoBehaviour {
 		
 		Debug.Log("Trying PGPGI...");
 		
+#if !UNITY_EDITOR
 		if (GameTracker.Active != null) {
 			
 			float maybeOut = 0F;
@@ -45,6 +46,7 @@ public class PostGamePlayGamesIntegration : MonoBehaviour {
 			}
 			
 		}
+#endif
 		
 	}
 	

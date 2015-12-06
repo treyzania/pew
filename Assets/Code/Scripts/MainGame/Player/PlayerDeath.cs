@@ -34,12 +34,12 @@ public class PlayerDeath : MonoBehaviour {
 		// Post death thing.
 		foreach (GameObject go in this.SpawnAfterDeath) GameObject.Instantiate(go, this.transform.position, this.transform.rotation);
 		
+#if !UNITY_EDITOR
 		Social.ReportProgress(GPConstants.achievement_it_takes_practice, 100, (bool success) => {
 			// Nothing!
 		});
+#endif	
 		
 	}
-	
-	
-	
+		
 }

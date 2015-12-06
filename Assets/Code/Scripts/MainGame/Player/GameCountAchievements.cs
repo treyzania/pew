@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Pew.Google;
 using GooglePlayGames;
 
 public class GameCountAchievements : MonoBehaviour {
@@ -12,6 +13,7 @@ public class GameCountAchievements : MonoBehaviour {
 	
 	void Start() {
 		
+#if !UNITY_EDITOR
 		foreach (string ach in ACHIEVEMENTS) {
 			
 			PlayGamesPlatform.Instance.IncrementAchievement(ach, 1, (bool success) => {
@@ -19,7 +21,8 @@ public class GameCountAchievements : MonoBehaviour {
 			});
 			
 		}
-		
+#endif
+				
 	}
 	
 }
