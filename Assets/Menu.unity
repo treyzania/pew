@@ -1738,3 +1738,47 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1957629084}
+--- !u!1 &2044043223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2044043225}
+  - 114: {fileID: 2044043224}
+  m_Layer: 0
+  m_Name: AptitudeCalculator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2044043224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2044043223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f7a5d55ca023424cb0bae4bc9c74390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TracksChecked:
+  - {fileID: 11400000, guid: d39e6eed5dc0ccb4f8b4c33b2707e24f, type: 2}
+  - {fileID: 11400000, guid: 35465a64df1dbcc42890f0dd2b2f33ef, type: 2}
+  - {fileID: 11400000, guid: d32cf04ed7ceccf4b9baae7b5b22a844, type: 2}
+  - {fileID: 11400000, guid: e32e589d936bd3748a1f73bb87e8635a, type: 2}
+--- !u!4 &2044043225
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2044043223}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 678.415161, y: 366.071686, z: 6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
