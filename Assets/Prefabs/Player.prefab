@@ -1146,14 +1146,14 @@ MonoBehaviour:
   ThrusterValues:
   - VelocityFactor: 1.25
     MaxVelocity: 2.5
-  - VelocityFactor: 1.5
+  - VelocityFactor: 1.29999995
     MaxVelocity: 5
-  - VelocityFactor: 2
-    MaxVelocity: 10
-  - VelocityFactor: 2.5
+  - VelocityFactor: 1.75
+    MaxVelocity: 7.5
+  - VelocityFactor: 2.25
+    MaxVelocity: 15
+  - VelocityFactor: 2.75
     MaxVelocity: 20
-  - VelocityFactor: 3.5
-    MaxVelocity: 30
 --- !u!114 &11460704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1173,15 +1173,15 @@ MonoBehaviour:
   - FireRate: .200000003
     Damage: 7
   - FireRate: .174999997
-    Damage: 12
+    Damage: 10
   - FireRate: .125
-    Damage: 17
+    Damage: 15
   - FireRate: .100000001
-    Damage: 30
+    Damage: 25
   - FireRate: .0850000009
-    Damage: 55
+    Damage: 35
   - FireRate: .075000003
-    Damage: 75
+    Damage: 60
   - FireRate: .0500000007
     Damage: 100
 --- !u!114 &11465432
