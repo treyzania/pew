@@ -45,7 +45,7 @@ GameObject:
   - 114: {fileID: 11496692}
   - 114: {fileID: 11424736}
   - 114: {fileID: 11473248}
-  - 136: {fileID: 13652532}
+  - 135: {fileID: 13534088}
   m_Layer: 0
   m_Name: Enemy5
   m_TagString: Enemy
@@ -513,10 +513,10 @@ MonoBehaviour:
   - {fileID: 471252}
   FiringVelocity: 20
   MissileDamage: 100
-  FiringRate: 1.25
+  FiringRate: .75
   AttackRadius: 5
---- !u!136 &13652532
-CapsuleCollider:
+--- !u!135 &13534088
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -524,10 +524,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: .349999994
-  m_Height: 1.20000005
-  m_Direction: 0
-  m_Center: {x: 0, y: 0, z: -.100000001}
+  serializedVersion: 2
+  m_Radius: .75
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

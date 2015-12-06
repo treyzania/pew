@@ -364,7 +364,7 @@ MonoBehaviour:
   BarrelEnds:
   - {fileID: 410246}
   FiringVelocity: 5
-  FiringRate: 10
+  FiringRate: 3
   AttackRadius: 12
 --- !u!135 &13505434
 SphereCollider:
