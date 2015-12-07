@@ -4,18 +4,35 @@ using Pew.Player;
 
 public class LeaderboardButton : MonoBehaviour {
 
+	public static float TIME_DIV_EXPONENT = 1.5F;
+	public static float TIME_SUM_FACTOR = 100F;
+	public static float DIFF_SUM_EXPONENT = 1.075F;
+	
 	void Start () {
-		
-#if !UNITY_EDITOR		
-		
+				
 		// Report values.
 		if (GameTracker.Active != null) {
 			
-			// Should these just parse straight to longs?
 			long money = (long) float.Parse(GameTracker.Active.GetValue("money_awarded"));
-			long score = (long) float.Parse(GameTracker.Active.GetValue("score"));
 			
-			Social.ReportScore(score, GPConstants.leaderboard_single_game_score, (bool success) => {
+			float baseScore = float.Parse(GameTracker.Active.GetValue("score"));
+			float timeAlive = float.Parse(GameTracker.Active.GetValue("time"));
+			float difficulty = float.Parse(GameTracker.Active.GetValue("difficulty"));
+			
+			float finalScore =  
+				(
+					(baseScore / Mathf.Pow(timeAlive, TIME_DIV_EXPONENT))
+					* (TIME_SUM_FACTOR * Mathf.Sqrt(timeAlive) + Mathf.Pow(difficulty, DIFF_SUM_EXPONENT))
+				)
+			;
+			
+			long longFinalScore = (long) Mathf.Floor(finalScore);
+			
+			Debug.Log("Calculated score: " + finalScore);
+			GameTracker.Active.PutValue("score_final", longFinalScore.ToString());
+			
+#if !UNITY_EDITOR
+			Social.ReportScore(longFinalScore, GPConstants.leaderboard_single_game_score, (bool success) => {
 				// Nothing!
 			});
 			
@@ -24,10 +41,9 @@ public class LeaderboardButton : MonoBehaviour {
 			});
 			
 			// TODO Make these callbacks to something useful.
-						
-		}
-		
 #endif
+			
+		}
 		
 	}
 	
