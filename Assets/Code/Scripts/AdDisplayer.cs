@@ -46,7 +46,7 @@ public class AdDisplayer : MonoBehaviour {
 		// Logistic function!
 		float prob = this.MaximumValue / (1 + Mathf.Pow(E, -1 * this.Steepness * (duration - this.SigmoidPoint)));
 		
-		return ((Random.Range(0, 1) <=  prob) || this.AlwaysShow) && ShowAds;
+		return ((Random.Range(0F, 1F) <= prob) || this.AlwaysShow) && ShowAds;
 		
 	}
 	

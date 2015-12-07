@@ -531,8 +531,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextScene: Game
   MaximumValue: .400000006
-  SigmoidPoint: 60
-  Steepness: 1
+  SigmoidPoint: 100
+  Steepness: .0250000004
   AlwaysShow: 0
 --- !u!114 &434305773
 MonoBehaviour:
@@ -2198,8 +2198,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextScene: Menu
   MaximumValue: .75
-  SigmoidPoint: 30
-  Steepness: 1
+  SigmoidPoint: 60
+  Steepness: .075000003
   AlwaysShow: 0
 --- !u!114 &1679814183
 MonoBehaviour:
