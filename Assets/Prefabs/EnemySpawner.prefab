@@ -1,0 +1,158 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &127602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 439702}
+  - 114: {fileID: 11422968}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &439702
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127602}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.175106, y: -7.07804632, z: 6.01821995}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11422968
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cbab275c796d8143b8e58a6e9d31047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseDifficulty: 1
+  ApparentAptitude: 0
+  DifficultyIncreaseFactor: 1.10000002
+  BaseWavePeriod: 30000
+  WavePeriodFactor: .949999988
+  SpawningRadius: 20
+  SpawningGroupRadius: 5
+  EnemyList:
+  - Prefab: {fileID: 179138, guid: 25b366815c000d94da1acc4f330bdef9, type: 2}
+    Difficulty: 3
+    MaxSpawnedInGroup: 50
+  - Prefab: {fileID: 134246, guid: 584fbe8acc7a33548904d711ac4b8a8e, type: 2}
+    Difficulty: 35
+    MaxSpawnedInGroup: 20
+  - Prefab: {fileID: 138198, guid: 9048a1ba5bf23d243967e966d14c2ba4, type: 2}
+    Difficulty: 50
+    MaxSpawnedInGroup: 3
+  - Prefab: {fileID: 188392, guid: baed35bff1cb6914eae6be46b07056b3, type: 2}
+    Difficulty: 15
+    MaxSpawnedInGroup: 50
+  - Prefab: {fileID: 180006, guid: f1b13ed5558432c4cb0cd038b91b7fc1, type: 2}
+    Difficulty: 250
+    MaxSpawnedInGroup: 5
+  - Prefab: {fileID: 134246, guid: 757502354cd95a941b66e0cbea4d962a, type: 2}
+    Difficulty: 250
+    MaxSpawnedInGroup: 3
+  - Prefab: {fileID: 187256, guid: 30a4e4bf99799114c8cb9487efdd4cab, type: 2}
+    Difficulty: 500
+    MaxSpawnedInGroup: 5
+  - Prefab: {fileID: 139688, guid: 37070f1b1fafb384a8ad75a4a4be6479, type: 2}
+    Difficulty: 300
+    MaxSpawnedInGroup: 20
+  - Prefab: {fileID: 193268, guid: 75b0daca30ee2f447ae7304793751f19, type: 2}
+    Difficulty: 60
+    MaxSpawnedInGroup: 10
+  - Prefab: {fileID: 165208, guid: c4a4a297e0ade5d448608006d718aff5, type: 2}
+    Difficulty: 75
+    MaxSpawnedInGroup: 7
+  DefaultEnemy:
+    Prefab: {fileID: 138264, guid: 29053a99069157d458286d5fa3b17ea1, type: 2}
+    Difficulty: 1e+06
+    MaxSpawnedInGroup: 0
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: EnemyList.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: EnemyList.Array.data[5].Prefab
+      value: 
+      objectReference: {fileID: 134246, guid: 757502354cd95a941b66e0cbea4d962a, type: 2}
+    - target: {fileID: 0}
+      propertyPath: EnemyList.Array.data[6].Prefab
+      value: 
+      objectReference: {fileID: 187256, guid: 30a4e4bf99799114c8cb9487efdd4cab, type: 2}
+    - target: {fileID: 0}
+      propertyPath: EnemyList.Array.data[7].Prefab
+      value: 
+      objectReference: {fileID: 139688, guid: 37070f1b1fafb384a8ad75a4a4be6479, type: 2}
+    - target: {fileID: 0}
+      propertyPath: EnemyList.Array.data[7].Difficulty
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: EnemyList.Array.data[6].Difficulty
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: EnemyList.Array.data[7].MaxSpawnedInGroup
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: EnemyList.Array.data[5].MaxSpawnedInGroup
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: EnemyList.Array.data[2].Difficulty
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: EnemyList.Array.data[8].Prefab
+      value: 
+      objectReference: {fileID: 193268, guid: 75b0daca30ee2f447ae7304793751f19, type: 2}
+    - target: {fileID: 0}
+      propertyPath: EnemyList.Array.data[9].Prefab
+      value: 
+      objectReference: {fileID: 165208, guid: c4a4a297e0ade5d448608006d718aff5, type: 2}
+    - target: {fileID: 0}
+      propertyPath: EnemyList.Array.data[1].Prefab
+      value: 
+      objectReference: {fileID: 134246, guid: 584fbe8acc7a33548904d711ac4b8a8e, type: 2}
+    - target: {fileID: 0}
+      propertyPath: EnemyList.Array.data[8].Difficulty
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: EnemyList.Array.data[9].Difficulty
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: EnemyList.Array.data[8].MaxSpawnedInGroup
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: EnemyList.Array.data[9].MaxSpawnedInGroup
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 127602}
+  m_IsPrefabParent: 1
