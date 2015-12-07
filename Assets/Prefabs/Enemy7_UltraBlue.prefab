@@ -576,8 +576,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389393b21d62cbc4eaf203fa584f28bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 1500
-  MaxHealth: 1500
+  Health: 1000
+  MaxHealth: 1000
   DefenseFactor: 1
 --- !u!114 &11494056
 MonoBehaviour:
@@ -617,6 +617,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: PointsAwarded
       value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Health
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MaxHealth
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
