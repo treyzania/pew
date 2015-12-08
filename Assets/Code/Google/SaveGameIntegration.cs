@@ -238,27 +238,33 @@ namespace Pew.Google {
 						SavedGameMetadataUpdate.Builder builder = new SavedGameMetadataUpdate.Builder ();
 						builder = builder
 							.WithUpdatedPlayedTime(timePlayed)
-							.WithUpdatedDescription("Saved game at " + DateTime.Now)
-							.WithUpdatedPngCoverImage(bannerTexture.EncodeToPNG());;
+							.WithUpdatedDescription("Saved game at " + DateTime.Now);
+						
+						if (bannerTexture != null) {
+							builder = builder.WithUpdatedPngCoverImage(bannerTexture.EncodeToPNG());
+						}
 						
 						//m_saveBundleMetadata.TotalTimePlayed.Add (new TimeSpan (0, 0, (int)Time.realtimeSinceStartup))
 						
-						SavedGameMetadataUpdate updatedMetadata = builder.Build ();
+						SavedGameMetadataUpdate updatedMetadata = builder.Build();
 						
 						savedGameClient.CommitUpdate(
 							m_saveBundleMetadata,
 							updatedMetadata,
 							SaveDataBundle.ToByteArray(file),
-							(SavedGameRequestStatus status,ISavedGameMetadata game) => {
+							(SavedGameRequestStatus status, ISavedGameMetadata game) => {
+								
+								Debug.Log("SGI CommitUpdate callback invoked with status " + status + ", proceeding...");
 								
 								if (status == SavedGameRequestStatus.Success) {
 									m_saveBundleMetadata = game;
 									m_currentSaveBundle = file;
 								}
-							
-							if (callback != null) callback.Invoke(status == SavedGameRequestStatus.Success);
-							
-						});
+								
+								if (callback != null) callback.Invoke(status == SavedGameRequestStatus.Success);
+								
+							}
+						);
 					
 					}
 				
@@ -433,6 +439,14 @@ namespace Pew.Google {
 		}
 		
 		public static void Save(int addedTime) {
+			Save(addedTime, () => {/* Nothing */});
+		}
+		
+		public static void Save(Action callback) {
+			Save(1, callback);
+		}
+		
+		public static void Save(int addedTime, Action callback) {
 			
 			if (!Initialized) Init((bool success) => {/* Nothing */});
 			
@@ -449,15 +463,8 @@ namespace Pew.Google {
 				
 				SaveSystem.SaveGame(new SaveDataBundle(data), (bool success) => {
 					
-					if (success) {
-						
-						StoredPlayerData.UpdateTimeValue(StoredPlayerData.TIME_CLOUD_KEY);
-						
-					} else {
-						
-						Debug.LogWarning("Cloud save failed!");
-						
-					}
+					Debug.Log("Calling post save callback.");
+					callback.Invoke();
 					
 				});
 				
@@ -467,6 +474,7 @@ namespace Pew.Google {
 			
 #else
 			data.LocalSave();
+			callback.Invoke();
 #endif
 				
 		}

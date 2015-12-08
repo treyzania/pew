@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 using System.Collections;
 using Pew.Player;
 using Pew.Google;
 using GooglePlayGames;
+
+using System.Threading;
 
 public class ButtonBuy : MonoBehaviour {
 
@@ -14,10 +17,16 @@ public class ButtonBuy : MonoBehaviour {
 	private Text desc;
 	private Text cost;
 	private Image icon;
+	private AudioSource audio;
 	
 	public bool ImmediatePurchase = true;
+	public AudioClip errorSound;
+	
+	public static bool AllowPurchasing;
 	
 	void Start() {
+		
+		AllowPurchasing = true;
 		
 		this.UpgradeIndex = StoredPlayerData.PLAYER_DATA.GetUpgradeLevel(UpgradeTrack.Part);
 		
@@ -28,6 +37,9 @@ public class ButtonBuy : MonoBehaviour {
 		this.cost = content.FindChild("Price").GetComponent<Text>();
 		this.icon = content.FindChild("Icon").GetComponent<Image>();
 		this.icon.sprite = this.UpgradeTrack.Icon;
+		
+		// Get the audio source.
+		this.audio = this.GetComponent<AudioSource>();
 		
 		this.UpdateDisplay();
 		
@@ -45,6 +57,11 @@ public class ButtonBuy : MonoBehaviour {
 	
 	public void OnButton() {
 		
+		if (!AllowPurchasing) {
+			this.audio.PlayOneShot(this.errorSound);
+			return;
+		}
+		
 		UpgradeEntry ue = this.GetNextUpgrade();
 		
 		if (ue.Price <= StoredPlayerData.PLAYER_DATA.Money) {
@@ -55,6 +72,8 @@ public class ButtonBuy : MonoBehaviour {
 				this.DoPurchase();
 			}
 			
+		} else {
+			this.audio.PlayOneShot(this.errorSound);
 		}
 		
 	}
@@ -67,9 +86,15 @@ public class ButtonBuy : MonoBehaviour {
 	
 	private void DoPurchase() {
 		
+#if !UNITY_EDITOR
 		PlayGamesPlatform.Instance.IncrementAchievement(GPConstants.achievement_bling, 1, (bool success) => {
-			if (!success) return; // TODO Make the user aware that something got messed up.
+			
+			if (success) {
+				
+			} // TODO Make the user aware that something got messed up.
+			
 		});
+#endif
 		
 		// Take the money out.
 		StoredPlayerData.PLAYER_DATA.Money -= this.GetNextUpgrade().Price;
@@ -85,9 +110,7 @@ public class ButtonBuy : MonoBehaviour {
 		);
 		
 		this.UpdateDisplay();
-		
-		// This should be done last to ensure that it gets done, eventually.
-		GoogleFrontend.Save();
+		this.audio.Play();
 		
 	}
 	
