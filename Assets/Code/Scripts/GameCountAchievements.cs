@@ -5,6 +5,8 @@ using GooglePlayGames;
 
 public class GameCountAchievements : MonoBehaviour {
 	
+	public static bool IncrementInProgress = false;
+	
 	public static string[] ACHIEVEMENTS = new string[] {
 		GPConstants.achievement_pirate_slayer,
 		GPConstants.achievement_space_veteran,
@@ -14,6 +16,8 @@ public class GameCountAchievements : MonoBehaviour {
 	void Start() {
 		
 		Debug.Log("Updating game count achievements...");
+		if (IncrementInProgress) return;
+		IncrementInProgress = true;
 		
 #if !UNITY_EDITOR
 		foreach (string ach in ACHIEVEMENTS) {
@@ -25,6 +29,10 @@ public class GameCountAchievements : MonoBehaviour {
 		}
 #endif
 				
+	}
+	
+	void Update() {
+		IncrementInProgress = false;
 	}
 	
 }

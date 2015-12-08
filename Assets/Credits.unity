@@ -868,11 +868,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 195574754}
   m_RootOrder: 2
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 672, y: -398}
-  m_SizeDelta: {x: 395, y: 67}
-  m_Pivot: {x: .5, y: .5}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -24, y: 24}
+  m_SizeDelta: {x: 300, y: 100}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &2070877746
 MonoBehaviour:
   m_ObjectHideFlags: 0
