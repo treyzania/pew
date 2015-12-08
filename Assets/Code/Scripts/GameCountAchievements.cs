@@ -13,6 +13,8 @@ public class GameCountAchievements : MonoBehaviour {
 	
 	void Start() {
 		
+		Debug.Log("Updating game count achievements...");
+		
 #if !UNITY_EDITOR
 		foreach (string ach in ACHIEVEMENTS) {
 			
