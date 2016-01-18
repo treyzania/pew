@@ -8,5 +8,5 @@ If you want to redistrubite it, go ahead.  But do as the license asks and don't
 claim it as your own, sell it, or redistribute it under an incompatible
 license.
 
-Support for iOS may come in the future.  IF you would like to contribute this
-or anything else, feel free.
+Support for iOS may come in the future.  If you would like to contribute this
+or anything else, feel free to fork and make a pull request.
